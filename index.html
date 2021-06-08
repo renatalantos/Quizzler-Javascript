@@ -17,106 +17,126 @@
 <body>
 
     <div id="wrap-around">
-        
-
-        
 
 
-        <div id="sidebar">Sidebar
 
-            
-            <div id="user-picture">Picture</div>
-            <div id="user-name">Username</div>
-            <div id="number-of-games">Number of games</div>
-            <div id="user-score">Score</div>
-            <div id="highest-score">Highest score</div>
+
+
+        <div id="sidebar">
+            <div id="info">
+                <h3>Your information</h3>
+                <hr>
+
+
+                <div id="user-name">
+                    <p>Your name:</p><span class="to-fill">My name</span>
+                </div>
+
+                <div id="number-of-games">
+                    <p>Number of games played:</p><span class="to-fill">0</span>
+                </div>
+                <div id="user-score">
+                    <p>Your score in this game:</p><span class="to-fill">0</span>
+                </div>
+                <div id="all-score">
+                    <p>Your score in all games:</p><span class="to-fill">0</span>
+                </div>
+            </div>
+
+            <form action="/action_page.php" method="post" id="login-form">
+                <div class="form-container">
+                    <h3>Login</h3>
+                    <hr>
+
+
+
+
+
+
+                    <label for="username" class="user-label">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+                    <label for="password" class="password-label">Password</label>
+                    <input type="text" id="password" name="password" placeholder="Enter Password" required>
+
+
+
+
+                    <button type="submit" class="login-btn"><p>Login</p></button>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember">
+                        <p>Remember me</p>
+                    </label>
+
+                </div>
+
+                <div class="sign-in-container">
+                    <p>Don't you have an account yet? Create one.<br><a href="#">Create account</a>.</p>
+                </div>
+
+            </form>
+
 
 
             <form action="/action_page.php" method="post" id="signup-form">
                 <div class="form-container">
-                    <h1>Register</h1>
-                    <p>Please fill in this form to create an account</p>
+                    <h3>Register</h3>
+                    <hr>
+                    <p>Please fill in this form to create an account.</p>
 
 
-                    <label for="email">Enter Email Address</label>
+                    <label for="email" class="email-label">Enter Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Email address" required>
 
-                    <label for="username">Create Username</label>
+                    <label for="username" class="user-label">Create Username</label>
                     <input type="text" id="username" name="username" placeholder="Username" required>
 
-                    <label for="password">Create Password</label>
+                    <label for="password" class="password-label">Create Password</label>
                     <input type="text" id="password" name="password" placeholder="Password" required>
 
 
-                    <label for="repeat-password">Repeat Password</label>
+                    <label for="repeat-password" class="repeat-password-label">Repeat Password</label>
                     <input type="text" id="repeat-password" name="repeat-password" placeholder="Repeat Password"
                         required>
 
-                    <button type="submit" class="register-btn">Register</button>
+                    <button type="submit" class="register-btn"><p>Register</p></button><br>
                     <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                      </label>
+                        <input type="checkbox" checked="checked" name="remember">
+                        <p>Remember me</p>
+                    </label>
 
                 </div>
 
-                <div class="sign-in-container"><p>Already have an account? <a href="#">Sign in</a>.</p></div>
-
-                <form action="/action_page.php" method="post" id="login-form">
-                    <div class="form-container">
-                        <h1>Login</h1>
-                        
-    
-    
-                    
-    
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Enter Username" required>
-    
-                        <label for="password">Password</label>
-                        <input type="text" id="password" name="password" placeholder="Enter Password" required>
-    
-    
-                        
-    
-                        <button type="submit" class="login-btn">Login</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                          </label>
-    
-                    </div>
-
-                    <div class="sign-in-container"><p>Don't you have an account yet? Create one.<a href="#">Create account</a>.</p></div>
-                
-                </form>
-                
-
+                <div class="sign-in-container">
+                    <p>Already have an account? <a href="#">Sign in</a>.</p>
+                </div>
 
             </form>
+
+
+
+
         </div>
 
         <section id="title-area">
-        
-            <h1>Do you know your art?</h1>
-            <div id="title"><i class="fas fa-palette"></i></div>
+
+            <h1 id="quiz-title">Do you know your art?</h1>
+            <div id="title"><i class="fas fa-palette"></i><i class="fas fa-paint-brush"></i></div>
         </section>
 
+
         <section id="photo-area">
-            
 
-
-            
-            <div id="photo">
-                
-
-            </div>
-            <h1></h1>
+           <div id="photo"><img src="/assets/images/paints.jpg" alt="colourful paints"></div> 
+         
         </section>
 
         <section id="question-area">
 
-            <h1>Question Area</h1>
+            <h2>Are you ready?</h2>
             <div id="question">
-            
+
 
             </div>
         </section>
@@ -126,13 +146,14 @@
 
             <h1></h1>
             <div id="button-area">
-                <button class="start-btn">Start Button</button>
+                <button class="start-btn">Start Game</button>
                 <button class="answer-btn">Button1</button>
                 <button class="answer-btn">Button2</button>
                 <button class="answer-btn">Button3</button>
                 <button class="answer-btn">Button4</button>
-                
-                <button class="next-btn">Next Button</button>
+
+                <button class="next-btn">Next Question<div id="right-arrow"><i class="fas fa-arrow-right"></i></div>
+                </button>
             </div>
         </section>
 

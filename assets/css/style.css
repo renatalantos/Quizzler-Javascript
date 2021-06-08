@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 /*font-family: 'Poppins', sans-serif;*/
+/*font-family: 'Nanum Brush Script', cursive;*/
 
 * {
     margin: 0;
@@ -25,56 +27,176 @@ body {
 
 
 
-/*#logo {
-    height: 80px;
-    width: 80px;
-    margin: 0 auto;
-    background-image: url('../images/Logo4.png');
-    border-radius:5%;
-    display: block;
-    text-align: center;
-}*/
-
 #sidebar {
-    height: 100%;
-    width: 200px;
-    /* background-color: yellow;*/
+    height: auto;
+    width: 220px;
+    background-color: #E8F3F1;
     float: left;
-
-    padding: 0;
-    position: fixed;
-    overflow: hidden;
-    /*  visibility: hidden;*/
+    padding: 0 10px;
+    position: absolute;
+    overflow: visible;
+     /*visibility: hidden;*/
 }
 
-#title-area {
+#info,
+#login-form,
+#signup-form {
+    margin: 10px 0;
+}
 
+#info h3,
+.form-container h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #D53E69;
+    font-size: 30px;
+    text-align: center;
+}
+
+hr {
+
+    border: solid 0.25px #DDE2F3;
+    width: 96%;
+}
+
+
+
+
+
+
+
+#user-name,
+#number-of-games,
+#number-of-games,
+#user-score,
+#all-score,
+.form-container {
+    text-align: center;
+
+}
+
+#user-name p,
+#number-of-games p,
+#number-of-games p,
+#user-score p,
+#all-score p,
+.user-label,
+.password-label,
+.email-label,
+.repeat-password-label {
+    font-family: 'Poppins', sans-serif;
+    color: teal;
+    font-weight: bolder;
+    font-size: 15px;
+    letter-spacing: 0rem;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.form-container p,
+.sign-in-container p {
+    color: #2A0B5B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    letter-spacing: 0rem;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.to-fill,
+#username,
+#password,
+#email,
+#repeat-password {
     height: auto;
-    width: 550px;
+    width: auto;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    letter-spacing: 0rem;
+    border-radius: 5px;
+    border: 2px solid #DDE2F3;
+}
+
+
+.login-btn,
+.register-btn {
+    height: auto;
+    width: 80px;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: teal;
+    font-weight: bolder;
+    font-size: 15px;
+    letter-spacing: 0rem;
+    border-radius: 5px;
+    border: 2px solid #DDE2F3;
+}
+
+
+.login-btn p,
+.register-btn p {
+    color: white;
+}
+
+
+
+#title-area {
+    height: auto;
+    width: 100vw;
     margin: 0 auto;
     float: none;
     display: block;
-    /*  background-color: purple;*/
+    /* background-color: purple;*/
     text-align: center;
-    overflow: visible;
-    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 
 }
 
-#photo-area {
+#quiz-title {
+    /*color:#8A88E4;*/
+    /* text-transform: uppercase;*/
+    letter-spacing: 2px;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 50px;
+    color: #2A0B5B;
 
+}
+
+
+#photo-area {
     height: 200px;
-    width: 550px;
+    width: 100vw;
     margin: 0 auto;
     float: none;
     display: block;
     /*  background-color: crimson;*/
     text-align: center;
+   
 }
 
+
+img {
+    background-image: url('../images/paints.jpg');
+    background-repeat: no-repeat;
+  justify-content: center;
+  margin: 10px auto 30px;
+  float:none;
+  display:block;
+  border-radius: 5px;
+  
+
+}
 #question-area {
     height: 50px;
-    width: 550px;
+    width: 100vw;
     margin: auto;
     float: none;
     display: block;
@@ -83,19 +205,21 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-i {
+#title {
     font-size: 50px;
-    color: teal
+    color: #D53E69;
+
 }
 
 #game-area {
     height: auto;
-    width: 550px;
+    width: 100vw;
     margin: auto;
     float: none;
     display: block;
     /*  background-color: darkgreen;*/
     text-align: center;
+    margin-bottom: 20px;
 }
 
 
@@ -110,11 +234,39 @@ i {
 .next-btn {
     display: inline;
     padding: 20px;
-    width: 400px;
     margin: 0 auto;
-
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     font-size: 15px;
     border-radius: 5px;
+    border: 2px solid #DDE2F3;
+
+}
+
+.answer-btn {
+    width: 400px;
+    background-color: #EFEFEF;
+    color: #4F4350;
+    font-size: 15px;
+
+}
+
+.start-btn {
+    width: 130px;
+    background-color: #078F0E;
+    color: white;
+
+}
+
+.next-btn {
+    width: 200px;
+    background-color: #078F0E;
+    color: white;
+
+}
+
+#right-arrow {
+    font-size: 30px;
+    color: white;
+    padding-top: 5px;
 }
