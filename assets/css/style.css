@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+/*font-family: 'Poppins', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+body {
+    background-color: #FFFADE;
+
+}
+
+#wrap-around {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*#logo {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    background-image: url('../images/Logo4.png');
+    border-radius:5%;
+    display: block;
+    text-align: center;
+}*/
+
+#sidebar {
+    height: 100%;
+    width: 200px;
+    /* background-color: yellow;*/
+    float: left;
+
+    padding: 0;
+    position: fixed;
+    overflow: hidden;
+    /*  visibility: hidden;*/
+}
+
+#title-area {
+
+    height: auto;
+    width: 550px;
+    margin: 0 auto;
+    float: none;
+    display: block;
+    /*  background-color: purple;*/
+    text-align: center;
+    overflow: visible;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#photo-area {
+
+    height: 200px;
+    width: 550px;
+    margin: 0 auto;
+    float: none;
+    display: block;
+    /*  background-color: crimson;*/
+    text-align: center;
+}
+
+#question-area {
+    height: 50px;
+    width: 550px;
+    margin: auto;
+    float: none;
+    display: block;
+    /* background-color: cyan;*/
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+i {
+    font-size: 50px;
+    color: teal
+}
+
+#game-area {
+    height: auto;
+    width: 550px;
+    margin: auto;
+    float: none;
+    display: block;
+    /*  background-color: darkgreen;*/
+    text-align: center;
+}
+
+
+#button-area {
+    display: grid;
+    grid-gap: 10px;
+
+}
+
+.answer-btn,
+.start-btn,
+.next-btn {
+    display: inline;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 5px;
+}
