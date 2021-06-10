@@ -142,7 +142,7 @@ hr {
     color: white;
 }
 
-#errors {
+#errors, #password-error{
     color:red;
 }
 /*#login-form.hide {visibility: hidden;}*/
