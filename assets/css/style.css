@@ -35,7 +35,7 @@ body {
     padding: 0 10px;
     position: absolute;
     overflow: visible;
-     /*visibility: hidden;*/
+    /*visibility: hidden;*/
 }
 
 #info,
@@ -59,11 +59,6 @@ hr {
 }
 
 
-
-
-
-
-
 #user-name,
 #number-of-games,
 #number-of-games,
@@ -71,7 +66,6 @@ hr {
 #all-score,
 .form-container {
     text-align: center;
-
 }
 
 #user-name p,
@@ -82,7 +76,8 @@ hr {
 .user-label,
 .password-label,
 .email-label,
-.repeat-password-label {
+.repeat-password-label, 
+.checkbox {
     font-family: 'Poppins', sans-serif;
     color: teal;
     font-weight: bolder;
@@ -129,7 +124,7 @@ hr {
     height: auto;
     width: 80px;
     padding: 5px;
-    margin-top: 10px;
+    margin: 10px auto auto auto;
     font-family: 'Poppins', sans-serif;
     color: white;
     background-color: teal;
@@ -138,6 +133,7 @@ hr {
     letter-spacing: 0rem;
     border-radius: 5px;
     border: 2px solid #DDE2F3;
+    display: block;
 }
 
 
@@ -146,7 +142,12 @@ hr {
     color: white;
 }
 
+#errors {
+    color:red;
+}
+/*#login-form.hide {visibility: hidden;}*/
 
+/*#signup-form.hide {visibility: hidden;}*/
 
 #title-area {
     height: auto;

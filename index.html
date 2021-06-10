@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- font awesome script  -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
+    <a href="form.html">  </a> 
+    
 
     <title>Quizzler Quiz Site</title>
 </head>
@@ -29,7 +31,7 @@
 
 
                 <div id="user-name">
-                    <p>Your name:</p><span class="to-fill">My name</span>
+                    <p>Your name:</p><span class="to-fill" id="created-name">My name</span>
                 </div>
 
                 <div id="number-of-games">
@@ -43,73 +45,37 @@
                 </div>
             </div>
 
-            <form action="/action_page.php" method="post" id="login-form">
-                <div class="form-container">
-                    <h3>Login</h3>
-                    <hr>
+           
 
 
-
-
-
-
-                    <label for="username" class="user-label">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
-
-                    <label for="password" class="password-label">Password</label>
-                    <input type="text" id="password" name="password" placeholder="Enter Password" required>
-
-
-
-
-                    <button type="submit" class="login-btn"><p>Login</p></button>
-                    <br>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember">
-                        <p>Remember me</p>
-                    </label>
-
-                </div>
-
-                <div class="sign-in-container">
-                    <p>Don't you have an account yet? Create one.<br><a href="#">Create account</a>.</p>
-                </div>
-
-            </form>
-
-
-
-            <form action="/action_page.php" method="post" id="signup-form">
+            <form id="registration-form" action="https://formdump.codeinstitute.net/" method="post" class="hide">
                 <div class="form-container">
                     <h3>Register</h3>
                     <hr>
                     <p>Please fill in this form to create an account.</p>
 
-
+                    <p id="errors"></p>
                     <label for="email" class="email-label">Enter Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Email address" required>
-
                     <label for="username" class="user-label">Create Username</label>
                     <input type="text" id="username" name="username" placeholder="Username" required>
-
                     <label for="password" class="password-label">Create Password</label>
-                    <input type="text" id="password" name="password" placeholder="Password" required>
-
-
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                     <label for="repeat-password" class="repeat-password-label">Repeat Password</label>
-                    <input type="text" id="repeat-password" name="repeat-password" placeholder="Repeat Password"
+                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat Password"
                         required>
 
-                    <button type="submit" class="register-btn"><p>Register</p></button><br>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember">
-                        <p>Remember me</p>
-                    </label>
+                    <input type="submit" class="register-btn" value="Register">
+                
+                    <label for="checkbox" class="checkbox">Remember me</label>
+                        <input type="checkbox" checked="checked" name="remember" id="checkbox" >
+                    
+                    
 
                 </div>
 
                 <div class="sign-in-container">
-                    <p>Already have an account? <a href="#">Sign in</a>.</p>
+                    <p>Already have an account? <a href="#login-form">Sign in</a>.</p>
                 </div>
 
             </form>
@@ -128,8 +94,8 @@
 
         <section id="photo-area">
 
-           <div id="photo"><img src="/assets/images/paints.jpg" alt="colourful paints"></div> 
-         
+            <div id="photo"><img src="/assets/images/paints.jpg" alt="colourful paints"></div>
+
         </section>
 
         <section id="question-area">
@@ -157,12 +123,16 @@
             </div>
         </section>
 
+    </div>
 
 
 
 
-
-
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" 
+    crossorigin="anonymous"></script>
 
 </body>
 
