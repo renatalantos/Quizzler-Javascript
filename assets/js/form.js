@@ -4,6 +4,10 @@ form.addEventListener('submit', handleSubmit);
 let errorMsg = document.getElementById('errors');
 let fillUsername = document.getElementById('created-name');
 let errorPwd = document.getElementById('password-error');
+let formLogin =document.getElementById('login-form');
+formLogin.addEventListener('submit', handleSubmit);
+
+
 
 let showLogin = document.getElementById("login");
 showLogin.addEventListener("click", onClickLogin);
@@ -41,10 +45,14 @@ function clearLogin() {
 }
 
 
+
+
+
 function handleSubmit(event) {
   event.preventDefault();
   //let name = form.elements.username.value;
-  
+
+if (this.id=="registration-form") {
 
   let name = document.getElementById('username').value;
 
@@ -80,9 +88,17 @@ function handleSubmit(event) {
 
 
   }
+} else if (this.id='login-form'){
 
 
+  let nameLogin = document.getElementById('username2').value;
+  formLogin.submit();
+  fillUsername.innerHTML = nameLogin;
+  clearLogin();
 
 }
+
+
+ }
 
 
