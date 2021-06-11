@@ -8,12 +8,11 @@
     <meta name="description" content="Trivia quiz with 15 questions">
     <meta name="keywords" content="trivia, quiz, online, game">
     <link rel="stylesheet" href="assets/css/style.css">
+    <title>Quizzler Quiz Site</title>
     <!-- font awesome script  -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
-    <a href="form.html"> </a>
-
-
-    <title>Quizzler Quiz Site</title>
+    
+    
 </head>
 
 <body>
@@ -31,17 +30,17 @@
 
 
                 <div id="user-name">
-                    <p>Your name:</p><span class="to-fill" id="created-name"></span>
+                    <p>Your name:</p><span class="to-fill name-to-fill" id="created-name"></span>
                 </div>
 
                 <div id="number-of-games">
-                    <p>Number of games played:</p><span class="to-fill">0</span>
+                    <p>Number of games played:</p><span class="to-fill"></span>
                 </div>
                 <div id="user-score">
-                    <p>Your score in this game:</p><span class="to-fill">0</span>
+                    <p>Your score in this game:</p><span class="to-fill"></span>
                 </div>
                 <div id="all-score">
-                    <p>Your score in all games:</p><span class="to-fill">0</span>
+                    <p>Your score in all games:</p><span class="to-fill"></span>
                 </div>
             </div>
 
@@ -78,9 +77,28 @@
                 </div>
 
                 <div class="sign-in-container">
-                    <p>Already have an account? <a href="#login-form">Sign in</a>.</p>
+                    <p>Already have an account? <a href="#login-form" id="login">Sign in</a>.</p>
                 </div>
 
+            </form>
+
+            <form id="login-form" action="https://formdump.codeinstitute.net/" target="_blank" method="post" class="hide">
+                <div class="form-container">
+                    <h3>Login</h3>
+                    <hr>
+                    <label for="username2" class="user-label">Username</label>
+                    <input type="text" id="username2" name="username2" placeholder="Enter Username" required>
+                    <label for="password2" class="password-label">Password</label>
+                    <input type="password" id="password2" name="password2" placeholder="Enter Password" required>
+                    <input type="submit" class="login-btn" value="Login">
+                    <label for="checkbox2" class="checkbox">Remember me</label>
+                    <input type="checkbox" checked="checked" name="remember" id="checkbox2">
+          
+                </div>
+                <div class="sign-in-container">
+                    <p>Don't you have an account yet? Create one.<br><a href="#registration-form" id="register">Create account</a>.</p>
+                </div>
+          
             </form>
 
 

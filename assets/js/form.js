@@ -5,63 +5,84 @@ let errorMsg = document.getElementById('errors');
 let fillUsername = document.getElementById('created-name');
 let errorPwd = document.getElementById('password-error');
 
-function clearFields() {
-    document.getElementById('email').value = '';
-    document.getElementById('username').value = '';
-    document.getElementById('password').value = '';
-    document.getElementById('repeat-password').value = '';
-    errorMsg.innerHTML = '';
-    errorPwd.innerHTML = '';
-    
+let showLogin = document.getElementById("login");
+showLogin.addEventListener("click", onClickLogin);
+function onClickLogin(event) {
+ document.getElementById("login-form").style.visibility = 'visible';
+ document.getElementById("registration-form").style.visibility="hidden";
+}
+
+let showReg = document.getElementById("register");
+showReg.addEventListener("click", onClickReg);
+function onClickReg(event){
+  document.getElementById("registration-form").style.visibility = 'visible';
+ document.getElementById("login-form").style.visibility="hidden";
+
 }
 
 
 
+
+
+function clearFields() {
+  document.getElementById('email').value = '';
+  document.getElementById('username').value = '';
+  document.getElementById('password').value = '';
+  document.getElementById('repeat-password').value = '';
+  errorMsg.innerHTML = '';
+  errorPwd.innerHTML = '';
+
+}
+
+function clearLogin() {
+  document.getElementById('username2').value = '';
+  document.getElementById('password2').value = '';
+
+}
 
 
 function handleSubmit(event) {
-    event.preventDefault();
-    //let name = form.elements.username.value;
-    let name = document.getElementById('username').value;
-    let password1 = form.elements['password'].value;
-    let password2 = form.elements['repeat-password'].value;
+  event.preventDefault();
+  //let name = form.elements.username.value;
+  
 
-    if ((usernames.includes(name)) && (password1 !== password2)) {
+  let name = document.getElementById('username').value;
 
-        errorMsg.innerHTML = `Sorry, the username ${name} is already in use. Please choose another username.`;
-        
-        
-        
-        errorPwd.innerHTML = "Please ensure your passwords match.";
-        errorPwd.style.display = 'block';
-        
-    }
+  let password1 = form.elements['password'].value;
+  let password2 = form.elements['repeat-password'].value;
 
-    else if ((usernames.includes(name)) && (password1 == password2)) {
+  if ((usernames.includes(name)) && (password1 !== password2)) {
 
-        errorMsg.innerHTML = `Sorry, the username ${name} is already in use. Please choose another username.`;
+    errorMsg.innerHTML = `Sorry, the username ${name} is already in use. Please choose another username.`;
 
-     } 
-     
-     
-     else if ((!(usernames.includes(name))) && (password1 !== password2)) {
 
-            let errorPwd = document.getElementById('password-error');
-            errorPwd.innerHTML = `Please ensure your passwords match.`;
-            errorPwd.style.display = 'block';
-            errorMsg.innerHTML = '';
 
-    } else {
-        fillUsername.innerHTML = name;
-        usernames.push(name);
-        form.submit();
-        console.log(usernames);
-        clearFields();   
-        
-       
-    }
+    errorPwd.innerHTML = "Please ensure your passwords match.";
+    errorPwd.style.display = 'block';
 
-    
+  } else if ((usernames.includes(name)) && (password1 == password2)) {
+
+    errorMsg.innerHTML = `Sorry, the username ${name} is already in use. Please choose another username.`;
+
+  } else if ((!(usernames.includes(name))) && (password1 !== password2)) {
+
+    let errorPwd = document.getElementById('password-error');
+    errorPwd.innerHTML = `Please ensure your passwords match.`;
+    errorPwd.style.display = 'block';
+    errorMsg.innerHTML = '';
+
+  } else {
+    fillUsername.innerHTML = name;
+    usernames.push(name);
+    form.submit();
+    console.log(usernames);
+    clearFields();
+
+
+  }
+
+
 
 }
+
 
