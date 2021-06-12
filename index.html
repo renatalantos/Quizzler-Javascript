@@ -11,8 +11,8 @@
     <title>Quizzler Quiz Site</title>
     <!-- font awesome script  -->
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
-    
-    
+
+
 </head>
 
 <body>
@@ -24,93 +24,112 @@
 
 
         <div id="sidebar">
-            <div id="info">
-                <h3>Your information</h3>
-                <hr>
+            <table id="info-table">
+                <tr>
+                    <td>
+                        <div id="info">
+                            <h3>Your information</h3>
+                            <hr>
 
 
-                <div id="user-name">
-                    <p>Your name:</p><span class="to-fill name-to-fill" id="created-name"></span>
-                </div>
+                            <div id="user-name">
+                                <p>Your name:</p><span class="to-fill name-to-fill" id="created-name"></span>
+                            </div>
 
-                <div id="number-of-games">
-                    <p>Number of games played:</p><span class="to-fill"></span>
-                </div>
-                <div id="user-score">
-                    <p>Your score in this game:</p><span class="to-fill"></span>
-                </div>
-                <div id="all-score">
-                    <p>Your score in all games:</p><span class="to-fill"></span>
-                </div>
-            </div>
-
-
-<table id="form-table1">
-
-          <tr>  <td><form id="registration-form" target="_blank" action="https://formdump.codeinstitute.net/" method="post"
-                class="hide">
-                <div class="form-container">
-                    <h3>Register</h3>
-                    <hr>
-                    <p>Please fill in this form to create an account.</p>
-
-                    <p id="errors"></p>
-                    <label for="email" class="email-label">Enter Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Email address" required>
-                    <label for="username" class="user-label">Create Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username" required>
-                    <label for="password" class="password-label">Create Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                    <label for="repeat-password" class="repeat-password-label">Repeat Password</label>
-                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat Password"
-                        required>
-
-                    <input type="submit" class="register-btn" id="reg-btn" value="Register">
-
-                    <label for="checkbox" class="checkbox">Remember me</label>
-                    <input type="checkbox" checked="checked" name="remember" id="checkbox">
-
-                    <p id="password-error"></p>
-
-
-
-                </div>
-
-                <div class="sign-in-container">
-                    <p>Already have an account? <a href="#login-form" id="login">Sign in</a>.</p>
-                </div>
-
-            </form></td></tr>
-
-        </table>
-
-        
-<table id="form-table2">
-           <tr><td> <form id="login-form" action="https://formdump.codeinstitute.net/" target="_blank" method="post" class="hide">
-                <div class="form-container">
-                    <h3>Login</h3>
-                    <hr>
-                    <label for="username2" class="user-label">Username</label>
-                    <input type="text" id="username2" name="username2" placeholder="Enter Username" required>
-                    <label for="password2" class="password-label">Password</label>
-                    <input type="password" id="password2" name="password2" placeholder="Enter Password" required>
-                    <input type="submit" class="login-btn" id="log-btn" value="Login">
-                    <label for="checkbox2" class="checkbox">Remember me</label>
-                    <input type="checkbox" checked="checked" name="remember" id="checkbox2">
-          
-                </div>
-                <div class="sign-in-container">
-                    <p>Don't you have an account yet? Create one.<br><a href="#registration-form" id="register">Create account</a>.</p>
-                </div>
-          
-            </form></td></tr>
+                            <div id="number-of-games">
+                                <p>Number of games played:</p><span class="to-fill">0</span>
+                            </div>
+                            <div id="user-score">
+                                <p>Your score in this game:</p><span class="to-fill">0</span>
+                            </div>
+                            <div id="all-score">
+                                <p>Your score in all games:</p><span class="to-fill">0</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
 
             </table>
 
 
+            <table id="form-table1">
 
+                <tr>
+                    <td>
+                        <form id="registration-form" target="_blank" action="https://formdump.codeinstitute.net/"
+                            method="post" class="hide">
+                            <div class="form-container">
+                                <h3>Register</h3>
+                                <hr>
+                                <p>Please fill in this form to create an account.</p>
+
+                                <p id="errors"></p>
+                                <label for="email" class="email-label">Enter Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Email address" required>
+                                <label for="username" class="user-label">Create Username</label>
+                                <input type="text" id="username" name="username" placeholder="Username" required>
+                                <label for="password" class="password-label">Create Password</label>
+                                <input type="password" id="password" name="password" placeholder="Password" required>
+                                <label for="repeat-password" class="repeat-password-label">Repeat Password</label>
+                                <input type="password" id="repeat-password" name="repeat-password"
+                                    placeholder="Repeat Password" required>
+
+                                <input type="submit" class="register-btn" id="reg-btn" value="Register">
+
+                                <label for="checkbox" class="checkbox">Remember me</label>
+                                <input type="checkbox" checked="checked" name="remember" id="checkbox">
+
+                                <p id="password-error"></p>
+
+
+
+                            </div>
+
+                            <div class="sign-in-container">
+                                <p>Already have an account? <a href="#login-form" id="login">Sign in</a>.</p>
+                            </div>
+
+                        </form>
+                    </td>
+                </tr>
+
+            </table>
+
+
+            <table id="form-table2">
+                <tr>
+                    <td>
+                        <form id="login-form" action="https://formdump.codeinstitute.net/" target="_blank" method="post"
+                            class="hide">
+                            <div class="form-container">
+                                <h3>Login</h3>
+                                <hr>
+                                <label for="username2" class="user-label">Username</label>
+                                <input type="text" id="username2" name="username2" placeholder="Enter Username"
+                                    required>
+                                <label for="password2" class="password-label">Password</label>
+                                <input type="password" id="password2" name="password2" placeholder="Enter Password"
+                                    required>
+                                <input type="submit" class="login-btn" id="log-btn" value="Login">
+                                <label for="checkbox2" class="checkbox">Remember me</label>
+                                <input type="checkbox" checked="checked" name="remember" id="checkbox2">
+
+                            </div>
+                            <div class="sign-in-container">
+                                <p>Don't you have an account yet? Create one.<br><a href="#registration-form"
+                                        id="register">Create account</a>.</p>
+                            </div>
+
+                        </form>
+                    </td>
+                </tr>
+
+            </table>
 
         </div>
+
+
+
 
         <section id="title-area">
 
@@ -143,12 +162,12 @@
                 <button class="answer-btn">Button1</button>
                 <button class="answer-btn">Button2</button>
                 <button class="answer-btn">Button3</button>
-                <button class="answer-btn">Button4</button>
+                <button class="answer-btn" id="answer-btn4">Button4</button>
 
                 <button class="next-btn">Next Question<i id="right-arrow" class="fas fa-arrow-right"></i>
-                    
+
                 </button>
-              
+
             </div>
         </section>
 

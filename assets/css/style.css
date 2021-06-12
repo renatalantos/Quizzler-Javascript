@@ -17,10 +17,7 @@ body {
 
 #wrap-around {
     margin: 0 auto;
-    width: 100%;
-    height: auto;
-    display: grid;
-    flex-wrap: wrap;
+    
     justify-content: center;
     align-items: center;
 }
@@ -76,7 +73,7 @@ hr {
 .user-label,
 .password-label,
 .email-label,
-.repeat-password-label, 
+.repeat-password-label,
 .checkbox {
     font-family: 'Poppins', sans-serif;
     color: teal;
@@ -103,7 +100,9 @@ hr {
 #username,
 #password,
 #email,
-#repeat-password, #username2, #password2 {
+#repeat-password,
+#username2,
+#password2 {
     height: auto;
     width: auto;
     padding: 5px;
@@ -157,12 +156,19 @@ hr {
     color: white;
 }
 
-#errors, #password-error{
-    color:red;
+#errors,
+#password-error {
+    color: red;
 }
-/*#login-form.hide {visibility:hidden;}*/
-#form-table2 {visibility:collapse;}
 
+/*#login-form.hide {visibility:hidden;}*/
+#form-table2 {
+    visibility: collapse;
+}
+
+#info-table {
+    visibility: collapse;
+}
 
 
 #title-area {
@@ -196,21 +202,22 @@ hr {
     display: block;
     /*  background-color: crimson;*/
     text-align: center;
-   
+
 }
 
 
 img {
     background-image: url('../images/paints.jpg');
     background-repeat: no-repeat;
-  justify-content: center;
-  margin: 10px auto 30px;
-  float:none;
-  display:block;
-  border-radius: 5px;
-  
+    justify-content: center;
+    margin: 10px auto 30px;
+    float: none;
+    display: block;
+    border-radius: 5px;
+
 
 }
+
 #question-area {
     height: 50px;
     width: 100vw;
@@ -249,7 +256,7 @@ img {
 .answer-btn,
 .start-btn,
 .next-btn {
-    display: inline;
+    display: block;
     padding: 20px;
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
@@ -258,7 +265,7 @@ img {
     border-radius: 5px;
     border: 2px solid #DDE2F3;
     text-align: center;
-   
+
 
 }
 
@@ -277,7 +284,7 @@ img {
     width: 150px;
     background-color: #078F0E;
     color: white;
-    white-space:nowrap;
+    white-space: nowrap;
 
 }
 
@@ -296,10 +303,106 @@ img {
     padding-left: 5px;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (min-width:768px) and (max-width:990px){
     body {
-      background-color: blue;
+        background-color: blue;
     }
 
-    #sidebar, #title-area, #photo-area, #question-area, #game-area, #button-area{display:block; float:none; position:relative;}
-  }
+    #sidebar,
+    #title-area,
+    #photo-area,
+    #question-area,
+    #game-area,
+    #button-area {
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+       
+    }
+
+    .answer-btn {
+        width: 200px;
+        background-color: #EFEFEF;
+        color: #4F4350;
+        font-size: 18px;
+        margin-top:5px;
+    
+    }
+
+    .start-btn {margin-bottom: 15px;}
+
+    .next-btn {
+    margin:0 auto;
+bottom:20px;}
+    #question{margin: 10px;}
+   #answer-btn4 {margin-bottom:20px;}
+
+    
+}
+
+@media screen and (min-width:280px) and (max-width:600px) {
+    body {
+        background-color: blue;
+    }
+
+   
+    #title-area,
+    #photo-area,
+    #question-area,
+    #game-area,
+    #button-area {
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+        height: auto;
+        width: auto;
+        justify-content: center;
+        align-content: center;
+       
+    }
+
+    #sidebar
+
+    {
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+        height: auto;
+        justify-content: center;
+        align-content: center;
+       
+    }
+
+
+
+    #wrap-around {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .answer-btn {
+        width: 200px;
+        background-color: #EFEFEF;
+        color: #4F4350;
+        font-size: 18px;
+        margin-top:5px;
+    
+    }
+
+    .start-btn {margin-bottom: 15px;}
+
+    .next-btn {margin: 20px;}
+    #question{margin: 10px;}
+
+    
+}
+
+
