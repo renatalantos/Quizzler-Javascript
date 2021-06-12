@@ -160,9 +160,10 @@ hr {
 #errors, #password-error{
     color:red;
 }
-#login-form.hide {visibility:hidden;}
+/*#login-form.hide {visibility:hidden;}*/
+#form-table2 {visibility:collapse;}
 
-/*#signup-form.hide {visibility: hidden;}*/
+
 
 #title-area {
     height: auto;
@@ -253,24 +254,30 @@ img {
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 5px;
     border: 2px solid #DDE2F3;
+    text-align: center;
+   
 
 }
+
+
+
 
 .answer-btn {
     width: 400px;
     background-color: #EFEFEF;
     color: #4F4350;
-    font-size: 15px;
+    font-size: 18px;
 
 }
 
 .start-btn {
-    width: 130px;
+    width: 150px;
     background-color: #078F0E;
     color: white;
+    white-space:nowrap;
 
 }
 
@@ -281,8 +288,18 @@ img {
 
 }
 
+
+
 #right-arrow {
-    font-size: 30px;
+    font-size: 18px;
     color: white;
-    padding-top: 5px;
+    padding-left: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: blue;
+    }
+
+    #sidebar, #title-area, #photo-area, #question-area, #game-area, #button-area{display:block; float:none; position:relative;}
+  }

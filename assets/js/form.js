@@ -12,15 +12,15 @@ formLogin.addEventListener('submit', handleSubmit);
 let showLogin = document.getElementById("login");
 showLogin.addEventListener("click", onClickLogin);
 function onClickLogin(event) {
- document.getElementById("login-form").style.visibility = 'visible';
- document.getElementById("registration-form").style.visibility="hidden";
+ document.getElementById("form-table2").style.visibility = "visible";
+ document.getElementById("form-table1").style.visibility="collapse";
 }
 
 let showReg = document.getElementById("register");
 showReg.addEventListener("click", onClickReg);
 function onClickReg(event){
-  document.getElementById("registration-form").style.visibility = 'visible';
- document.getElementById("login-form").style.visibility="hidden";
+  document.getElementById("form-table1").style.visibility = "visible";
+ document.getElementById("form-table2").style.visibility="collapse";
 
 }
 
@@ -71,7 +71,7 @@ if (this.id=="registration-form") {
   } else if ((usernames.includes(name)) && (password1 == password2)) {
 
     errorMsg.innerHTML = `Sorry, the username ${name} is already in use. Please choose another username.`;
-
+    errorPwd.innerHTML = '';
   } else if ((!(usernames.includes(name))) && (password1 !== password2)) {
 
     let errorPwd = document.getElementById('password-error');
