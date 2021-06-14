@@ -80,7 +80,7 @@ if (this.id=="registration-form") {
     errorPwd.innerHTML = `Please ensure your passwords match.`;
     errorPwd.style.display = 'block';
     errorMsg.innerHTML = '';
-    document.getElementById("info-table").style.visibility = "visible";
+    document.getElementById("info-table").style.visibility = "collapse";
 
   } else {
     fillUsername.innerHTML = name;

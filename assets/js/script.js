@@ -12,15 +12,17 @@ formLogin.addEventListener('submit', handleSubmit);
 let showLogin = document.getElementById("login");
 showLogin.addEventListener("click", onClickLogin);
 function onClickLogin(event) {
- document.getElementById("login-form").style.visibility = 'visible';
- document.getElementById("form-table").style.visibility="collapse";
+ document.getElementById("form-table2").style.visibility = "visible";
+ document.getElementById("form-table1").style.visibility="collapse";
+ 
 }
 
 let showReg = document.getElementById("register");
 showReg.addEventListener("click", onClickReg);
 function onClickReg(event){
-  document.getElementById("form-table").style.visibility = 'visible';
- document.getElementById("login-form").style.visibility="hidden";
+  document.getElementById("form-table1").style.visibility = "visible";
+ document.getElementById("form-table2").style.visibility="collapse";
+ 
 
 }
 
@@ -78,6 +80,7 @@ if (this.id=="registration-form") {
     errorPwd.innerHTML = `Please ensure your passwords match.`;
     errorPwd.style.display = 'block';
     errorMsg.innerHTML = '';
+    document.getElementById("info-table").style.visibility = "collapse";
 
   } else {
     fillUsername.innerHTML = name;
@@ -85,6 +88,9 @@ if (this.id=="registration-form") {
     form.submit();
     console.log(usernames);
     clearFields();
+    document.getElementById("info-table").style.visibility = "visible";
+    document.getElementById("form-table2").style.visibility = "collapse";
+ document.getElementById("form-table1").style.visibility="collapse";
 
 
   }
@@ -95,6 +101,9 @@ if (this.id=="registration-form") {
   formLogin.submit();
   fillUsername.innerHTML = nameLogin;
   clearLogin();
+  document.getElementById("info-table").style.visibility = "visible";
+    document.getElementById("form-table2").style.visibility = "collapse";
+ document.getElementById("form-table1").style.visibility="collapse";
 
 }
 

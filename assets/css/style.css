@@ -17,7 +17,7 @@ body {
 
 #wrap-around {
     margin: 0 auto;
-    
+
     justify-content: center;
     align-items: center;
 }
@@ -303,12 +303,10 @@ img {
     padding-left: 5px;
 }
 
-@media screen and (min-width:768px) and (max-width:990px){
-    body {
-        background-color: blue;
-    }
+@media screen and (min-width:768px) and (max-width:990px) {
 
-    #sidebar,
+
+
     #title-area,
     #photo-area,
     #question-area,
@@ -318,35 +316,91 @@ img {
         float: none;
         position: relative;
         margin: 0 auto;
-       
+
     }
+
+    #sidebar {
+        height: auto;
+        width: 50%;
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+        align-content: center;
+
+
+    }
+
 
     .answer-btn {
         width: 200px;
         background-color: #EFEFEF;
         color: #4F4350;
         font-size: 18px;
-        margin-top:5px;
-    
+        margin-top: 5px;
+
     }
 
-    .start-btn {margin-bottom: 15px;}
+    .start-btn {
+        margin-bottom: 15px;
+    }
 
     .next-btn {
-    margin:0 auto;
-bottom:20px;}
-    #question{margin: 10px;}
-   #answer-btn4 {margin-bottom:20px;}
+        float: none;
+        margin-bottom: 20px;
 
-    
-}
-
-@media screen and (min-width:280px) and (max-width:600px) {
-    body {
-        background-color: blue;
     }
 
-   
+    #answer-btn4 {
+        margin-bottom: 20px;
+
+    }
+
+
+    #username,
+    #password,
+    #repeat-password,
+    #username2,
+    #password2,
+    #email {
+
+        height: auto;
+        width: 150px;
+        margin-top: 5px;
+
+
+    }
+
+
+
+    .user-label,
+    .password-label,
+
+    .repeat-password-label {
+        margin-right: 8px;
+
+    }
+
+    .email-label {
+        margin-right: -2px;
+    }
+
+    .form-container {
+        padding-right: 20px;
+    }
+
+    #info-table, #form-table1, #form-table2{
+        margin: 0 auto;
+    }
+
+
+
+}
+
+@media screen and (min-width:280px) and (max-width:767px) {
+
+
+
     #title-area,
     #photo-area,
     #question-area,
@@ -360,12 +414,10 @@ bottom:20px;}
         width: auto;
         justify-content: center;
         align-content: center;
-       
+
     }
 
-    #sidebar
-
-    {
+    #sidebar {
         display: block;
         float: none;
         position: relative;
@@ -373,7 +425,7 @@ bottom:20px;}
         height: auto;
         justify-content: center;
         align-content: center;
-       
+
     }
 
 
@@ -393,16 +445,22 @@ bottom:20px;}
         background-color: #EFEFEF;
         color: #4F4350;
         font-size: 18px;
-        margin-top:5px;
-    
+        margin-top: 5px;
+
     }
 
-    .start-btn {margin-bottom: 15px;}
+    .start-btn {
+        margin-bottom: 15px;
+    }
 
-    .next-btn {margin: 20px;}
-    #question{margin: 10px;}
+    .next-btn {
+        margin: 20px;
 
-    
+    }
+
+    #question {
+        margin: 10px;
+    }
+
+
 }
-
-
