@@ -53,7 +53,22 @@ function clearLogin() {
 
 }
 
+//colorBtnRed()
+function colorBtnRed(){
+  document.getElementById("btn2").style.backgroundColor="red";
+  
+  document.getElementById("btn2").classList.toggle("animate");
+  
 
+}
+//colorBtnGreen()
+function colorBtnGreen(){
+  document.getElementById("btn2").style.backgroundColor="green";
+  
+  document.getElementById("btn2").classList.toggle("animate");
+  
+
+}
 
 
 function handleSubmit(event) {
@@ -116,9 +131,12 @@ function handleSubmit(event) {
     formLogin.submit();
     fillUsername.innerHTML = nameLogin;
     clearLogin();
+   colorBtnRed;
+    
     document.getElementById("info-table").style.visibility = "visible";
     document.getElementById("form-table2").style.visibility = "collapse";
     document.getElementById("form-table1").style.visibility = "collapse";
+    
 
 
 
@@ -126,3 +144,4 @@ function handleSubmit(event) {
 
 
 }
+
