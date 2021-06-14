@@ -30,9 +30,10 @@ body {
     background-color: #E8F3F1;
     float: left;
     padding: 0 10px;
-    position: absolute;
+    position: fixed;
     overflow: visible;
     /*visibility: hidden;*/
+  
 }
 
 #info,
@@ -61,7 +62,7 @@ hr {
 #number-of-games,
 #user-score,
 #all-score,
-.form-container {
+.form-container, #reg-msg{
     text-align: center;
 }
 
@@ -74,7 +75,7 @@ hr {
 .password-label,
 .email-label,
 .repeat-password-label,
-.checkbox {
+.checkbox, #reg-msg, #guest{
     font-family: 'Poppins', sans-serif;
     color: teal;
     font-weight: bolder;
@@ -83,7 +84,14 @@ hr {
     text-align: center;
     padding: 5px;
 
+    
 }
+
+/*#guest { color: #D53E69;
+
+}*/
+
+
 
 .form-container p,
 .sign-in-container p {
@@ -162,13 +170,15 @@ hr {
 }
 
 /*#login-form.hide {visibility:hidden;}*/
-#form-table2 {
+#form-table1 {
     visibility: collapse;
 }
 
 #info-table {
     visibility: collapse;
 }
+
+
 
 
 #title-area {
@@ -207,7 +217,7 @@ hr {
 
 
 img {
-    background-image: url('../images/paints.jpg');
+ background-image: url('../images/paints.jpg');
     background-repeat: no-repeat;
     justify-content: center;
     margin: 10px auto 30px;
