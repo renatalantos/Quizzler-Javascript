@@ -343,7 +343,106 @@ img {
     padding-left: 5px;
 }
 
-@media screen and (min-width:768px) and (max-width:1300px) {
+@media screen and (min-width:1080x) and (max-width:2400px) {
+
+
+
+    #title-area,
+    #photo-area,
+    #question-area,
+    #game-area,
+    #button-area {
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+
+    }
+
+    #sidebar {
+        height: auto;
+        width: 50%;
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+        align-content: center;
+
+
+    }
+
+
+    .answer-btn {
+        width: 200px;
+        background-color: #EFEFEF;
+        color: #4F4350;
+        font-size: 18px;
+        margin-top: 5px;
+
+
+    }
+
+    .start-btn {
+        margin-bottom: 15px;
+    }
+
+    .next-btn {
+        float: none;
+        margin-bottom: 20px;
+
+
+    }
+
+    #answer-btn4 {
+        margin-bottom: 20px;
+
+
+    }
+
+
+    #username,
+    #password,
+    #repeat-password,
+    #username2,
+    #password2,
+    #email {
+
+        height: auto;
+        width: 150px;
+        margin-top: 5px;
+
+
+    }
+
+
+
+    .user-label,
+    .password-label,
+
+    .repeat-password-label {
+        margin-right: 8px;
+
+    }
+
+    .email-label {
+        margin-right: -2px;
+    }
+
+    .form-container {
+        padding-right: 20px;
+    }
+
+    #info-table,
+    #form-table1,
+    #form-table2 {
+        margin: 0 auto;
+    }
+
+
+
+}
+
+@media screen and (min-width:768px) and (max-width:990px) {
 
 
 
