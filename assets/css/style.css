@@ -32,7 +32,7 @@ body {
     padding: 0 10px;
     position: fixed;
     overflow: visible;
-    /*visibility: hidden;*/
+    
 
 }
 
@@ -172,7 +172,7 @@ hr {
     color: red;
 }
 
-/*#login-form.hide {visibility:hidden;}*/
+
 #form-table1 {
     visibility: collapse;
 }
@@ -260,9 +260,9 @@ img {
     margin-bottom: 20px;
 }
 
-/*#hide-btns {
+#hide-btns {
     visibility: hidden;
-}*/
+}
 
 #button-area,
 #hide-btns {
@@ -444,7 +444,7 @@ img {
 
 }
 
-@media screen and (min-width:412x) and (max-width:914px) {
+@media only screen and (min-width:400px) and (max-width:990px) { /*Check this later*/
 
 
 
@@ -462,7 +462,7 @@ img {
 
     #sidebar {
         height: auto;
-        width: 100%;
+        width: 50%;
         display: block;
         float: none;
         position: relative;
@@ -511,6 +511,7 @@ img {
         height: auto;
         width: 150px;
         margin-top: 5px;
+        text-align: center;
 
 
     }
@@ -529,9 +530,7 @@ img {
         margin-right: -2px;
     }
 
-    .form-container {
-        padding-right: 20px;
-    }
+    
 
     #info-table,
     #form-table1,

@@ -6,14 +6,15 @@ let fillUsername = document.getElementById('created-name');
 let errorPwd = document.getElementById('password-error');
 let formLogin = document.getElementById('login-form');
 formLogin.addEventListener('submit', handleSubmit);
-//let regMsg = document.getElementById('reg-msg');
-
-
-
-
-
 let showLogin = document.getElementById("login");
 showLogin.addEventListener("click", onClickLogin);
+let showReg = document.getElementById("register");
+showReg.addEventListener("click", onClickReg);
+let regMsg = document.getElementById('reg-msg');
+let startBtn = document.getElementById('start-btn');
+startBtn.addEventListener("click", startGame);
+let buttonArea = document.getElementById('hide-btns');
+
 
 function onClickLogin(event) {
   document.getElementById("form-table2").style.visibility = "visible";
@@ -21,17 +22,12 @@ function onClickLogin(event) {
 
 }
 
-let showReg = document.getElementById("register");
-showReg.addEventListener("click", onClickReg);
 
 function onClickReg(event) {
   document.getElementById("form-table1").style.visibility = "visible";
   document.getElementById("form-table2").style.visibility = "collapse";
 
 }
-
-
-
 
 
 
@@ -113,7 +109,7 @@ function handleSubmit(event) {
       form.submit();
       console.log(usernames);
       clearFields();
-      let regMsg = document.getElementById('reg-msg');
+
 
       regMsg.innerHTML = `Hello ${name}, thank you for registering. A confirmation email has been sent to ${emailAddress}. Enjoy playing!`;
       regMsg.style.display = "block";
@@ -132,7 +128,7 @@ function handleSubmit(event) {
     formLogin.submit();
     fillUsername.innerHTML = nameLogin;
     clearLogin();
-    
+
     document.getElementById("info-table").style.visibility = "visible";
     document.getElementById("form-table2").style.visibility = "collapse";
     document.getElementById("form-table1").style.visibility = "collapse";
@@ -142,3 +138,36 @@ function handleSubmit(event) {
 
 
 }
+
+
+function startGame() {
+
+  buttonArea.style.visibility = "visible";
+  regMsg.style.visibility = "hide";
+
+  startBtn.style.visibility = "hidden";
+
+}
+
+let imgs = ['img', 'img2', 'img3'];
+let qs = ['q1', 'q2', 'q3'];
+let imgsAndQs = [];
+
+
+function iterateCounters(imgs, qs) {
+  for (let i = 0; i < 3; i++) {
+
+    for (let j = 0; j < 3; j++) {
+      if (qs[i]===imgs[j]){
+
+        imgsAndQs.push([img[i], q[j]]);
+        return imgsAndQs;
+
+
+      }
+    }
+  }
+
+}
+
+
