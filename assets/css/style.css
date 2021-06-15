@@ -361,7 +361,7 @@ img {
 
     #sidebar {
         height: auto;
-        width: 50%;
+        width: 100%;
         display: block;
         float: none;
         position: relative;
