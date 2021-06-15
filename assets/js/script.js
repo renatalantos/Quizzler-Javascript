@@ -14,6 +14,8 @@ let regMsg = document.getElementById('reg-msg');
 let startBtn = document.getElementById('start-btn');
 startBtn.addEventListener("click", startGame);
 let buttonArea = document.getElementById('hide-btns');
+//let nextBtn = document.getElementById('next-btn');
+//nextBtn.addEventListener('click', nextPage);
 
 
 function onClickLogin(event) {
@@ -138,23 +140,22 @@ function handleSubmit(event) {
 
 
 }
-
-
 function startGame() {
 
   buttonArea.style.visibility = "visible";
-  regMsg.style.visibility = "hide";
-
+  regMsg.style.visibility = "hidden";
   startBtn.style.visibility = "hidden";
+  plusImage();
 
 }
 
-let imgs = ['img', 'img2', 'img3'];
-let qs = ['q1', 'q2', 'q3'];
-let imgsAndQs = [];
+
+//let imgs = ['img', 'img2', 'img3'];
+//let qs = ['q1', 'q2', 'q3'];
+//let imgsAndQs = [];
 
 
-function iterateCounters(imgs, qs) {
+/*function iterateCounters(imgs, qs) {
   for (let i = 0; i < 3; i++) {
 
     for (let j = 0; j < 3; j++) {
@@ -168,6 +169,33 @@ function iterateCounters(imgs, qs) {
     }
   }
 
+}*/
+
+let imageIndex = 1;
+showImages(imageIndex);
+//let questionIndex = 0;
+//showQuestions(questionIndex);
+
+function plusImage() {
+  showImages(imageIndex += 1);
 }
+
+
+/*together with this, add function for questions and answer to next button*/
+function showImages(n) {
+  let image = document.getElementsByClassName('slide');
+ /*if (n > image.length) {
+    imageIndex = 1
+  }
+  if (n < 1) {
+    imageIndex = image.length
+  }*/
+  for (i = 0; i < image.length; i++) {
+    image[i].style.display = "none";
+  }
+  image[imageIndex +1].style.display = "block";
+}
+
+
 
 
