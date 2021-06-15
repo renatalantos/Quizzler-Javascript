@@ -137,6 +137,7 @@ function handleSubmit(event) {
     document.getElementById("form-table2").style.visibility = "collapse";
     document.getElementById("form-table1").style.visibility = "collapse";
 
+
   }
 
 

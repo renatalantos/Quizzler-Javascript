@@ -300,7 +300,9 @@ img {
 
 }
 
-.animate { animation:fademe 0.5s;}
+.animate {
+    animation: fademe 0.5s;
+}
 
 
 @keyframes fademe {
@@ -312,7 +314,9 @@ img {
         opacity: 0.5;
     }
 
-    100% {opacity:0;}
+    100% {
+        opacity: 0;
+    }
 }
 
 .start-btn {
