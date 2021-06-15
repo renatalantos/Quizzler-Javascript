@@ -14,8 +14,8 @@ let regMsg = document.getElementById('reg-msg');
 let startBtn = document.getElementById('start-btn');
 startBtn.addEventListener("click", startGame);
 let buttonArea = document.getElementById('hide-btns');
-//let nextBtn = document.getElementById('next-btn');
-//nextBtn.addEventListener('click', nextPage);
+let nextBtn = document.getElementById('next-btn');
+nextBtn.addEventListener('click', nextPage);
 
 
 function onClickLogin(event) {
@@ -140,6 +140,7 @@ function handleSubmit(event) {
 
 
 }
+
 function startGame() {
 
   buttonArea.style.visibility = "visible";
@@ -171,7 +172,7 @@ function startGame() {
 
 }*/
 
-let imageIndex = 1;
+let imageIndex = 0;
 showImages(imageIndex);
 //let questionIndex = 0;
 //showQuestions(questionIndex);
@@ -181,21 +182,74 @@ function plusImage() {
 }
 
 
-/*together with this, add function for questions and answer to next button*/
-function showImages(n) {
+
+/*together with this, add function for questions and answer to next buttons*/
+function showImages() {
   let image = document.getElementsByClassName('slide');
- /*if (n > image.length) {
-    imageIndex = 1
-  }
-  if (n < 1) {
-    imageIndex = image.length
-  }*/
   for (i = 0; i < image.length; i++) {
     image[i].style.display = "none";
   }
-  image[imageIndex +1].style.display = "block";
+  image[imageIndex + 1].style.display = "block";
 }
 
 
 
+const myQuestions = [
+  
+ question= ["Where is the Alhambra, famous for its Moorish architecture?"], 
+    answers=
+      [
+      { text: "Granada, Spain", correct: true},
+      { text: "Marocco", correct: false},
+      { text: "Tunis, Tunisia",correct: false},
+      {text: "Istanbul, Turkey", correct: false}
+      
+      ]
+    ,
+  
+    question = ["What is the name of the art trend that Salvador Dali is a representant of?"],
+    answers=
+      [
+      { text: "Impressionism", correct: false},
+      { text: "Surrealism", correct: true},
+      { text: "Cubism",correct: false},
+      {text: "Expressionism", correct: false}
+      
+      ],
+
+      question = ["What was the name of the architect who designed the above building?"],
+    answers=
+      [
+      { text: "Friedensreich Hundertwasser", correct: false},
+      { text: "Le Corbusier", correct: false},
+      { text: "Hassan Fathy",correct: false},
+      {text: "Antonio Gaudi", correct: true}
+      
+      ]
+  
+]
+
+function nextPage(){
+  
+  plusImage();
+  myQuestions.forEach(getIndexQuestions,getIndexAnswers);
+//match index with image index
+//pull question into questions
+//pull answer into answers
+  
+}
+
+
+function getIndexes(){
+ let question=myQuestions[i];
+ let answer =myQuestions[j=i+1];
+  for (i=0; i<6; i++) {
+    question[i++];
+    for (j=i+1; j<6; j++){
+      answer[j++];
+  
+    } 
+  }
+  
+}
 
