@@ -141,174 +141,140 @@ function handleSubmit(event) {
 
 }
 
+
+const question = document.querySelector('#question');
+const answers = Array.from(document.querySelectorAll('.answer-text'));
+const scoreText = document.querySelector('#to-fill-score');
+const image = document.querySelector('#photo');
+
+let currentQuestion = {}
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+const score_points = 100;
+const max_questions = 15;
+
+
+
+let questions = [
+
+  {
+
+    img: './assets/images/alhambra.jpg',
+    question: 'Where is the Alhambra, famous for its Moorish architecture?',
+
+    answer1: 'Granada, Spain',
+    answer2: 'Rabat, Morocco',
+    answer3: 'Tunis, Tunisia',
+    answer4: 'Istanbul, Turkey',
+    answer: 1,
+  },
+
+  {
+    img: './assets/images/dali.jpg',
+    question: 'What is the name of the art trend that Salvador Dali is a representant of?',
+
+    answer1: 'Impressionism',
+    answer2: 'Surrealism',
+    answer3: 'Cubism',
+    answer4: 'Expressionism',
+    answer: 2,
+  },
+
+  {
+    img: './assets/images/gaudi.jpg',
+    question: 'What was the name of the architect who designed the above building?',
+
+    answer1: 'Friedensreich Hundertwasser',
+    answer2: 'Le Corbusier',
+    answer3: 'Hassan Fathy',
+    answer4: 'Antonio Gaudi',
+    answer: 4,
+  },
+
+
+]
+
 function startGame() {
 
   buttonArea.style.visibility = "visible";
   regMsg.style.visibility = "hidden";
   startBtn.style.visibility = "hidden";
-  plusImage();
-  
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
+  getNewQuestion();
+
 
 
 }
 
+getNewQuestion = () => {
 
-//let imgs = ['img', 'img2', 'img3'];
-//let qs = ['q1', 'q2', 'q3'];
-//let imgsAndQs = [];
-
-
-/*function iterateCounters(imgs, qs) {
-  for (let i = 0; i < 3; i++) {
-
-    for (let j = 0; j < 3; j++) {
-      if (qs[i]===imgs[j]){
-
-        imgsAndQs.push([img[i], q[j]]);
-        return imgsAndQs;
-
-
-      }
-    }
-  }
-
-}*/
-
-
-
-let imageIndex = 0;
-showImages(imageIndex);
-
-
-function plusImage() {
-  showImages(imageIndex += 1);
-}
-
-let questionIndex =imageIndex-1;
-showQuestion(questionIndex);
-
-function plusQuestion() {
-  showQuestion(questionIndex +=1);
-}
-
-
-
-
-
-
-
-/*together with this, add function for questions and answer to next buttons*/
-function showImages() {
-  let image = document.getElementsByClassName('slide');
-  
-
-  for (let i = 0; i < image.length; i++) {
-    image[i].style.display = "none";
-
+  if ((availableQuestions.length === 0) || (questionCounter > max_questions)) {
+    localStorage.setItem('mostRecentScore', score);
+    buttonArea.style.visibility = "hidden";
 
   }
-  image[imageIndex + 1].style.display = "block";
-}
+  questionCounter++;
+  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionsIndex];
+  question.innerText = currentQuestion.question;
 
 
-function showQuestion (){
-  let question = document.getElementsByClassName('question');
-  
-  for (let i = 0; i < question.length; i++) {
-    question[i].style.display = "none";
-    
-    
-  }
-  question[questionIndex + 1].style.display = "inline";
+  answers.forEach(answer => {
+    const number = answer.dataset['number'];
+    answer.innerText = currentQuestion['answer' + number];
 
 
-}
-
-
-
-/*const myQuestions = [
-
-  question = ["Where is the Alhambra, famous for its Moorish architecture?"],
-  answers = [{
-      text: "Granada, Spain",
-      correct: true
-    },
-    {
-      text: "Marocco",
-      correct: false
-    },
-    {
-      text: "Tunis, Tunisia",
-      correct: false
-    },
-    {
-      text: "Istanbul, Turkey",
-      correct: false
-    }
-
-  ],
-
-  question = ["What is the name of the art trend that Salvador Dali is a representant of?"],
-  answers = [{
-      text: "Impressionism",
-      correct: false
-    },
-    {
-      text: "Surrealism",
-      correct: true
-    },
-    {
-      text: "Cubism",
-      correct: false
-    },
-    {
-      text: "Expressionism",
-      correct: false
-    }
-
-  ],
-
-  question = ["What was the name of the architect who designed the above building?"],
-  answers = [{
-      text: "Friedensreich Hundertwasser",
-      correct: false
-    },
-    {
-      text: "Le Corbusier",
-      correct: false
-    },
-    {
-      text: "Hassan Fathy",
-      correct: false
-    },
-    {
-      text: "Antonio Gaudi",
-      correct: true
-    }
-
-  ]
-
-]
-*/
-function nextPage() {
-  plusQuestion();
-  plusImage();
- /* myQuestions.forEach(getIndexQuestions, getIndexAnswers);*/
-  //match index with image index
-  //pull question into questions
-  //pull answer into answers
+  })
+  availableQuestions.splice(questionsIndex, 1)
+  acceptingAnswers = true;
 
 }
 
+answers.forEach(answer => {
+      answer.addEventListener('click', e => {
 
-/*function getIndexes() {
-  let question = myQuestions[i];
-  let answer = myQuestions[j = i + 1];
-  for (i = 0; i < 6; i++) {
-    question[i++];
-    for (j = i + 1; j < 6; j++) {
-      answer[j++];
+          if (!acceptingAnswers)
+            buttonArea.style.visibility = "hidden";
+          acceptingAnswers = false;
+          const selectedChoice = e.target;
+          const selectedAnswer = selectedChoice.dataset['number'];
+          let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+          if (classToApply = 'correct') {
+            incrementScore(score_points)
+          }
+
+          selectedChoice.parentElement.classList.add(classToApply);
+
+          setTimeout(() => {
+              selectedChoice.parentElement.classList.remove(classToApply);
+              getNewQuestion();
+
+
+            }, 1000)
+
+
+
+          })
+      })
+
+incrementScore = num => {
+score+=num;
+scoreText.innerText=score;
+
+}
+
+startGame();
+
+
+
+
+
+    function nextPage() {
+
+
 
     }
-  }*/
-

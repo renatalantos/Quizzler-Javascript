@@ -40,7 +40,7 @@
                                 <p>Number of games played:</p><span class="to-fill">0</span>
                             </div>
                             <div id="user-score">
-                                <p>Your score in this game:</p><span class="to-fill">0</span>
+                                <p>Your score in this game:</p><span class="to-fill" id="to-fill-score">0</span>
                             </div>
                             <div id="all-score">
                                 <p>Your score in all games:</p><span class="to-fill">0</span>
@@ -151,7 +151,9 @@
         <section id="photo-area">
 
             <div id="photo">
-              <img class="slide">
+
+            
+             <!-- <img class="slide">
                 <img class="slide" src="./assets/images/paints.jpg" alt="colourful paints">
                 
                 <img class="slide" src="./assets/images/alhambra.jpg" alt="Alhambra">
@@ -173,7 +175,7 @@
                 <img class="slide" src="./assets/images/sashiko.jpg" alt="Sashiko">
                 <img class="slide" src="./assets/images/st_peters.jpg" alt="St. Peter's Basilica">
                 <img class="slide" src="./assets/images/van_gogh.jpg" alt="Van Gogh">
-                <img class="slide" src="./assets/images/william_turner.jpg" alt="Turner">
+                <img class="slide" src="./assets/images/william_turner.jpg" alt="Turner">-->
 
 
 
@@ -186,11 +188,7 @@
             <h2>Are you ready?</h2>
             <div id="question">
                 
-                <p class="question">Where is the Alhambra, famous for its Moorish architecture?</p>
-                <p class="question">What is the name of the art trend that Salvador Dali is a representant of?</p>
-                <p class="question">What was the name of the architect who designed the above building?</p>
-                <p class="question">laaa</p>
-                <p class="question">hahahaha</p>
+        
 
 
             </div>
@@ -204,20 +202,20 @@
             <div id="button-area">
 
 
-                <button id="start-btn" class="start-btn">Start Game</button>
+                <div id="start-btn" class="start-btn"><p>Start Game</p></div>
 
-                <div id="hide-btns"> <button id="btn1" class="answer-btn">Button1</button>
+                <div id="hide-btns"> <div id="btn1" class="answer-btn"><p class="answer-letter">A:</p><p class="answer-text">Hello</p></div>
 
-                    <button id="btn2" class="answer-btn">Button2</button>
+                    <div id="btn2" class="answer-btn"><p  class="answer-letter">B:</p><p class="answer-text">Hello</p></div>
 
-                    <button id="btn3" class="answer-btn">Button3</button>
+                    <div id="btn3" class="answer-btn"><p p class="answer-letter">C:</p><p class="answer-text">Hello</p></div>
 
-                    <button class="answer-btn" id="answer-btn4">Button4</button>
+                    <div id="answer-btn4" class="answer-btn" ><p  class="answer-letter">D:</p><p class="answer-text">Hello</p></div>
 
 
 
-                    <button id="next-btn" class="next-btn">Next Question<i id="right-arrow"
-                            class="fas fa-arrow-right"></i></button>
+                    <div id="next-btn" class="next-btn"><p>Next Question</p><i id="right-arrow"
+                            class="fas fa-arrow-right"></i></div>
 
 
                 </div>
