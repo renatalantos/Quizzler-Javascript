@@ -147,6 +147,8 @@ function startGame() {
   regMsg.style.visibility = "hidden";
   startBtn.style.visibility = "hidden";
   plusImage();
+  
+
 
 }
 
@@ -172,84 +174,141 @@ function startGame() {
 
 }*/
 
+
+
 let imageIndex = 0;
 showImages(imageIndex);
-//let questionIndex = 0;
-//showQuestions(questionIndex);
+
 
 function plusImage() {
   showImages(imageIndex += 1);
 }
+
+let questionIndex =imageIndex-1;
+showQuestion(questionIndex);
+
+function plusQuestion() {
+  showQuestion(questionIndex +=1);
+}
+
+
+
+
 
 
 
 /*together with this, add function for questions and answer to next buttons*/
 function showImages() {
   let image = document.getElementsByClassName('slide');
-  for (i = 0; i < image.length; i++) {
+  
+
+  for (let i = 0; i < image.length; i++) {
     image[i].style.display = "none";
+
+
   }
   image[imageIndex + 1].style.display = "block";
 }
 
 
-
-const myQuestions = [
+function showQuestion (){
+  let question = document.getElementsByClassName('question');
   
- question= ["Where is the Alhambra, famous for its Moorish architecture?"], 
-    answers=
-      [
-      { text: "Granada, Spain", correct: true},
-      { text: "Marocco", correct: false},
-      { text: "Tunis, Tunisia",correct: false},
-      {text: "Istanbul, Turkey", correct: false}
-      
-      ]
-    ,
-  
-    question = ["What is the name of the art trend that Salvador Dali is a representant of?"],
-    answers=
-      [
-      { text: "Impressionism", correct: false},
-      { text: "Surrealism", correct: true},
-      { text: "Cubism",correct: false},
-      {text: "Expressionism", correct: false}
-      
-      ],
-
-      question = ["What was the name of the architect who designed the above building?"],
-    answers=
-      [
-      { text: "Friedensreich Hundertwasser", correct: false},
-      { text: "Le Corbusier", correct: false},
-      { text: "Hassan Fathy",correct: false},
-      {text: "Antonio Gaudi", correct: true}
-      
-      ]
-  
-]
-
-function nextPage(){
-  
-  plusImage();
-  myQuestions.forEach(getIndexQuestions,getIndexAnswers);
-//match index with image index
-//pull question into questions
-//pull answer into answers
-  
-}
-
-
-function getIndexes(){
- let question=myQuestions[i];
- let answer =myQuestions[j=i+1];
-  for (i=0; i<6; i++) {
-    question[i++];
-    for (j=i+1; j<6; j++){
-      answer[j++];
-  
-    } 
+  for (let i = 0; i < question.length; i++) {
+    question[i].style.display = "none";
+    
+    
   }
-  
+  question[questionIndex + 1].style.display = "inline";
+
+
 }
+
+
+
+/*const myQuestions = [
+
+  question = ["Where is the Alhambra, famous for its Moorish architecture?"],
+  answers = [{
+      text: "Granada, Spain",
+      correct: true
+    },
+    {
+      text: "Marocco",
+      correct: false
+    },
+    {
+      text: "Tunis, Tunisia",
+      correct: false
+    },
+    {
+      text: "Istanbul, Turkey",
+      correct: false
+    }
+
+  ],
+
+  question = ["What is the name of the art trend that Salvador Dali is a representant of?"],
+  answers = [{
+      text: "Impressionism",
+      correct: false
+    },
+    {
+      text: "Surrealism",
+      correct: true
+    },
+    {
+      text: "Cubism",
+      correct: false
+    },
+    {
+      text: "Expressionism",
+      correct: false
+    }
+
+  ],
+
+  question = ["What was the name of the architect who designed the above building?"],
+  answers = [{
+      text: "Friedensreich Hundertwasser",
+      correct: false
+    },
+    {
+      text: "Le Corbusier",
+      correct: false
+    },
+    {
+      text: "Hassan Fathy",
+      correct: false
+    },
+    {
+      text: "Antonio Gaudi",
+      correct: true
+    }
+
+  ]
+
+]
+*/
+function nextPage() {
+  plusQuestion();
+  plusImage();
+ /* myQuestions.forEach(getIndexQuestions, getIndexAnswers);*/
+  //match index with image index
+  //pull question into questions
+  //pull answer into answers
+
+}
+
+
+/*function getIndexes() {
+  let question = myQuestions[i];
+  let answer = myQuestions[j = i + 1];
+  for (i = 0; i < 6; i++) {
+    question[i++];
+    for (j = i + 1; j < 6; j++) {
+      answer[j++];
+
+    }
+  }*/
 

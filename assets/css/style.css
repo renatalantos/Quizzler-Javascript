@@ -262,6 +262,8 @@ img {
     margin-bottom: 20px;
 }
 
+#question {overflow: hidden;}
+
 #hide-btns {
     visibility: hidden;
 }
