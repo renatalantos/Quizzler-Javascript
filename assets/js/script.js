@@ -1,12 +1,4 @@
-window.onload = function startPage() {
-  startBtn.style.visibility = "visible";
-  nextBtn.style.visibility="hidden";
-  buttonArea.style.visibility ="hidden";
-  questionArea.style.visibility ="hidden";
-  readyQuestion.style.visibility ="visible";
-      
-  
-}
+window.onload =  startPage;
 let usernames = ["Harry", "Daisy", "Michael", "Sarah", "Sally"];
 let form = document.getElementById('registration-form');
 form.addEventListener('submit', handleSubmit);
@@ -27,6 +19,7 @@ let nextBtn = document.getElementById('next-btn');
 nextBtn.addEventListener('click', nextPage);
 let questionArea = document.getElementById('question');
 let readyQuestion = document.getElementById('ready')
+let infoTable = document.getElementById('info-table');
 
 
 function onClickLogin(event) {
@@ -125,7 +118,8 @@ function handleSubmit(event) {
 
 
       regMsg.innerHTML = `Hello ${name}, thank you for registering. A confirmation email has been sent to ${emailAddress}. Enjoy playing!`;
-      regMsg.style.display = "block";
+      regMsg.style.visibility = "visible";
+      regMsg.style.display ="block";
 
       document.getElementById("info-table").style.visibility = "visible";
       document.getElementById("form-table2").style.visibility = "collapse";
@@ -157,11 +151,12 @@ function handleSubmit(event) {
 
 
 const question = document.querySelector('#question');
-const answers = Array.from(document.querySelectorAll('.answer-text'));
+const choices = Array.from(document.querySelectorAll('.answer-text'));
 const scoreText = document.querySelector('#to-fill-score');
 const image = document.querySelector('#photo');
 
 let currentQuestion = {}
+let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -177,10 +172,10 @@ let questions = [
     img: './assets/images/alhambra.jpg',
     question: 'Where is the Alhambra, famous for its Moorish architecture?',
 
-    answer1: 'Granada, Spain',
-    answer2: 'Rabat, Morocco',
-    answer3: 'Tunis, Tunisia',
-    answer4: 'Istanbul, Turkey',
+    choice1: 'Granada, Spain',
+    choice2: 'Rabat, Morocco',
+    choice3: 'Tunis, Tunisia',
+    choice4: 'Istanbul, Turkey',
     answer: 1,
   },
 
@@ -209,6 +204,15 @@ let questions = [
 
 ]
 
+function startPage() {
+  startBtn.style.visibility = "visible";
+  nextBtn.style.visibility="hidden";
+  buttonArea.style.visibility ="hidden";
+  questionArea.style.visibility ="hidden";
+  readyQuestion.style.visibility ="visible";     
+  
+}
+
 
 function startGame() {
 
@@ -219,7 +223,7 @@ function startGame() {
   score = 0;
   availableQuestions = [...questions];
   getNewQuestion();
-  startBtn.style.visibility="hidden";
+  
   nextBtn.style.visibility ="visible";
   questionArea.style.visibility ="visible";
   readyQuestion.style.visibility ="hidden";
