@@ -1,3 +1,12 @@
+window.onload = function startPage() {
+  startBtn.style.visibility = "visible";
+  nextBtn.style.visibility="hidden";
+  buttonArea.style.visibility ="hidden";
+  questionArea.style.visibility ="hidden";
+  readyQuestion.style.visibility ="visible";
+      
+  
+}
 let usernames = ["Harry", "Daisy", "Michael", "Sarah", "Sally"];
 let form = document.getElementById('registration-form');
 form.addEventListener('submit', handleSubmit);
@@ -16,6 +25,8 @@ startBtn.addEventListener("click", startGame);
 let buttonArea = document.getElementById('hide-btns');
 let nextBtn = document.getElementById('next-btn');
 nextBtn.addEventListener('click', nextPage);
+let questionArea = document.getElementById('question');
+let readyQuestion = document.getElementById('ready')
 
 
 function onClickLogin(event) {
@@ -142,6 +153,9 @@ function handleSubmit(event) {
 }
 
 
+
+
+
 const question = document.querySelector('#question');
 const answers = Array.from(document.querySelectorAll('.answer-text'));
 const scoreText = document.querySelector('#to-fill-score');
@@ -195,16 +209,20 @@ let questions = [
 
 ]
 
+
 function startGame() {
 
   buttonArea.style.visibility = "visible";
   regMsg.style.visibility = "hidden";
   startBtn.style.visibility = "hidden";
-  questionCounter = 0;
+  questionCounter = -1;
   score = 0;
   availableQuestions = [...questions];
   getNewQuestion();
-
+  startBtn.style.visibility="hidden";
+  nextBtn.style.visibility ="visible";
+  questionArea.style.visibility ="visible";
+  readyQuestion.style.visibility ="hidden";
 
 
 }
@@ -214,6 +232,9 @@ getNewQuestion = () => {
   if ((availableQuestions.length === 0) || (questionCounter > max_questions)) {
     localStorage.setItem('mostRecentScore', score);
     buttonArea.style.visibility = "hidden";
+    startBtn.style.visibility = "visible";
+    questionArea.style.visibility ="visible";
+    
 
   }
   questionCounter++;
@@ -269,12 +290,14 @@ scoreText.innerText=score;
 
 startGame();
 
-
-
-
-
-    function nextPage() {
-
-
-
+function nextPage() {
+      getNewQuestion();
+      nextBtn.style.visibility="visible";
+      questionArea.style.visibility ="visible";
     }
+
+nextPage();
+
+
+function endGame(){};
+    

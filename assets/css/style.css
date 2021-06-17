@@ -212,6 +212,7 @@ hr {
     width: 100vw;
     margin: 0 auto;
     float: none;
+   
    display:block;
     /*background-color: crimson;*/
     text-align: center;
@@ -229,6 +230,19 @@ hr {
    display: block;
     height: 300px;
     width:100%;
+    position: relative;
+
+}
+
+#photo2 {
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    float: none;
+   display: block;
+    height: 300px;
+    width:100%;
+
 
 }
 
@@ -465,6 +479,8 @@ margin: 0 10px;}
 
     #title-area,
     #photo-area,
+   
+   
     #question-area,
     #game-area,
     #button-area {
@@ -474,6 +490,10 @@ margin: 0 10px;}
         margin: 0 auto;
 
     }
+
+  
+
+  
 
     
 
@@ -581,6 +601,7 @@ margin: 0 10px;}
         align-content: center;
 
     }
+  
 
     #sidebar {
         display: block;
