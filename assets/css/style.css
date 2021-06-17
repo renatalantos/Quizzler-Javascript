@@ -223,8 +223,8 @@ hr {
 }
 
 
-#photo {
-    background-image: url('../images/paints.jpg');
+*#photo {
+    
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
@@ -236,7 +236,8 @@ hr {
 
 }
 
-#photo2 {
+/*#photo2{
+    
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
@@ -246,7 +247,7 @@ hr {
     width:100%;
 
 
-}
+}*/
 
 #question-area {
     height: 50px;
