@@ -136,14 +136,9 @@ function handleSubmit(event) {
     document.getElementById("form-table2").style.visibility = "collapse";
     document.getElementById("form-table1").style.visibility = "collapse";
 
-
   }
 
-
 }
-
-
-
 
 
 const question = document.querySelector('#question');
@@ -151,16 +146,16 @@ const choices = Array.from(document.querySelectorAll('.answer-text'));
 const scoreText = document.querySelector('#to-fill-score');
 const photoArea = document.querySelector('#photo');
 
-let currentQuestion = {}
+
+let currentQuestion =  {}
 let acceptingAnswers = true;
 let score = 0;
-let questionCounter = 0;
+let questionCounter = imageCounter=0;
 let availableQuestions = [];
 const score_points = 100;
 const max_questions = 15;
-let currentImage = currentQuestion;
-let imageCounter= questionCounter;
-//let availableImages = availableQuestions;
+
+
 
 
 
@@ -219,22 +214,25 @@ function startPage() {
   startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
   buttonArea.style.visibility = "hidden";
-  questionArea.style.visibility = "hidden";
-  readyQuestion.style.visibility = "visible"; 
-  questionCounter = 0;
-  score = 0;
-  availableQuestions = [...questions];
+  readyQuestion.style.visibility = "visible";
+
+ 
+
 }
 
+function nextPage() {
+  nextBtn.style.visibility = "visible";
+  questionArea.style.visibility = "visible";
+  getNewQuestion();
+  
 
-
+}
 
 
 function startGame() {
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
   startBtn.style.visibility = "hidden";
-  getNewQuestion();
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
   readyQuestion.style.visibility = "hidden";
@@ -249,10 +247,15 @@ function startGame() {
     regMsg.remove();
   }
 
-   removeRegMsg();
+  removeRegMsg();
+  nextPage();
+
 
 }
 
+questionCounter++;
+imageCounter++;
+availableQuestions = availableImages =[...questions];
 
 getNewQuestion = () => {
 
@@ -264,25 +267,23 @@ getNewQuestion = () => {
     questionArea.style.visibility = "visible";
   }
 
-  questionCounter++;
-  imageCounter++;
 
-  const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = availableQuestions[questionsIndex];
+
+  const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = currentImage= availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
-  //currentImage = availableQuestions[questionsIndex];
-  //let image = questions[questionsIndex].img;
-  photoArea.innerHTML += "<img src=" + availableQuestions[questionsIndex].url + " />;"
-
+  let image = availableImages[imageIndex].url;
+  photoArea.innerHTML = "<img src=" + image + " />"
+ 
   choices.forEach(choice => {
     const number = choice.dataset['number'];
     choice.innerText = currentQuestion['choice' + number];
 
-
   })
 
-  availableQuestions.splice(questionsIndex, 1);
-  //availableImages.splice(questionsIndex, 1);
+  availableQuestions.splice(questionsIndex,1);
+  
+
   acceptingAnswers = true;
 
 }
@@ -320,14 +321,14 @@ scoreText.innerText=score;
 }*/
 
 
-function nextPage() {
-  nextBtn.style.visibility = "visible";
-  questionArea.style.visibility = "visible";
-  getNewQuestion();
-}
 
 
-nextPage();
+
+
+
+
+
+
 
 
 /*function endGame(){};*/

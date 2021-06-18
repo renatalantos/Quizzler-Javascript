@@ -226,11 +226,10 @@ function startPage() {
   buttonArea.style.visibility = "hidden";
   questionArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
-  // photoArea.style.visibility="hidden";
-  questionCounter = 0;
-  score = 0;
-  availableQuestions = [...questions];
-
+  photoArea.style.visibility="hidden";
+  questionCounter++;
+  
+availableQuestions = [...questions];
 
 }
 
@@ -264,7 +263,9 @@ function startGame() {
 }
 
 
+questionCounter++;
 
+  availableQuestions = [...questions];
 
 getNewQuestion = () => {
 
