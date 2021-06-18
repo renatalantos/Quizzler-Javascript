@@ -20,6 +20,8 @@ nextBtn.addEventListener('click', nextPage);
 let questionArea = document.getElementById('question');
 let readyQuestion = document.getElementById('ready')
 let infoTable = document.getElementById('info-table');
+let mainImage = document.getElementById('main-image');
+
 
 
 function onClickLogin(event) {
@@ -59,18 +61,12 @@ function clearLogin() {
 
 function colorBtnRed() {
   document.getElementById("btn2").style.backgroundColor = "red";
-
   document.getElementById("btn2").classList.toggle("animate");
-
-
 }
 //colorBtnGreen()
 function colorBtnGreen() {
   document.getElementById("btn2").style.backgroundColor = "green";
-
   document.getElementById("btn2").classList.toggle("animate");
-
-
 }
 
 
@@ -162,8 +158,9 @@ let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
 const max_questions = 15;
-let currentImage = {}
-let imageCounter=0;
+let currentImage = currentQuestion;
+let imageCounter= questionCounter;
+//let availableImages = availableQuestions;
 
 
 
@@ -223,61 +220,59 @@ function startPage() {
   nextBtn.style.visibility = "hidden";
   buttonArea.style.visibility = "hidden";
   questionArea.style.visibility = "hidden";
-  readyQuestion.style.visibility = "visible";
-
+  readyQuestion.style.visibility = "visible"; 
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
 }
+
+
 
 
 
 function startGame() {
-
+  photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
-  regMsg.style.visibility = "hidden";
   startBtn.style.visibility = "hidden";
-  questionCounter = 0;
-  score = 0;
-  availableQuestions = [...questions];
   getNewQuestion();
-
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
   readyQuestion.style.visibility = "hidden";
 
-  /*let mainImage = document.getElementById('main-image');
-
   function removeMainImage() {
     mainImage.remove();
   }
-  removeMainImage();*/
 
+  removeMainImage();
+
+  function removeRegMsg() {
+    regMsg.remove();
+  }
+
+   removeRegMsg();
 
 }
 
+
 getNewQuestion = () => {
+
 
   if ((availableQuestions.length === 0) || (questionCounter > max_questions)) {
     localStorage.setItem('mostRecentScore', score);
     buttonArea.style.visibility = "hidden";
     startBtn.style.visibility = "visible";
     questionArea.style.visibility = "visible";
-
-
   }
 
   questionCounter++;
- //imageCounter++;
+  imageCounter++;
 
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
-  currentImage = availableQuestions[questionsIndex];
+  //currentImage = availableQuestions[questionsIndex];
   //let image = questions[questionsIndex].img;
-  //photoArea.innerHTML += "<img src=\"" + image + "\" width=\"200\" height=\"200\"><br>";
-  // photoArea.innerHTML += "<img src=" + image.url + " />;"
   photoArea.innerHTML += "<img src=" + availableQuestions[questionsIndex].url + " />;"
-
-
-
 
   choices.forEach(choice => {
     const number = choice.dataset['number'];
@@ -285,7 +280,9 @@ getNewQuestion = () => {
 
 
   })
-  availableQuestions.splice(questionsIndex, 1)
+
+  availableQuestions.splice(questionsIndex, 1);
+  //availableImages.splice(questionsIndex, 1);
   acceptingAnswers = true;
 
 }
@@ -313,8 +310,6 @@ choices.forEach(choice => {
 
           }, 1000)*/
 
-
-
   })
 })
 
@@ -324,14 +319,13 @@ scoreText.innerText=score;
 
 }*/
 
-startGame();
 
 function nextPage() {
-  getNewQuestion();
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
-
+  getNewQuestion();
 }
+
 
 nextPage();
 

@@ -31,8 +31,8 @@ body {
     float: left;
     padding: 0 10px;
     position: fixed;
-    
-    
+
+
 
 }
 
@@ -92,9 +92,11 @@ hr {
 
 }
 
-/*#guest, #reg-msg { color: #D53E69;
+#guest,
+#reg-msg {
+    color: #D53E69;
 
-}*/
+}
 
 
 
@@ -129,7 +131,8 @@ hr {
     border: 2px solid #DDE2F3;
 }
 
-.to-fill, #to-fill-score {
+.to-fill,
+#to-fill-score {
     height: auto;
     width: auto;
     padding: 5px 30px;
@@ -214,40 +217,33 @@ hr {
     width: 100vw;
     margin: 0 auto;
     float: none;
-   
-   display:block;
+
+    display: block;
     /*background-color: crimson;*/
     text-align: center;
-  overflow: hidden;
+    overflow: hidden;
 
 }
 
 
-*#photo {
-    
+#photo {
+
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
     float: none;
-   display: block;
+    display: block;
     height: 300px;
-    width:100%;
+    width: 100%;
     position: relative;
 
 }
 
-/*#photo2{
-    
-    background-repeat: no-repeat;
-    background-position: center;
-    justify-content: center;
-    float: none;
-   display: block;
-    height: 300px;
-    width:100%;
 
 
-}*/
+img {
+    border-radius: 5px;
+}
 
 #question-area {
     height: 50px;
@@ -277,7 +273,9 @@ hr {
     margin-bottom: 20px;
 }
 
-#question {overflow: hidden;}
+#question {
+    overflow: hidden;
+}
 
 #hide-btns {
     visibility: hidden;
@@ -324,11 +322,14 @@ hr {
     border: 2px solid #DDE2F3;
     margin: 0 auto;
     text-align: left;
-    
-    
+
+
 }
-.answer-btn p{display:inline;
-margin: 0 10px;}
+
+.answer-btn p {
+    display: inline;
+    margin: 0 10px;
+}
 
 
 
@@ -476,31 +477,30 @@ margin: 0 10px;}
 
 }
 
-@media only screen and (min-width:400px) and (max-width:990px) { /*Check this later*/
+@media only screen and (min-width:400px) and (max-width:990px) {
+    /*Check this later*/
 
 
 
     #title-area,
     #photo-area,
-   
-   
     #question-area,
     #game-area,
     #button-area {
         display: block;
         float: none;
-      position: relative;
+        position: relative;
         margin: 0 auto;
 
     }
 
-  
 
-  
 
-    
 
-    
+
+
+
+
 
     #sidebar {
         height: auto;
@@ -532,8 +532,6 @@ margin: 0 10px;}
     .next-btn {
         float: none;
         margin-bottom: 20px;
-
-
     }
 
     #answer-btn4 {
@@ -553,7 +551,7 @@ margin: 0 10px;}
         height: auto;
         width: 150px;
         margin-top: 5px;
-        
+
 
 
     }
@@ -572,7 +570,7 @@ margin: 0 10px;}
         margin-right: -2px;
     }
 
-    
+
 
     #info-table,
     #form-table1,
@@ -585,7 +583,7 @@ margin: 0 10px;}
 }
 
 @media screen and (min-width:280px) and (max-width:767px) {
-    
+
 
 
 
@@ -604,7 +602,7 @@ margin: 0 10px;}
         align-content: center;
 
     }
-  
+
 
     #sidebar {
         display: block;
