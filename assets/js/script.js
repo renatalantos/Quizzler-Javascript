@@ -224,7 +224,7 @@ let questions = [
     url: './assets/images/knossos.jpg',
     question: 'Beside its ancient Palace, what else is Knossos in Crete famous for by legend?',
 
-    choice1: 'Ulysess was living here.',
+    choice1: 'Ulysess lived here.',
     choice2: 'The mythic creature half man, half bull Minotaur lived here.',
     choice3: 'The Trojan horse was built here.',
     choice4: 'The Greek god Zeus gave it to his wife, Hera.',
@@ -299,13 +299,90 @@ let questions = [
 
   {
     url: './assets/images/moore.jpg',
-    question: 'Who is the sculptor who created the above piece of art?',
+    question: 'Who is the sculptor that created the above piece of art?',
 
     choice1: 'Thomas Moore',
     choice2: 'Roger Moore',
     choice3: 'Michael Barrymore',
     choice4: 'Henry Moore',
     answer: 4,
+  },
+
+  {
+    url: './assets/images/nyugati.jpg',
+    question: 'Where is the above train station, designed by Gustav Eiffel?',
+
+    choice1: 'Paris, France',
+    choice2: 'Budapest, Hungary',
+    choice3: 'London, England',
+    choice4: 'Vienna, Austria',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/picasso.jpg',
+    question: 'Picasso depicted the brutal bombing of the town Guernica in which war?',
+
+    choice1: 'World War I',
+    choice2: 'World War II',
+    choice3: 'The Spanish Civil War',
+    choice4: 'The Vietnam War',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/pula.jpg',
+    question: 'Where is the above colosseum?',
+
+    choice1: 'Pula, Croatia',
+    choice2: 'Italy, Rome',
+    choice3: 'Malaga, Spain',
+    choice4: 'Arles, France',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/sashiko.jpg',
+    question: 'What is the name of the traditional Japanese embroidery, depicted above?',
+
+    choice1: 'Michiko',
+    choice2: 'Tamago',
+    choice3: 'Sashiko',
+    choice4: 'Mariko',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/st_peters.jpg',
+    question: "Which famous artist redesigned St. Peter's Basilica in the 16th century?",
+
+    choice1: 'Michelangelo',
+    choice2: 'Verrochio',
+    choice3: 'Leonardo da Vinci',
+    choice4: 'Boticelli',
+    answer: 1,
+  },
+
+  {
+    url: './assets/images/van_gogh.jpg',
+    question: "Which famous artist was heavily influenced by Japanese prints in his art?",
+
+    choice1: 'Rembrandt',
+    choice2: 'Van Dyke',
+    choice3: 'Paul Gaugin',
+    choice4: 'Vincent Van Gogh',
+    answer: 4,
+  },
+
+  {
+    url: './assets/images/william_turner.jpg',
+    question: "Which city is depicted in this painting by William Turner?",
+
+    choice1: 'London',
+    choice2: 'Glasgow',
+    choice3: 'Venice',
+    choice4: 'Marseille',
+    answer: 1,
   },
 
 
