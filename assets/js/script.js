@@ -150,7 +150,7 @@ const photoArea = document.querySelector('#photo');
 let currentQuestion =  {}
 let acceptingAnswers = true;
 let score = 0;
-let questionCounter = imageCounter=0;
+let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
 const max_questions = 15;
@@ -254,7 +254,7 @@ function startGame() {
 }
 
 questionCounter++;
-imageCounter++;
+
 availableQuestions = availableImages =[...questions];
 
 getNewQuestion = () => {
@@ -269,7 +269,7 @@ getNewQuestion = () => {
 
 
 
-  const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+  const questionsIndex = imageIndex= Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = currentImage= availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
   let image = availableImages[imageIndex].url;

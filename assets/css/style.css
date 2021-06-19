@@ -423,7 +423,12 @@ img {
 
     .next-btn {
         float: none;
-        margin-bottom: 20px;
+        /*margin-bottom: 20px;*/
+        display: block;
+        float: none;
+        position: relative;
+        margin: 0 auto;
+
 
 
     }
@@ -530,8 +535,11 @@ img {
     }
 
     .next-btn {
+        display: block;
         float: none;
-        margin-bottom: 20px;
+        position: relative;
+        margin: 20px auto 20px auto;
+
     }
 
     #answer-btn4 {
@@ -641,7 +649,13 @@ img {
     }
 
     .next-btn {
-        margin: 20px;
+       /* margin: 20px;*/
+
+       display: block;
+        float: none;
+        position: relative;
+        margin: 20px auto 20px auto;
+
 
     }
 
