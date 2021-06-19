@@ -259,6 +259,7 @@ img {
 #title {
     font-size: 50px;
     color: #D53E69;
+    margin-bottom: 20px;
 
 }
 
@@ -273,13 +274,26 @@ img {
     margin-bottom: 20px;
 }
 
-#question {
-    overflow: hidden;
+#ready{
+    color: #D53E69;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 50px;
+    margin: 20px;
+    display:block;
+
+
 }
 
-#hide-btns {
-    visibility: hidden;
+#question {
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #2A0B5B;
+    display:block;
 }
+
+
 
 #button-area,
 #hide-btns {
@@ -293,7 +307,7 @@ img {
 .next-btn {
     display: block;
     padding: 20px;
-    margin: 0 auto;
+    margin: 20px auto;
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     font-size: 18px;
@@ -328,7 +342,7 @@ img {
 
 .answer-btn p {
     display: inline;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 

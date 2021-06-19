@@ -208,6 +208,107 @@ let questions = [
     answer: 4,
   },
 
+
+  {
+    url: './assets/images/frida_kahlo.jpg',
+    question: 'Which actress plays artist Frida Kahlo in the 2002 movie "Frida"?',
+
+    choice1: 'Eva Mendes',
+    choice2: 'Sandra Bullock',
+    choice3: 'Salma Hayek',
+    choice4: 'Rachel Weisz',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/knossos.jpg',
+    question: 'Beside its ancient Palace, what else is Knossos in Crete famous for by legend?',
+
+    choice1: 'Ulysess was living here.',
+    choice2: 'The mythic creature half man, half bull Minotaur lived here.',
+    choice3: 'The Trojan horse was built here.',
+    choice4: 'The Greek god Zeus gave it to his wife, Hera.',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/lautrec.jpg',
+    question: 'What technology did French artist Toulouse-Lautrec reinvent for his posters?',
+
+    choice1: 'Calligraphy',
+    choice2: 'Ortography',
+    choice3: 'Lithography',
+    choice4: 'Biography',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/leonardo.jpg',
+    question: 'Which reneissance artist dissected human bodies for anatomical studies?',
+
+    choice1: 'Leonardo da Vinci',
+    choice2: 'Raffaello',
+    choice3: 'Michelangelo',
+    choice4: 'Donatello',
+    answer: 1,
+  },
+
+  {
+    url: './assets/images/marc_chagall.jpg',
+    question: 'Who was the above picture painted by?',
+
+    choice1: 'Picasso',
+    choice2: 'Edvard Munch',
+    choice3: 'Paul Klee',
+    choice4: 'Marc Chagall',
+    answer: 4,
+  },
+
+  {
+    url: './assets/images/mero_nubia.jpg',
+    question: 'Where are the above pyramids?',
+
+    choice1: 'Teotihuacan, Mexico',
+    choice2: 'Ghiza, Egypt',
+    choice3: 'Meroe, Sudan',
+    choice4: 'Caral, Peru',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/miro.jpg',
+    question: 'Which artist has paintings that reinvoke the childlike?',
+
+    choice1: 'Picasso',
+    choice2: 'Joan Miro',
+    choice3: 'Vasily Kandinsky',
+    choice4: 'Paul Klee',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/monet.jpg',
+    question: 'Which French artist painted the above picture?',
+
+    choice1: 'Claude Monet',
+    choice2: 'Edouard Manet',
+    choice3: 'Georges Seurat',
+    choice4: 'Edgar Degas',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/moore.jpg',
+    question: 'Who is the sculptor who created the above piece of art?',
+
+    choice1: 'Thomas Moore',
+    choice2: 'Roger Moore',
+    choice3: 'Michael Barrymore',
+    choice4: 'Henry Moore',
+    answer: 4,
+  },
+
+
 ]
 
 function startPage() {
@@ -232,22 +333,34 @@ function nextPage() {
 function startGame() {
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
-  startBtn.style.visibility = "hidden";
+  //startBtn.style.visibility = "hidden";
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
-  readyQuestion.style.visibility = "hidden";
-
-  function removeMainImage() {
-    mainImage.remove();
-  }
-
-  removeMainImage();
+ 
 
   function removeRegMsg() {
     regMsg.remove();
   }
 
+  function removeMainImage() {
+    mainImage.remove();
+  }
+
+  function removeReadyQuestion() {
+    readyQuestion.remove();
+
+  }
+
+  function removeStartBtn(){
+
+    startBtn.remove();
+  }
+
+  removeMainImage();
   removeRegMsg();
+  removeMainImage();
+  removeReadyQuestion();
+  removeStartBtn();
   nextPage();
 
 
@@ -273,7 +386,10 @@ getNewQuestion = () => {
   currentQuestion = currentImage= availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
   let image = availableImages[imageIndex].url;
-  photoArea.innerHTML = "<img src=" + image + " />"
+ // photoArea.innerHTML = "<img src=" + image + " />";
+  photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
+
+
  
   choices.forEach(choice => {
     const number = choice.dataset['number'];
