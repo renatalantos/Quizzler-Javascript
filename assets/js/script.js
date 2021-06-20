@@ -145,7 +145,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
-const max_questions = 7;
+const max_questions = 10;
 //let number_of_games=0;
 //let score_in_all_games=1;
 
@@ -381,6 +381,84 @@ let questions = [
   },
 
 
+  {
+    url: './assets/images/andy_warhol.jpg',
+    question: 'The original Andy Warhol "Factory" was called The _______',
+
+    choice1: 'Bronze Factory',
+    choice2: 'Diamond Factory',
+    choice3: 'Gold Factory',
+    choice4: 'Silver Factory',
+    answer: 4,
+  },
+
+  {
+    url: './assets/images/blue_horse.jpg',
+    question: 'The painting Blue Horse by Franz Marc announced the birth of which art trend?',
+
+    choice1: 'Dadaism',
+    choice2: 'Surrealism',
+    choice3: 'Fauvism',
+    choice4: 'Expressionism',
+    answer: 4,
+  },
+
+  {
+    url: './assets/images/cezanne.jpg',
+    question: 'Which artist, whose painting you see above, was the forerunner of cubism?',
+
+    choice1: 'Paul Cezanne',
+    choice2: 'Georges Seurat',
+    choice3: 'Francisco Goya',
+    choice4: 'Diego Velazquez',
+    answer: 1,
+  },
+
+  {
+    url: './assets/images/csontvary_kosztka.jpg',
+    question: 'What is the name of the above painting by Hungarian artist Csontvary?',
+
+    choice1: 'Temple of Baalbek',
+    choice2: 'Mount of Olives',
+    choice3: 'Theatre at Taormina',
+    choice4: 'Pompeii',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/garfield.jpg',
+    question: 'What is the name of the cartoonist who created Garfield and Friends?',
+
+    choice1: 'Albert Uderzo',
+    choice2: 'Jim Davis',
+    choice3: 'René Goscinny',
+    choice4: 'Stephen Hillenburg',
+    answer: 2,
+  },
+
+  {
+    url: './assets/images/gaugin.jpg',
+    question: 'Which book by Maugham is based on the life of French artist Paul Gaugin?',
+
+    choice1: 'The Moon and Sixpence',
+    choice2: 'Of Human Bondage',
+    choice3: 'The Painted Veil',
+    choice4: 'Far Eastern Tales',
+    answer: 1,
+  },
+
+  {
+    url: './assets/images/kandinsky.jpg',
+    question: "What would be a typical title of one of Kandinsky's works?",
+
+    choice1: 'The Sky Above 3',
+    choice2: 'Lady by the Lake 2',
+    choice3: 'Improvisation 5',
+    choice4: 'Suite # 3',
+    answer: 2,
+  },
+
+
 ]
 
 function startPage() {
@@ -395,6 +473,8 @@ function nextPage() {
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
   getNewQuestion();
+  questionCounter++;
+  
 
 
 
@@ -437,18 +517,19 @@ function startGame() {
 
 }
 
+//Problem start here
 
-questionCounter++;
+//questionCounter++;
 availableQuestions = availableImages = [...questions];
 
 getNewQuestion = () => {
 
  
   
-  if /*((availableQuestions.length === 0) ||*/ (questionCounter == max_questions) {
+  if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
     /*  localStorage.setItem('mostRecentScore', score);*/
 
-    numberOfGames.innerText = ('The End!');
+   /* numberOfGames.innerText = ('The End!');*/
     buttonArea.style.visibility="hidden"
     
   } else {
@@ -477,12 +558,11 @@ getNewQuestion = () => {
 }
 
 
-//Problems start here
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
 
-    if (!acceptingAnswers) return
+    if (!acceptingAnswers) return /*???*/
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
@@ -514,17 +594,17 @@ incrementScore = num => {
 
 }
 
-/*incrementNumberOfGames = num => {
+incrementNumberOfGames = num => {
   number_of_games+=num;
   numberOfGames.innerText = number_of_games;
 
-}*/
+}
 
-/*incrementAllScore = num => {
+incrementAllScore = num => {
 score+=score_in_all_games=num;
 allScore.innerText=score_in_all_games;
 
-}*/
+}
 
 
 /*function endGame() {

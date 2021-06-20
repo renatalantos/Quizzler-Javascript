@@ -335,7 +335,7 @@ img {
 
 
 
-.answer-text {padding-right: 80px;}
+.answer-text {padding-right: 30px;}
 
 
 .answer-btn {
@@ -444,7 +444,7 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
+        background: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
         color: white;
         font-size: 18px;
         margin-top: 5px;
@@ -556,9 +556,9 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
+        background: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
         color: white;
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 5px;
 
 
@@ -622,6 +622,20 @@ img {
     }
 
 
+    .correct {
+
+        background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
+        /*transition: transform 60ms;*/
+    }
+    
+    
+    .incorrect  {
+    
+        background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
+       /* transition: transform 60ms;*/
+    }
+
+
 
 }
 
@@ -672,9 +686,9 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
+        background: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
         color: white;
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 5px;
 
     }
@@ -731,6 +745,19 @@ img {
     }
 
     .answer-text {padding-right:0;}
+
+    .correct {
+
+        background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
+        /*transition: transform 60ms;*/
+    }
+    
+    
+    .incorrect  {
+    
+        background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
+       /* transition: transform 60ms;*/
+    }
 
 
 }
