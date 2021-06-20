@@ -222,12 +222,12 @@ let questions = [
 
   {
     url: './assets/images/knossos.jpg',
-    question: 'Beside its ancient Palace, what else is Knossos in Crete famous for by legend?',
+    question: 'What is the mythical half man, half bull creature that by legend lived in Knossos, Crete?',
 
-    choice1: 'Ulysess lived here.',
-    choice2: 'The mythic creature half man, half bull Minotaur lived here.',
-    choice3: 'The Trojan horse was built here.',
-    choice4: 'The Greek god Zeus gave it to his wife, Hera.',
+    choice1: 'Ulysess',
+    choice2: 'Minotaur',
+    choice3: 'Centaur',
+    choice4: 'Nymph',
     answer: 2,
   },
 
@@ -268,7 +268,7 @@ let questions = [
     url: './assets/images/mero_nubia.jpg',
     question: 'Where are the above pyramids?',
 
-    choice1: 'Teotihuacan, Mexico',
+    choice1: 'Cholula, Mexico',
     choice2: 'Ghiza, Egypt',
     choice3: 'Meroe, Sudan',
     choice4: 'Caral, Peru',
@@ -325,8 +325,8 @@ let questions = [
 
     choice1: 'World War I',
     choice2: 'World War II',
-    choice3: 'The Spanish Civil War',
-    choice4: 'The Vietnam War',
+    choice3: 'Spanish Civil War',
+    choice4: 'Vietnam War',
     answer: 3,
   },
 
