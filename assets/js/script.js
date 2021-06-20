@@ -463,7 +463,7 @@ getNewQuestion = () => {
   currentQuestion = currentImage= availableQuestions[questionsIndex];
   question.innerText = currentQuestion.question;
   let image = availableImages[imageIndex].url;
- // photoArea.innerHTML = "<img src=" + image + " />";
+ 
   photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
 
 
@@ -489,7 +489,7 @@ choices.forEach(choice => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
-    /*    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+       let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (classToApply = 'correct') {
           incrementScore(score_points)
@@ -502,7 +502,7 @@ choices.forEach(choice => {
             getNewQuestion();
 
 
-          }, 1000)*/
+          }, 1000)
 
   })
 })
