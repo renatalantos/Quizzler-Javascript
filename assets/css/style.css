@@ -138,11 +138,11 @@ hr {
     height: auto;
     width: auto;
     padding: 5px 30px;
-    font-family: 'Poppins', sans-serif;
-    color: black;
+    font-family: 'Sniglet', cursive;
+    color: purple;
     background-color: white;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 20px;
     letter-spacing: 0rem;
     border-radius: 5px;
     border: 2px solid #DDE2F3;
@@ -335,7 +335,7 @@ img {
 
 
 
-
+.answer-text {padding-right: 80px;}
 
 
 .answer-btn {
@@ -363,6 +363,7 @@ img {
     cursor: pointer;
     transition: transform 120ms;
     transform: scale(1.04);
+    
 
 }
 
@@ -399,15 +400,15 @@ img {
 
 .correct {
 
-    background: linear-gradient(90deg, rgb(5, 209, 63), rgb(2, 114, 36));
-    transition: transform 60ms;
+    background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
+    /*transition: transform 60ms;*/
 }
 
 
 .incorrect  {
 
-    background: linear-gradient(90deg, rgb(231, 19, 36), rgb(167, 6, 6));
-    transition: transform 60ms;
+    background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
+   /* transition: transform 60ms;*/
 }
 
 
@@ -580,6 +581,7 @@ img {
 
 
     }
+    .answer-text {padding-right:0;}
 
 
     #username,
@@ -728,7 +730,7 @@ img {
 
     }
 
-
+    .answer-text {padding-right:0;}
 
 
 }

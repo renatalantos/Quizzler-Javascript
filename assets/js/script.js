@@ -57,17 +57,7 @@ function clearLogin() {
 
 }
 
-//colorBtnRed()
 
-function colorBtnRed() {
-  document.getElementById("btn2").style.backgroundColor = "red";
-  document.getElementById("btn2").classList.toggle("animate");
-}
-//colorBtnGreen()
-function colorBtnGreen() {
-  document.getElementById("btn2").style.backgroundColor = "green";
-  document.getElementById("btn2").classList.toggle("animate");
-}
 
 
 function handleSubmit(event) {
@@ -145,15 +135,20 @@ const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.answer-text'));
 const scoreText = document.querySelector('#to-fill-score');
 const photoArea = document.querySelector('#photo');
+const numberOfGames = document.querySelector('#to-fill-all-games');
+//const allScore = document.querySelector('#to-fill-all-score');
 
 
-let currentQuestion =  {}
+let currentQuestion = {}
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
-const max_questions = 15;
+const max_questions = 7;
+//let number_of_games=0;
+//let score_in_all_games=1;
+
 
 
 
@@ -205,7 +200,7 @@ let questions = [
     choice2: 'Reneissance',
     choice3: 'Baroque',
     choice4: 'Expressionism',
-    answer: 4,
+    answer: 1,
   },
 
 
@@ -224,7 +219,7 @@ let questions = [
     url: './assets/images/knossos.jpg',
     question: 'What is the mythical half man, half bull creature that by legend lived in Knossos, Crete?',
 
-    choice1: 'Ulysess',
+    choice1: 'Ulysses',
     choice2: 'Minotaur',
     choice3: 'Centaur',
     choice4: 'Nymph',
@@ -257,7 +252,7 @@ let questions = [
     url: './assets/images/marc_chagall.jpg',
     question: 'Who was the above picture painted by?',
 
-    choice1: 'Picasso',
+    choice1: 'Pablo Picasso',
     choice2: 'Edvard Munch',
     choice3: 'Paul Klee',
     choice4: 'Marc Chagall',
@@ -279,7 +274,7 @@ let questions = [
     url: './assets/images/miro.jpg',
     question: 'Which artist has paintings that reinvoke the childlike?',
 
-    choice1: 'Picasso',
+    choice1: 'Pablo Picasso',
     choice2: 'Joan Miro',
     choice3: 'Vasily Kandinsky',
     choice4: 'Paul Klee',
@@ -294,7 +289,7 @@ let questions = [
     choice2: 'Edouard Manet',
     choice3: 'Georges Seurat',
     choice4: 'Edgar Degas',
-    answer: 2,
+    answer: 1,
   },
 
   {
@@ -309,7 +304,7 @@ let questions = [
   },
 
   {
-    url: './assets/images/nyugati.jpg',
+    url: './assets/images/nyugatip.jpg',
     question: 'Where is the above train station, designed by Gustav Eiffel?',
 
     choice1: 'Paris, France',
@@ -338,7 +333,7 @@ let questions = [
     choice2: 'Italy, Rome',
     choice3: 'Malaga, Spain',
     choice4: 'Arles, France',
-    answer: 2,
+    answer: 1,
   },
 
   {
@@ -382,7 +377,7 @@ let questions = [
     choice2: 'Glasgow',
     choice3: 'Venice',
     choice4: 'Marseille',
-    answer: 1,
+    answer: 3,
   },
 
 
@@ -394,15 +389,14 @@ function startPage() {
   buttonArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
 
- 
-
 }
 
 function nextPage() {
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
   getNewQuestion();
-  
+
+
 
 }
 
@@ -413,7 +407,7 @@ function startGame() {
   //startBtn.style.visibility = "hidden";
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
- 
+
 
   function removeRegMsg() {
     regMsg.remove();
@@ -428,7 +422,7 @@ function startGame() {
 
   }
 
-  function removeStartBtn(){
+  function removeStartBtn() {
 
     startBtn.remove();
   }
@@ -443,85 +437,100 @@ function startGame() {
 
 }
 
-questionCounter++;
 
-availableQuestions = availableImages =[...questions];
+questionCounter++;
+availableQuestions = availableImages = [...questions];
 
 getNewQuestion = () => {
 
+ 
+  
+  if /*((availableQuestions.length === 0) ||*/ (questionCounter == max_questions) {
+    /*  localStorage.setItem('mostRecentScore', score);*/
 
-  if ((availableQuestions.length === 0) || (questionCounter > max_questions)) {
-    localStorage.setItem('mostRecentScore', score);
-    buttonArea.style.visibility = "hidden";
-    startBtn.style.visibility = "visible";
-    questionArea.style.visibility = "visible";
+    numberOfGames.innerText = ('The End!');
+    buttonArea.style.visibility="hidden"
+    
+  } else {
+    
+
+    const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = currentImage = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+    let image = availableImages[imageIndex].url;
+
+    photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
+
+
+
+    choices.forEach(choice => {
+      const number = choice.dataset['number'];
+      choice.innerText = currentQuestion['choice' + number];
+
+    })
+
+
+    availableQuestions.splice(questionsIndex, 1);
+    acceptingAnswers = true;
   }
 
-
-
-  const questionsIndex = imageIndex= Math.floor(Math.random() * availableQuestions.length);
-  currentQuestion = currentImage= availableQuestions[questionsIndex];
-  question.innerText = currentQuestion.question;
-  let image = availableImages[imageIndex].url;
- 
-  photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
-
-
- 
-  choices.forEach(choice => {
-    const number = choice.dataset['number'];
-    choice.innerText = currentQuestion['choice' + number];
-
-  })
-
-  availableQuestions.splice(questionsIndex,1);
-  
-
-  acceptingAnswers = true;
-
 }
+
+
+//Problems start here
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
 
-    if (!acceptingAnswers)
-      buttonArea.style.visibility = "hidden";
+    if (!acceptingAnswers) return
+
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
-       let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-        if (classToApply = 'correct') {
-          incrementScore(score_points)
-        }
-
-        selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
+    if (classToApply === 'correct') {
+      incrementScore(score_points)
+    }
 
 
-          }, 1000)
+    selectedChoice.parentElement.classList.add(classToApply);
+
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+
+
+    }, 1000)
 
   })
 })
 
-/*incrementScore = num => {
-score+=num;
-scoreText.innerText=score;
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+
+
+
+}
+
+/*incrementNumberOfGames = num => {
+  number_of_games+=num;
+  numberOfGames.innerText = number_of_games;
+
+}*/
+
+/*incrementAllScore = num => {
+score+=score_in_all_games=num;
+allScore.innerText=score_in_all_games;
 
 }*/
 
 
+/*function endGame() {
+  /* incrementNumberOfGames;
+   incrementAllScore;*/
+ /* startPage;
 
 
-
-
-
-
-
-
-
-
-/*function endGame(){};*/
+}*/

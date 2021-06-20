@@ -37,15 +37,15 @@
                             </div>
 
                             <div id="number-of-games">
-                                <p>Number of games played:</p><span class="to-fill">0</span>
+                                <p>Number of games played:</p><span class="to-fill" id="to-fill-all-games">0</span>
                             </div>
                             <div id="user-score">
                                 <p>Your score in this game:</p><span class="to-fill" id="to-fill-score">0</span>
                             </div>
                             <div id="all-score">
-                                <p>Your score in all games:</p><span class="to-fill">0</span>
+                                <p>Your score in all games:</p><span class="to-fill" id="to-fill-all-score">0</span>
                             </div>
-                           <p id="reg-msg"></p> 
+                            <p id="reg-msg"></p>
 
 
 
@@ -62,9 +62,8 @@
 
                 <tr>
                     <td>
-                        <form id="registration-form"   target="_blank" action="https://formdump.codeinstitute.net/"
-                        
-                        method="post" class="hide">
+                        <form id="registration-form" target="_blank" action="https://formdump.codeinstitute.net/"
+                            method="post" class="hide">
                             <div class="form-container">
                                 <h3>Register</h3>
                                 <hr>
@@ -151,12 +150,12 @@
 
         <section id="photo-area">
 
-            <img id ="main-image" class="slide" src="./assets/images/paints.jpg" alt="colourful paints" >
-            
-            <div id="photo"></div>
-           
+            <img id="main-image" class="slide" src="./assets/images/paints.jpg" alt="colourful paints">
 
-               <!-- <img class="slide" src="./assets/images/paints.jpg" alt="colourful paints">
+            <div id="photo"></div>
+
+
+            <!-- <img class="slide" src="./assets/images/paints.jpg" alt="colourful paints">
                 
                <img class="slide" src="./assets/images/alhambra.jpg" alt="Alhambra">
                <img class="slide" src="./assets/images/dali.jpg" alt="Dali">
@@ -181,52 +180,68 @@
 
 
 
+    </div>
+
+    </section>
+
+    <section id="question-area">
+
+        <h2 id="ready">Are you ready?</h2>
+        <div id="question">
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <section id="game-area">
+
+        <h1></h1>
+        <div id="button-area">
+
+
+            <div id="start-btn" class="start-btn">
+                <p>Start Game</p>
             </div>
 
-        </section>
+            <div id="hide-btns">
+                <div class="answer-btn">
+                    <p class="answer-letter">A</p>
+                    <p class="answer-text" data-number="1"></p>
+                </div>
 
-        <section id="question-area">
+                <div class="answer-btn">
+                    <p class="answer-letter">B</p>
+                    <p class="answer-text" data-number="2"></p>
+                </div>
 
-            <h2 id="ready">Are you ready?</h2>
-            <div id="question">
-                
-        
+                <div class="answer-btn">
+                    <p class="answer-letter">C</p>
+                    <p class="answer-text" data-number="3"></p>
+                </div>
 
-
-            </div>
-
-        </section>
-
-
-        <section id="game-area">
-
-            <h1></h1>
-            <div id="button-area">
-
-
-                <div id="start-btn" class="start-btn"><p>Start Game</p></div>
-
-                <div id="hide-btns"> <div id="btn1" class="answer-btn"><p class="answer-letter">A</p><p class="answer-text" data-number="1">Hello</p></div>
-
-                    <div id="btn2" class="answer-btn"><p  class="answer-letter">B</p><p class="answer-text" data-number="2">Hello</p></div>
-
-                    <div id="btn3" class="answer-btn"><p p class="answer-letter">C</p><p class="answer-text" data-number="3">Hello</p></div>
-
-                    <div id="answer-btn4" class="answer-btn" ><p  class="answer-letter">D</p><p class="answer-text" data-number="4"> Hello</p></div>
-
-
-
-                    <div id="next-btn" class="next-btn"><p>Next Question</p><i id="right-arrow"
-                            class="fas fa-arrow-right"></i></div>
-
-
+                <div class="answer-btn">
+                    <p class="answer-letter">D</p>
+                    <p class="answer-text" data-number="4"></p>
                 </div>
 
 
 
+                <div id="next-btn" class="next-btn">
+                    <p>Next Question</p><i id="right-arrow" class="fas fa-arrow-right"></i>
+                </div>
+
 
             </div>
-        </section>
+
+
+
+
+        </div>
+    </section>
 
     </div>
 
@@ -234,7 +249,7 @@
 
 
     <script src="assets/js/script.js">
-    
+
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
         integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
