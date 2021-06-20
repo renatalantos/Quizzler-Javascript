@@ -213,7 +213,7 @@ hr {
 
 
 #photo-area {
-    height: 300px;
+    height: 340px;
     width: 100vw;
     margin: 0 auto;
     float: none;
@@ -233,16 +233,26 @@ hr {
     justify-content: center;
     float: none;
     display: block;
-    height: 300px;
+    height: 340px;
     width: 100%;
     position: relative;
+    
 
 }
 
 
 
 img {
-    border-radius: 5px;
+    
+    border: 10px solid white;
+    box-shadow: 
+    0 0 0 10px 		hsla(22, 26%, 72%),
+    0 0 0 22px 	hsla(22, 26%, 52%);
+    
+    position: relative;
+    margin: 20px;
+    
+    
 }
 
 #question-area {
@@ -289,7 +299,7 @@ img {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
     font-size: 20px;
-    color: #2A0B5B;
+    color: #432E67;
     display:block;
 }
 
@@ -311,7 +321,7 @@ img {
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 2px solid #DDE2F3;
     text-align: center;
 
@@ -329,10 +339,13 @@ img {
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     width: 300px;
-    background-color: #EFEFEF;
-    color: #4F4350;
+   /* background-color: #EFEFEF;*/
+
+   background-image: linear-gradient(180deg, rgb(132, 94, 194), rgb(132, 94, 194, 1));
+   /* color: #4F4350;*/
+   color: #EFEFEF;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 2px solid #DDE2F3;
     margin: 0 auto;
     text-align: left;
@@ -368,7 +381,7 @@ img {
 
 .start-btn {
     width: 150px;
-    background-color: #078F0E;
+    background-image: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
     color: white;
     white-space: nowrap;
     /*  visibility: hidden;*/
@@ -377,7 +390,7 @@ img {
 
 .next-btn {
     width: 200px;
-    background-color: #078F0E;
+    background-image: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
     color: white;
 
 }
@@ -423,8 +436,8 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-color: #EFEFEF;
-        color: #4F4350;
+        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103,1));
+        color: white;
         font-size: 18px;
         margin-top: 5px;
 
@@ -536,8 +549,8 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-color: #EFEFEF;
-        color: #4F4350;
+        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103,1));
+        color: white;
         font-size: 18px;
         margin-top: 5px;
 
@@ -651,8 +664,8 @@ img {
 
     .answer-btn {
         width: 200px;
-        background-color: #EFEFEF;
-        color: #4F4350;
+        background-image: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103,1));
+        color: white;
         font-size: 18px;
         margin-top: 5px;
 
