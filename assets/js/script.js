@@ -243,13 +243,13 @@ let questions = [
   },
 
   {
-    url: './assets/images/leonardo.jpg',
-    question: 'Which reneissance artist dissected human bodies for anatomical studies?',
+    url: './assets/images/last_supper.jpg',
+    question: "In which movie is Leonardo's Last Supper mirrored?",
 
-    choice1: 'Leonardo da Vinci',
-    choice2: 'Raffaello',
-    choice3: 'Michelangelo',
-    choice4: 'Donatello',
+    choice1: 'The Dirty Dozen',
+    choice2: 'The Da Vinci Code',
+    choice3: "The Devil's Advocate",
+    choice4: "Ocean's Twelve",
     answer: 1,
   },
 
@@ -320,13 +320,13 @@ let questions = [
   },
 
   {
-    url: './assets/images/picasso.jpg',
-    question: 'Picasso depicted the brutal bombing of the town Guernica in which war?',
+    url: './assets/images/harlequins.jpg',
+    question: 'Who created the above picture?',
 
-    choice1: 'World War I',
-    choice2: 'World War II',
-    choice3: 'Spanish Civil War',
-    choice4: 'Vietnam War',
+    choice1: 'Amadeo Modigliani',
+    choice2: 'Edgar Degas',
+    choice3: 'Pablo Picasso',
+    choice4: 'Paul Cezanne',
     answer: 3,
   },
 

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 /*font-family: 'Poppins', sans-serif;*/
 /*font-family: 'Nanum Brush Script', cursive;*/
+/*font-family: 'Sniglet', cursive;*/
 
 * {
     margin: 0;
@@ -246,14 +248,13 @@ img {
 
     border: 10px solid white;
     box-shadow:
-        0 0 0 10px hsla(22, 26%, 72%),
-        0 0 0 22px hsla(22, 26%, 52%);
+        0 0 0 10px rgb(202, 179, 165),
+        0 0 0 22px rgb(164, 124, 101);
 
     position: relative;
     margin: 20px;
 
     /*  border-radius: 5px;*/
-
 
 }
 
@@ -265,7 +266,7 @@ img {
     display: block;
     /* background-color: cyan;*/
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sniglet', cursive;
 }
 
 #title {
@@ -281,7 +282,6 @@ img {
     margin: auto;
     float: none;
     display: block;
-    /*  background-color: darkgreen;*/
     text-align: center;
     margin-bottom: 20px;
 }
@@ -298,9 +298,9 @@ img {
 
 #question {
     overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
+    font-family: 'Sniglet', cursive;
+    font-weight: 600;
+    font-size: 22px;
     color: #432E67;
     display: block;
     margin: 40px 0 20px 0;
@@ -321,13 +321,15 @@ img {
     display: block;
     padding: 20px;
     margin: 20px auto;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-    font-size: 18px;
-    border-radius: 10px;
+    font-family: 'Sniglet', cursive;
+    font-size: 20px;
+    border-radius: 20px;
     border: 2px solid #DDE2F3;
     text-align: center;
-
+    width: 150px;
+    background-image: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
+    color: white;
+    white-space: nowrap;
 
 }
 
@@ -339,21 +341,15 @@ img {
 .answer-btn {
     display: block;
     padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
+    font-family: 'Sniglet', cursive;
     width: 300px;
-    /* background-color: #EFEFEF;*/
-
-    background-image: linear-gradient(180deg, rgb(132, 94, 194), rgb(132, 94, 194, 1));
-    /* color: #4F4350;*/
+    background-image: linear-gradient(180deg, rgb(132, 94, 194), rgb(132, 12, 215, 1));
     color: #EFEFEF;
-    font-size: 18px;
-    border-radius: 10px;
+    font-size: 20px;
+    border-radius: 20px;
     border: 2px solid #DDE2F3;
     margin: 0 auto;
     text-align: left;
-
-
 }
 
 .answer-btn p {
@@ -361,7 +357,14 @@ img {
     margin: 0 5px;
 }
 
+.answer-btn:hover,
+.start-btn:hover,
+.next-btn:hover {
+    cursor: pointer;
+    transition: transform 120ms;
+    transform: scale(1.04);
 
+}
 
 .animate {
     animation: fademe 0.5s;
@@ -382,21 +385,7 @@ img {
     }
 }
 
-.start-btn {
-    width: 150px;
-    background-image: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
-    color: white;
-    white-space: nowrap;
-    /*  visibility: hidden;*/
 
-}
-
-.next-btn {
-    width: 200px;
-    background-image: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
-    color: white;
-
-}
 
 
 
@@ -706,12 +695,12 @@ img {
     #photo-area {
         height: 300px;
         width: 100vw;
-    
+
     }
-    
-    
+
+
     #photo {
-    
+
         background-repeat: no-repeat;
         background-position: center;
         justify-content: center;
@@ -720,10 +709,10 @@ img {
         height: 300px;
         width: 100%;
         position: relative;
-    
-    
+
+
     }
-    
+
 
 
 
