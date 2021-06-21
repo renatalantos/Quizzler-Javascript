@@ -14,7 +14,7 @@ showReg.addEventListener("click", onClickReg);
 let regMsg = document.getElementById('reg-msg');
 let startBtn = document.getElementById('start-btn');
 startBtn.addEventListener("click", startGame);
-let buttonArea = document.getElementById('hide-btns');
+let buttonArea = document.getElementById('answer-area');
 let nextBtn = document.getElementById('next-btn');
 nextBtn.addEventListener('click', nextPage);
 let questionArea = document.getElementById('question');
@@ -145,9 +145,11 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
-const max_questions = 10;
+const max_questions = 15;
 //let number_of_games=0;
 //let score_in_all_games=1;
+//const result = document.querySelector('#result');
+
 
 
 
@@ -239,7 +241,7 @@ let questions = [
 
   {
     url: './assets/images/last_supper.jpg',
-    question: "In which movie is Leonardo's Last Supper mirrored?",
+    question: "In which movie is Leonardo's Last Supper acted out?",
 
     choice1: 'The Dirty Dozen',
     choice2: 'The Da Vinci Code',
@@ -455,8 +457,54 @@ let questions = [
     choice2: 'Lady by the Lake 2',
     choice3: 'Improvisation 5',
     choice4: 'Suite # 3',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/matisse.jpg',
+    question: "Who painted the above picture?",
+
+    choice1: 'Marc Chagall',
+    choice2: 'Paul Cezanne',
+    choice3: 'Franz Marc',
+    choice4: 'Henry Matisse',
+    answer: 4,
+  },
+
+  {
+    url: './assets/images/modigliani.jpg',
+    question: "What art influenced Modigliani's painting?",
+
+    choice1: 'Polynesian art',
+    choice2: 'African Art',
+    choice3: 'South American Art',
+    choice4: 'Japanese Art',
     answer: 2,
   },
+
+  {
+    url: './assets/images/monty_python.jpg',
+    question: "Which member of Monty Python was also the team's cartoonist?",
+
+    choice1: 'John Cleese',
+    choice2: 'Graham Chapman',
+    choice3: 'Terry Gilliam',
+    choice4: 'Terry Jones',
+    answer: 3,
+  },
+
+  {
+    url: './assets/images/vasarely.jpg',
+    question: "Hungarian-French artist Vasarely was the representant of which art trend?",
+
+    choice1: 'Op art',
+    choice2: 'Cubism',
+    choice3: 'Impressionism',
+    choice4: 'Pop art',
+    answer: 1,
+  },
+
+
 
 
 ]
@@ -474,10 +522,7 @@ function nextPage() {
   questionArea.style.visibility = "visible";
   getNewQuestion();
   questionCounter++;
-  
-
-
-
+ 
 }
 
 
@@ -507,6 +552,8 @@ function startGame() {
     startBtn.remove();
   }
 
+
+
   removeMainImage();
   removeRegMsg();
   removeMainImage();
@@ -524,16 +571,16 @@ availableQuestions = availableImages = [...questions];
 
 getNewQuestion = () => {
 
- 
-  
+
+
   if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
     /*  localStorage.setItem('mostRecentScore', score);*/
 
-   /* numberOfGames.innerText = ('The End!');*/
-    buttonArea.style.visibility="hidden"
-    
+    /* numberOfGames.innerText = ('The End!');*/
+    buttonArea.style.visibility = "hidden"
+
   } else {
-    
+
 
     const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = currentImage = availableQuestions[questionsIndex];
@@ -568,22 +615,45 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    
+
 
     if (classToApply === 'correct') {
       incrementScore(score_points)
+
+      result.innerText = ("Correct! +100 points");
+      result.style.color = "green";
+
+
+
+
+    } else {
+
+      result.innerText = ("Incorrect! 0 points");
+      result.style.color = "red";
+
     }
 
+    function removeResult() {
+      result.remove();
+    }
 
     selectedChoice.parentElement.classList.add(classToApply);
 
-
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
+    const resDiv = document.querySelector('#res-div')
+    let node = document.result.createTextNode("");
+    //resDiv.appendChild(result.innerText = "");
+    resDiv.appendChild(node);
+    
+    removeResult();
 
 
-    }, 1000)
+    }, 900)
+ })
 
-  })
+
 })
 
 incrementScore = num => {
@@ -595,14 +665,14 @@ incrementScore = num => {
 }
 
 incrementNumberOfGames = num => {
-  number_of_games+=num;
+  number_of_games += num;
   numberOfGames.innerText = number_of_games;
 
 }
 
 incrementAllScore = num => {
-score+=score_in_all_games=num;
-allScore.innerText=score_in_all_games;
+  score += score_in_all_games = num;
+  allScore.innerText = score_in_all_games;
 
 }
 
@@ -610,7 +680,7 @@ allScore.innerText=score_in_all_games;
 /*function endGame() {
   /* incrementNumberOfGames;
    incrementAllScore;*/
- /* startPage;
+/* startPage;
 
 
 }*/

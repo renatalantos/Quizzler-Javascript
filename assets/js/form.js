@@ -67,7 +67,7 @@ function colorBtnRed() {
 }
 //colorBtnGreen()
 function colorBtnGreen() {
-  document.getElementById("btn2").style.backgroundColor = "green";
+  document.getElementById("btn2").style.Color = "green";
 
   document.getElementById("btn2").classList.toggle("animate");
 

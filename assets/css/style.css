@@ -27,7 +27,7 @@ body {
 
 
 #sidebar {
-    height: auto;
+    height: 100vw;
     width: 220px;
     background-color: #E8F3F1;
     float: left;
@@ -215,7 +215,7 @@ hr {
 
 
 #photo-area {
-    height: 330px;
+    height: 270px;
     width: 100vw;
     margin: 0 auto;
     float: none;
@@ -235,7 +235,7 @@ hr {
     justify-content: center;
     float: none;
     display: block;
-    height: 330px;
+    height: 270px;
     width: 100%;
     position: relative;
 
@@ -246,15 +246,15 @@ hr {
 
 img {
 
-    border: 10px solid white;
+   /* border: 10px solid white;
     box-shadow:
         0 0 0 10px rgb(202, 179, 165),
         0 0 0 22px rgb(164, 124, 101);
 
     position: relative;
-    margin: 20px;
+    margin: 20px;*/
 
-    /*  border-radius: 5px;*/
+     border-radius: 5px;
 
 }
 
@@ -293,27 +293,27 @@ img {
     margin: 20px;
     display: block;
 
-
 }
 
 #question {
     overflow: hidden;
     font-family: 'Sniglet', cursive;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 19px;
     color: #432E67;
     display: block;
-    margin: 40px 0 20px 0;
+    margin: 20px 0 10px 0;
 }
 
 
 
-#button-area,
-#hide-btns {
+#button-area
+{
     display: grid;
     grid-gap: 10px;
 
 }
+
 
 
 .start-btn,
@@ -333,19 +333,33 @@ img {
 
 }
 
+#res-div, #result{
+
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+}
 
 
-.answer-text {padding-right: 30px;}
 
+#answer-area {
+    display: grid;
+  grid-template-columns: 250px 250px;
+ /* grid-row: auto auto;*/
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-gap: 10px;
+  margin: 20px auto;
+}
 
 .answer-btn {
     display: block;
     padding: 20px;
     font-family: 'Sniglet', cursive;
-    width: 300px;
+    width: 200px;
     background: linear-gradient(180deg, rgb(132, 94, 194), rgb(132, 12, 215, 1));
     color: #EFEFEF;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 20px;
     border: 2px solid #DDE2F3;
     margin: 0 auto;
@@ -364,28 +378,17 @@ img {
     transition: transform 120ms;
     transform: scale(1.04);
     
+    
 
 }
 
-/*
-.animate {
-    animation: fademe 0.5s;
-}
 
-
-@keyframes fademe {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 0;
-    }
+/*.animate {
+    animation: fadeMe 0.5s;
 }*/
+
+
+
 
 
 
@@ -402,13 +405,89 @@ img {
 
     background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
     /*transition: transform 60ms;*/
+    animation: fadeMe 0.5s;
+    -webkit-animation: fadeMe 0.5s;
+    -moz-animation: fadeMe 0.5s;
+    -o-animation: fadeMe 0.5s;
+    -ms-animation: fadeMe 0.5s;
+    
 }
 
+@keyframes fadeMe {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeMe {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+    
+}
+
+@-o-keyframes fadeMe {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@-ms-keyframes fadeMe {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 .incorrect  {
 
     background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
    /* transition: transform 60ms;*/
+   animation: fadeMe 0.5s;
+    -webkit-animation: fadeMe 0.5s;
+    -moz-animation: fadeMe 0.5s;
+    -o-animation: fadeMe 0.5s;
+    -ms-animation: fadeMe 0.5s;
+    
+   
+}
+
+#result {
+font-size: 25px;
+  font-family: 'Sniglet', cursive;
+  display: inline;
 }
 
 
@@ -421,7 +500,8 @@ img {
     #photo-area,
     #question-area,
     #game-area,
-    #button-area {
+    #button-area,
+    #answer-area {
         display: block;
         float: none;
         position: relative;
@@ -429,6 +509,12 @@ img {
 
     }
 
+  #question-area, #question{
+
+    width: 50%;
+    height: auto;
+    justify-content: center;
+  }
     #sidebar {
         height: auto;
         width: 50%;
@@ -440,13 +526,13 @@ img {
 
 
     }
-
+   
 
     .answer-btn {
         width: 200px;
         background: linear-gradient(180deg, rgb(132, 94, 194, 1), rgb(67, 46, 103, 1));
         color: white;
-        font-size: 18px;
+        font-size: 14px;
         margin-top: 5px;
 
 
@@ -526,7 +612,8 @@ img {
     #photo-area,
     #question-area,
     #game-area,
-    #button-area {
+    #button-area, 
+    #answer-area{
         display: block;
         float: none;
         position: relative;
@@ -648,7 +735,8 @@ img {
     #photo-area,
     #question-area,
     #game-area,
-    #button-area {
+    #button-area,
+    #answer-area {
         display: block;
         float: none;
         position: relative;
@@ -708,9 +796,7 @@ img {
 
     }
 
-    #question {
-        margin: 10px;
-    }
+    
 
     img {
 
