@@ -305,7 +305,7 @@ getNewQuestion = () => {
 
   availableQuestions.splice(questionsIndex, 1);
   availableImages.splice(questionsIndex, 1);
-  acceptingAnswers = true;
+  acceptingAnswers = true;gree
 
 }
 

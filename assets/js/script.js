@@ -148,7 +148,7 @@ const score_points = 100;
 const max_questions = 15;
 //let number_of_games=0;
 //let score_in_all_games=1;
-//const result = document.querySelector('#result');
+const result = document.querySelector('#result');
 
 
 
@@ -522,7 +522,8 @@ function nextPage() {
   questionArea.style.visibility = "visible";
   getNewQuestion();
   questionCounter++;
- 
+  
+  
 }
 
 
@@ -551,6 +552,16 @@ function startGame() {
 
     startBtn.remove();
   }
+
+  /* function addEmptyString() {
+  const resDiv = document.querySelector('#res-div')
+  resDiv.add(result.innerText = "hello");
+  }
+*/
+  function removeResult() {
+    result.remove();
+  }
+
 
 
 
@@ -614,47 +625,38 @@ choices.forEach(choice => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
-    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-    
-
+    let classToApply= selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
     if (classToApply === 'correct') {
       incrementScore(score_points)
-
-      result.innerText = ("Correct! +100 points");
-      result.style.color = "green";
-
-
-
-
+      result.innerHTML="Correct! +100 points"
+      result.style.color="green";
+        
     } else {
 
-      result.innerText = ("Incorrect! 0 points");
-      result.style.color = "red";
-
+      result.innerHTML="Incorrect! 0points"
+      result.style.color="red";
     }
 
-    function removeResult() {
-      result.remove();
-    }
+  
+  selectedChoice.parentElement.classList.add(classToApply);
 
-    selectedChoice.parentElement.classList.add(classToApply);
+
 
     setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
+    selectedChoice.parentElement.classList.remove(classToApply) 
     const resDiv = document.querySelector('#res-div')
-    let node = document.result.createTextNode("");
-    //resDiv.appendChild(result.innerText = "");
-    resDiv.appendChild(node);
-    
-    removeResult();
-
+    resDiv.append(result.innerText = ""); 
 
     }, 900)
- })
 
-
+  })
 })
+
+
+
+
+
 
 incrementScore = num => {
   score += num;

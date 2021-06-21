@@ -246,14 +246,6 @@ hr {
 
 img {
 
-   /* border: 10px solid white;
-    box-shadow:
-        0 0 0 10px rgb(202, 179, 165),
-        0 0 0 22px rgb(164, 124, 101);
-
-    position: relative;
-    margin: 20px;*/
-
      border-radius: 5px;
 
 }
@@ -401,7 +393,7 @@ img {
 }
 
 
-.correct {
+.correct, .right p {
 
     background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
     /*transition: transform 60ms;*/
@@ -471,7 +463,7 @@ img {
     }
 }
 
-.incorrect  {
+.incorrect, .wrong p {
 
     background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
    /* transition: transform 60ms;*/
@@ -489,6 +481,8 @@ font-size: 25px;
   font-family: 'Sniglet', cursive;
   display: inline;
 }
+
+.empty-string{visibility:hidden;}
 
 
 
