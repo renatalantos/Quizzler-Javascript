@@ -344,6 +344,16 @@ img {
   margin: 20px auto;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.enabled {
+    pointer-events: all;
+    opacity:1;
+}
+
 .answer-btn {
     display: block;
     padding: 20px;

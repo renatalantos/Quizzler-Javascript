@@ -514,6 +514,7 @@ function startPage() {
   nextBtn.style.visibility = "hidden";
   buttonArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
+  
 
 }
 
@@ -522,8 +523,11 @@ function nextPage() {
   questionArea.style.visibility = "visible";
   getNewQuestion();
   questionCounter++;
-  
-  
+}
+
+function enableButtons(){
+  buttonArea.classList.toggle("enabled");
+
 }
 
 
@@ -553,17 +557,7 @@ function startGame() {
     startBtn.remove();
   }
 
-  /* function addEmptyString() {
-  const resDiv = document.querySelector('#res-div')
-  resDiv.add(result.innerText = "hello");
-  }
-*/
-  function removeResult() {
-    result.remove();
-  }
-
-
-
+ 
 
   removeMainImage();
   removeRegMsg();
@@ -575,7 +569,7 @@ function startGame() {
 
 }
 
-//Problem start here
+//Problems start here
 
 //questionCounter++;
 availableQuestions = availableImages = [...questions];
@@ -607,8 +601,6 @@ getNewQuestion = () => {
       choice.innerText = currentQuestion['choice' + number];
 
     })
-
-
     availableQuestions.splice(questionsIndex, 1);
     acceptingAnswers = true;
   }
@@ -629,7 +621,7 @@ choices.forEach(choice => {
 
     if (classToApply === 'correct') {
       incrementScore(score_points)
-      result.innerHTML="Correct! +100 points"
+      result.innerHTML=`Correct! +${score_points} points!`
       result.style.color="green";
         
     } else {
@@ -638,20 +630,19 @@ choices.forEach(choice => {
       result.style.color="red";
     }
 
-  
+    
   selectedChoice.parentElement.classList.add(classToApply);
-
-
 
     setTimeout(() => {
     selectedChoice.parentElement.classList.remove(classToApply) 
     const resDiv = document.querySelector('#res-div')
     resDiv.append(result.innerText = ""); 
-
+    buttonArea.classList.toggle("disabled") 
     }, 900)
-
   })
+  
 })
+
 
 
 
