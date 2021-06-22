@@ -17,6 +17,9 @@ startBtn.addEventListener("click", startGame);
 let buttonArea = document.getElementById('answer-area');
 let nextBtn = document.getElementById('next-btn');
 nextBtn.addEventListener('click', nextPage);
+
+
+
 let questionArea = document.getElementById('question');
 let readyQuestion = document.getElementById('ready')
 let infoTable = document.getElementById('info-table');
@@ -149,6 +152,7 @@ const max_questions = 15;
 //let number_of_games=0;
 //let score_in_all_games=1;
 const result = document.querySelector('#result');
+
 
 
 
@@ -514,8 +518,6 @@ function startPage() {
   nextBtn.style.visibility = "hidden";
   buttonArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
-  
-
 }
 
 function nextPage() {
@@ -523,12 +525,13 @@ function nextPage() {
   questionArea.style.visibility = "visible";
   getNewQuestion();
   questionCounter++;
+
+  if (acceptingAnswers === false) {
+    buttonArea.classList.toggle("disabled");
+    acceptingAnswers = true;
+  }
 }
 
-function enableButtons(){
-  buttonArea.classList.toggle("enabled");
-
-}
 
 
 function startGame() {
@@ -557,15 +560,12 @@ function startGame() {
     startBtn.remove();
   }
 
- 
-
   removeMainImage();
   removeRegMsg();
   removeMainImage();
   removeReadyQuestion();
   removeStartBtn();
   nextPage();
-
 
 }
 
@@ -576,13 +576,11 @@ availableQuestions = availableImages = [...questions];
 
 getNewQuestion = () => {
 
-
-
   if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
-    /*  localStorage.setItem('mostRecentScore', score);*/
+     localStorage.setItem('mostRecentScore', score);
 
     /* numberOfGames.innerText = ('The End!');*/
-    buttonArea.style.visibility = "hidden"
+   buttonArea.style.visibility = "hidden"
 
   } else {
 
@@ -592,9 +590,8 @@ getNewQuestion = () => {
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
 
+
     photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
-
-
 
     choices.forEach(choice => {
       const number = choice.dataset['number'];
@@ -602,7 +599,8 @@ getNewQuestion = () => {
 
     })
     availableQuestions.splice(questionsIndex, 1);
-    acceptingAnswers = true;
+    // acceptingAnswers = true;
+
   }
 
 }
@@ -611,49 +609,45 @@ getNewQuestion = () => {
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
-
     if (!acceptingAnswers) return /*???*/
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
-    let classToApply= selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+    
+
 
     if (classToApply === 'correct') {
       incrementScore(score_points)
-      result.innerHTML=`Correct! +${score_points} points!`
-      result.style.color="green";
-        
-    } else {
+      result.innerHTML = `Correct! +${score_points} points!`
+      result.style.color = "green";
 
-      result.innerHTML="Incorrect! 0points"
-      result.style.color="red";
+
+    } else {
+      result.innerHTML = "Incorrect! 0points"
+      result.style.color = "red";
     }
 
-    
-  selectedChoice.parentElement.classList.add(classToApply);
+    // buttonArea.classList.toggle("disabled")
+
+    selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
-    selectedChoice.parentElement.classList.remove(classToApply) 
-    const resDiv = document.querySelector('#res-div')
-    resDiv.append(result.innerText = ""); 
-    buttonArea.classList.toggle("disabled") 
-    }, 900)
+      console.log(acceptingAnswers)
+      selectedChoice.parentElement.classList.remove(classToApply)
+      const resDiv = document.querySelector('#res-div')
+      resDiv.append(result.innerText = "")
+      console.log('set timout')
+      buttonArea.classList.toggle("disabled")
+    }, 1200)
   })
-  
+
 })
-
-
-
-
-
-
 
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
-
-
 
 }
 
@@ -670,10 +664,3 @@ incrementAllScore = num => {
 }
 
 
-/*function endGame() {
-  /* incrementNumberOfGames;
-   incrementAllScore;*/
-/* startPage;
-
-
-}*/

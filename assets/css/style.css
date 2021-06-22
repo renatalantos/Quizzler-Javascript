@@ -215,7 +215,7 @@ hr {
 
 
 #photo-area {
-    height: 270px;
+    height:auto;
     width: 100vw;
     margin: 0 auto;
     float: none;
@@ -235,7 +235,7 @@ hr {
     justify-content: center;
     float: none;
     display: block;
-    height: 270px;
+    height: auto;
     width: 100%;
     position: relative;
 
@@ -347,6 +347,20 @@ img {
 .disabled {
     pointer-events: none;
     opacity: 0.5;
+    animation-duration: 30s;
+    animation: fadeIn;
+}
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.5;
+    }
+
+
+
 }
 
 .enabled {
@@ -403,9 +417,9 @@ img {
 }
 
 
-.correct, .right p {
+.correct {
 
-    background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
+    background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.9));
     /*transition: transform 60ms;*/
     animation: fadeMe 0.5s;
     -webkit-animation: fadeMe 0.5s;
@@ -473,11 +487,11 @@ img {
     }
 }
 
-.incorrect, .wrong p {
+.incorrect {
 
-    background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
+    background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.9));
    /* transition: transform 60ms;*/
-   animation: fadeMe 0.5s;
+  animation: fadeMe 0.5s;
     -webkit-animation: fadeMe 0.5s;
     -moz-animation: fadeMe 0.5s;
     -o-animation: fadeMe 0.5s;
@@ -492,11 +506,21 @@ font-size: 25px;
   display: inline;
 }
 
-.empty-string{visibility:hidden;}
+
+@media only screen and (min-width:992px) and (max-width:1024px){
+
+    #question-area, #question{
+
+        width: 50%;
+        height: auto;
+        justify-content: center;
+        margin:0 auto;
+      }
+
+}
 
 
-
-@media screen and (min-width:768px) and (max-width:990px) {
+@media screen and (min-width:768px) and (max-width:991px) {
 
 
 
@@ -513,12 +537,10 @@ font-size: 25px;
 
     }
 
-  #question-area, #question{
 
-    width: 50%;
-    height: auto;
-    justify-content: center;
-  }
+
+
+  
     #sidebar {
         height: auto;
         width: 50%;
@@ -604,12 +626,16 @@ font-size: 25px;
     }
 
 
-
+ 
 }
 
-@media only screen and (min-width:400px) and (max-width:990px) {
-    /*Check this later*/
 
+
+@media only screen and (min-width:400px) and (max-width:990px) {
+    
+    question {
+        padding: 0 10px;
+    }
 
 
     #title-area,
@@ -733,7 +759,9 @@ font-size: 25px;
 @media screen and (min-width:280px) and (max-width:767px) {
 
 
-
+    #question {
+        padding: 0 10px;
+    }
 
     #title-area,
     #photo-area,
@@ -814,7 +842,7 @@ font-size: 25px;
     }
 
     #photo-area {
-        height: 300px;
+        height: auto;
         width: 100vw;
 
     }
@@ -827,14 +855,14 @@ font-size: 25px;
         justify-content: center;
         float: none;
         display: block;
-        height: 300px;
+        height: auto;
         width: 100%;
         position: relative;
 
 
     }
 
-    .answer-text {padding-right:0;}
+   /* .answer-text {padding-right: 50px;}*/
 
     .correct {
 
