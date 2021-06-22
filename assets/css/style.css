@@ -29,7 +29,8 @@ body {
 #sidebar {
     height: 100vw;
     width: 220px;
-    background-color: #E8F3F1;
+    /*background-color: #E8F3F1;*/
+    background-color: rgb(119, 226, 245);
     float: left;
     padding: 0 10px;
     position: fixed;
@@ -46,7 +47,7 @@ body {
 
 #info h3,
 .form-container h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sniglet', cursive;
     color: #D53E69;
     font-size: 30px;
     text-align: center;
@@ -83,7 +84,7 @@ hr {
 .checkbox,
 #reg-msg,
 #guest {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sniglet', cursive;
     color: teal;
     font-weight: bolder;
     font-size: 15px;
@@ -123,8 +124,8 @@ hr {
     height: auto;
     width: auto;
     padding: 5px;
-    font-family: 'Poppins', sans-serif;
-    color: black;
+    font-family: 'Sniglet', cursive;
+    color:lightgray;
     background-color: white;
     font-weight: bolder;
     font-size: 15px;
@@ -185,7 +186,7 @@ hr {
 }
 
 #info-table {
-    visibility: collapse;
+    visibility: visible;
 }
 
 
@@ -506,7 +507,17 @@ font-size: 25px;
   display: inline;
 }
 
+@media only screen and (min-width:1025px) and (max-width:1200px){
+    #question-area, #question{
 
+        width: 50%;
+        height: auto;
+        justify-content: center;
+        margin:0 auto;
+      }
+
+
+}
 @media only screen and (min-width:992px) and (max-width:1024px){
 
     #question-area, #question{
