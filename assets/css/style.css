@@ -68,13 +68,16 @@ hr {
 .form-container,
 #reg-msg {
     text-align: center;
+   
 }
 
 
 
 #user-name p,
+.user-label p,
+#username p,
 #number-of-games p,
-#number-of-games p,
+
 #user-score p,
 #all-score p,
 .user-label,
@@ -90,7 +93,7 @@ hr {
     font-size: 15px;
     letter-spacing: 0rem;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 
 
 }
@@ -120,12 +123,13 @@ hr {
 #email,
 #repeat-password,
 #username2,
-#password2 {
-    height: auto;
-    width: auto;
-    padding: 5px;
+#password2
+ {
+    height: 30px;
+    width: 150px;
+   padding: 5px;
     font-family: 'Sniglet', cursive;
-    color:lightgray;
+    color: purple;
     background-color: white;
     font-weight: bolder;
     font-size: 15px;
@@ -134,11 +138,13 @@ hr {
     border: 2px solid #DDE2F3;
 }
 
+
+
 .to-fill,
-#to-fill-score {
+#to-fill-score, .user-label {
     height: auto;
     width: auto;
-    padding: 5px 30px;
+ padding: 5px 30px;
     font-family: 'Sniglet', cursive;
     color: purple;
     background-color: white;
@@ -152,25 +158,28 @@ hr {
 }
 
 
-.login-btn,
+
+
+.save-btn,
 .register-btn {
-    height: auto;
-    width: 80px;
+    height: 50px;
+    width: 100px;
     padding: 5px;
     margin: 10px auto auto auto;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sniglet', cursive;
     color: white;
     background-color: teal;
-    font-weight: bolder;
-    font-size: 15px;
+    
+    font-size: 20px;
     letter-spacing: 0rem;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 2px solid #DDE2F3;
     display: block;
+    margin-top: 20px;
 }
 
 
-.login-btn p,
+.save-btn p,
 .register-btn p {
     color: white;
 }
@@ -390,7 +399,7 @@ img {
 
 .answer-btn:hover,
 .start-btn:hover,
-.next-btn:hover {
+.next-btn:hover, .save-btn:hover {
     cursor: pointer;
     transition: transform 120ms;
     transform: scale(1.04);
@@ -726,6 +735,11 @@ font-size: 25px;
 
 
     }
+
+    ::placeholder {
+        color:lightgray;
+      }
+      
 
 
 
