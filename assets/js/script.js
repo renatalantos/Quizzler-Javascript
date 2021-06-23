@@ -1,7 +1,6 @@
 window.onload = startPage;
 
 let fillUsername = document.getElementById('created-name');
-
 let startBtn = document.getElementById('start-btn');
 startBtn.addEventListener("click", startGame);
 let buttonArea = document.getElementById('answer-area');
@@ -419,10 +418,6 @@ function startGame() {
   questionArea.style.visibility = "visible";
 
 
- // function removeRegMsg() {
-  //  regMsg.remove();
-//  }
-
   function removeMainImage() {
     mainImage.remove();
   }
@@ -526,7 +521,7 @@ choices.forEach(choice => {
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
-  
+
 
 }
 
@@ -542,4 +537,7 @@ incrementAllScore = num => {
 
 }
 
-
+const username = document.querySelector('#username');
+const saveBtn = document.querySelector('#save-btn');
+//const username = document.querySelector('#username');
+//const username = document.querySelector('#username');

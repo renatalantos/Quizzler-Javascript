@@ -39,14 +39,11 @@ body {
 
 }
 
-#info,
-#login-form,
-#registration-form {
+#info {
     margin: 10px 0;
 }
 
-#info h3,
-.form-container h3 {
+#info h3 {
     font-family: 'Sniglet', cursive;
     color: #D53E69;
     font-size: 30px;
@@ -64,11 +61,9 @@ hr {
 #number-of-games,
 #number-of-games,
 #user-score,
-#all-score,
-.form-container,
-#reg-msg {
+#all-score {
     text-align: center;
-   
+
 }
 
 
@@ -77,16 +72,8 @@ hr {
 .user-label p,
 #username p,
 #number-of-games p,
-
 #user-score p,
-#all-score p,
-.user-label,
-.password-label,
-.email-label,
-.repeat-password-label,
-.checkbox,
-#reg-msg,
-#guest {
+#all-score p {
     font-family: 'Sniglet', cursive;
     color: teal;
     font-weight: bolder;
@@ -98,36 +85,14 @@ hr {
 
 }
 
-#guest,
-#reg-msg {
-    color: #D53E69;
-
-}
 
 
 
-.form-container p,
-.sign-in-container p {
-    color: #2A0B5B;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-    font-size: 15px;
-    letter-spacing: 0rem;
-    text-align: center;
-    padding: 5px;
 
-}
-
-#username,
-#password,
-#email,
-#repeat-password,
-#username2,
-#password2
- {
+#username {
     height: 30px;
     width: 150px;
-   padding: 5px;
+    padding: 5px;
     font-family: 'Sniglet', cursive;
     color: purple;
     background-color: white;
@@ -138,13 +103,15 @@ hr {
     border: 2px solid #DDE2F3;
 }
 
-
+#username::placeholder {
+    color: lightgray;
+}
 
 .to-fill,
-#to-fill-score, .user-label {
+#to-fill-score {
     height: auto;
     width: auto;
- padding: 5px 30px;
+    padding: 5px 30px;
     font-family: 'Sniglet', cursive;
     color: purple;
     background-color: white;
@@ -160,16 +127,14 @@ hr {
 
 
 
-.save-btn,
-.register-btn {
+#save-btn {
     height: 50px;
-    width: 100px;
+    width: 80px;
     padding: 5px;
     margin: 10px auto auto auto;
     font-family: 'Sniglet', cursive;
     color: white;
     background-color: teal;
-    
     font-size: 20px;
     letter-spacing: 0rem;
     border-radius: 20px;
@@ -179,20 +144,13 @@ hr {
 }
 
 
-.save-btn p,
-.register-btn p {
+#save-btn p {
     color: white;
 }
 
-#errors,
-#password-error {
-    color: red;
-}
 
 
-#form-table1 {
-    visibility: collapse;
-}
+
 
 #info-table {
     visibility: visible;
@@ -225,13 +183,11 @@ hr {
 
 
 #photo-area {
-    height:auto;
+    height: auto;
     width: 100vw;
     margin: 0 auto;
     float: none;
-
     display: block;
-    /*background-color: crimson;*/
     text-align: center;
     overflow: hidden;
 
@@ -239,7 +195,6 @@ hr {
 
 
 #photo {
-
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
@@ -248,15 +203,13 @@ hr {
     height: auto;
     width: 100%;
     position: relative;
-
-
 }
 
 
 
 img {
 
-     border-radius: 5px;
+    border-radius: 5px;
 
 }
 
@@ -309,8 +262,7 @@ img {
 
 
 
-#button-area
-{
+#button-area {
     display: grid;
     grid-gap: 10px;
 
@@ -335,7 +287,8 @@ img {
 
 }
 
-#res-div, #result{
+#res-div,
+#result {
 
     margin: 0 auto;
     justify-content: center;
@@ -346,12 +299,12 @@ img {
 
 #answer-area {
     display: grid;
-  grid-template-columns: 250px 250px;
- /* grid-row: auto auto;*/
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  grid-gap: 10px;
-  margin: 20px auto;
+    grid-template-columns: 250px 250px;
+    /* grid-row: auto auto;*/
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-gap: 10px;
+    margin: 20px auto;
 }
 
 .disabled {
@@ -361,10 +314,11 @@ img {
     animation: fadeIn;
 }
 
-@keyframes fadeIn{
+@keyframes fadeIn {
     0% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 0.5;
     }
@@ -375,7 +329,7 @@ img {
 
 .enabled {
     pointer-events: all;
-    opacity:1;
+    opacity: 1;
 }
 
 .answer-btn {
@@ -399,25 +353,15 @@ img {
 
 .answer-btn:hover,
 .start-btn:hover,
-.next-btn:hover, .save-btn:hover {
+.next-btn:hover,
+#save-btn:hover {
     cursor: pointer;
     transition: transform 120ms;
     transform: scale(1.04);
-    
-    
+
+
 
 }
-
-
-/*.animate {
-    animation: fadeMe 0.5s;
-}*/
-
-
-
-
-
-
 
 
 #right-arrow {
@@ -436,7 +380,7 @@ img {
     -moz-animation: fadeMe 0.5s;
     -o-animation: fadeMe 0.5s;
     -ms-animation: fadeMe 0.5s;
-    
+
 }
 
 @keyframes fadeMe {
@@ -465,7 +409,7 @@ img {
     100% {
         opacity: 0;
     }
-    
+
 }
 
 @-o-keyframes fadeMe {
@@ -500,47 +444,51 @@ img {
 .incorrect {
 
     background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.9));
-   /* transition: transform 60ms;*/
-  animation: fadeMe 0.5s;
+    /* transition: transform 60ms;*/
+    animation: fadeMe 0.5s;
     -webkit-animation: fadeMe 0.5s;
     -moz-animation: fadeMe 0.5s;
     -o-animation: fadeMe 0.5s;
     -ms-animation: fadeMe 0.5s;
-    
-   
+
+
 }
 
 #result {
-font-size: 25px;
-  font-family: 'Sniglet', cursive;
-  display: inline;
+    font-size: 25px;
+    font-family: 'Sniglet', cursive;
+    display: inline;
 }
 
-@media only screen and (min-width:1025px) and (max-width:1200px){
-    #question-area, #question{
+@media screen and (min-width:1025px) and (max-width:1200px) {
+
+    #question-area,
+    #question {
 
         width: 50%;
         height: auto;
         justify-content: center;
-        margin:0 auto;
-      }
+        margin: 0 auto;
+    }
 
 
 }
-@media only screen and (min-width:992px) and (max-width:1024px){
 
-    #question-area, #question{
+@media screen and (min-width:992px) and (max-width:1024px) {
+
+    #question-area,
+    #question {
 
         width: 50%;
         height: auto;
         justify-content: center;
-        margin:0 auto;
-      }
+        margin: 0 auto;
+    }
 
 }
 
 
-@media screen and (min-width:768px) and (max-width:991px) {
+@media screen and (min-width:768px)  and (max-width:991px) {
 
 
 
@@ -560,7 +508,7 @@ font-size: 25px;
 
 
 
-  
+
     #sidebar {
         height: auto;
         width: 50%;
@@ -572,7 +520,7 @@ font-size: 25px;
 
 
     }
-   
+
 
     .answer-btn {
         width: 200px;
@@ -607,53 +555,51 @@ font-size: 25px;
     }
 
 
-    #username,
-    #password,
-    #repeat-password,
-    #username2,
-    #password2,
-    #email {
-
+    #username {
         height: auto;
         width: 150px;
         margin-top: 5px;
-
-
     }
 
 
 
-    .user-label,
-    .password-label,
 
-    .repeat-password-label {
-        margin-right: 8px;
 
-    }
-
-    .email-label {
-        margin-right: -2px;
-    }
-
-    .form-container {
-        padding-right: 20px;
-    }
-
-    #info-table,
-    #form-table1,
-    #form-table2 {
+    #info-table {
         margin: 0 auto;
     }
 
 
- 
+
 }
 
 
 
-@media only screen and (min-width:400px) and (max-width:990px) {
-    
-    question {
+@media screen and (min-width:400px) and (max-width:990px) {
+
+
+    #save-btn {
+        height: 50px;
+        width: 100px;
+        padding: 5px;
+        margin: 10px auto auto auto;
+        font-family: 'Sniglet', cursive;
+        color: white;
+        background-color: teal;
+
+        font-size: 20px;
+        letter-spacing: 0rem;
+        border-radius: 20px;
+        border: 2px solid #DDE2F3;
+        display: block;
+        margin-top: 20px;
+    }
+
+    #save-btn p {
+        color: white;
+    }
+
+    #question {
         padding: 0 10px;
     }
 
@@ -662,8 +608,8 @@ font-size: 25px;
     #photo-area,
     #question-area,
     #game-area,
-    #button-area, 
-    #answer-area{
+    #button-area,
+    #answer-area {
         display: block;
         float: none;
         position: relative;
@@ -672,15 +618,9 @@ font-size: 25px;
     }
 
 
-
-
-
-
-
-
     #sidebar {
         height: auto;
-        width: 50%;
+        width: auto;
         display: block;
         float: none;
         position: relative;
@@ -718,15 +658,13 @@ font-size: 25px;
 
 
     }
-    .answer-text {padding-right:0;}
+
+    .answer-text {
+        padding-right: 0;
+    }
 
 
-    #username,
-    #password,
-    #repeat-password,
-    #username2,
-    #password2,
-    #email {
+    #username {
 
         height: auto;
         width: 150px;
@@ -737,29 +675,11 @@ font-size: 25px;
     }
 
     ::placeholder {
-        color:lightgray;
-      }
-      
-
-
-
-    .user-label,
-    .password-label,
-
-    .repeat-password-label {
-        margin-right: 8px;
-
-    }
-
-    .email-label {
-        margin-right: -2px;
+        color: lightgray;
     }
 
 
-
-    #info-table,
-    #form-table1,
-    #form-table2 {
+    #info-table {
         margin: 0 auto;
     }
 
@@ -769,19 +689,41 @@ font-size: 25px;
         background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
         /*transition: transform 60ms;*/
     }
-    
-    
-    .incorrect  {
-    
+
+
+    .incorrect {
+
         background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
-       /* transition: transform 60ms;*/
+        /* transition: transform 60ms;*/
     }
 
 
 
 }
 
-@media screen and (min-width:280px) and (max-width:767px) {
+@media screen and (min-width:280px) and (max-width:767px){
+
+    #save-btn {
+        height: 50px;
+        width: 100px;
+        padding: 5px;
+        margin: 10px auto auto auto;
+        font-family: 'Sniglet', cursive;
+        color: white;
+        background-color: teal;
+
+        font-size: 20px;
+        letter-spacing: 0rem;
+        border-radius: 20px;
+        border: 2px solid #DDE2F3;
+        display: block;
+        margin-top: 20px;
+    }
+
+    #save-btn p {
+        color: white;
+    }
+
 
 
     #question {
@@ -853,7 +795,7 @@ font-size: 25px;
 
     }
 
-    
+
 
     img {
 
@@ -887,19 +829,19 @@ font-size: 25px;
 
     }
 
-   /* .answer-text {padding-right: 50px;}*/
+    /* .answer-text {padding-right: 50px;}*/
 
     .correct {
 
         background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
         /*transition: transform 60ms;*/
     }
-    
-    
-    .incorrect  {
-    
+
+
+    .incorrect {
+
         background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
-       /* transition: transform 60ms;*/
+        /* transition: transform 60ms;*/
     }
 
 
