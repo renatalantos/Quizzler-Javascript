@@ -152,7 +152,7 @@ hr {
 
 
 
-#info-table {
+#info-container {
     visibility: visible;
 }
 
@@ -287,16 +287,6 @@ img {
 
 }
 
-#res-div,
-#result {
-
-    margin: 0 auto;
-    justify-content: center;
-    display: block;
-}
-
-
-
 #answer-area {
     display: grid;
     grid-template-columns: 250px 250px;
@@ -306,6 +296,29 @@ img {
     grid-gap: 10px;
     margin: 20px auto;
 }
+
+#res-div,
+#result {
+
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+}
+
+#end-table{
+
+    margin:0 auto;
+    height: auto;
+    width: auto;
+    font-family: 'Sniglet', cursive;
+    font-size:16px;
+    color:rgba(6, 53, 20, 1);
+    display: block;
+}
+
+
+
+
 
 .disabled {
     pointer-events: none;
@@ -565,7 +578,7 @@ img {
 
 
 
-    #info-table {
+    #info-container {
         margin: 0 auto;
     }
 
@@ -679,7 +692,7 @@ img {
     }
 
 
-    #info-table {
+    #info-container {
         margin: 0 auto;
     }
 

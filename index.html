@@ -24,41 +24,37 @@
 
 
         <div id="sidebar">
-            <table id="info-table">
-                <tr>
-                    <td>
-                        <div id="info">
-                            <h3>Your information</h3>
-                            <hr>
+            <div id="info-container">
+
+                <div id="info">
+                    <h3>Your information</h3>
+                    <hr>
 
 
-                            <div id="user-name">
-                                <p>Username</p>
-                                <input type="text" id="username" name="username" placeholder="Enter Username" required>
-                            </div>
+                    <div id="user-name">
+                        <p>Username</p>
+                        <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                    </div>
 
-                            <div id="number-of-games">
-                                <p>Number of games played:</p><span class="to-fill" id="to-fill-all-games">0</span>
-                            </div>
-                            <div id="user-score">
-                                <p>Your score in this game:</p><span class="to-fill" id="to-fill-score">0</span>
-                            </div>
-                            <div id="all-score">
-                                <p>Highscore</p><span class="to-fill" id="to-fill-all-score">0</span>
-                            </div>
-                            <button type="submit" id="save-btn">
-                                Save
-                            </button><br>
-
-
-
-                        </div>
+                    <div id="number-of-games">
+                        <p>Number of games played:</p><span class="to-fill" id="to-fill-all-games">0</span>
+                    </div>
+                    <div id="user-score">
+                        <p>Your score in this game:</p><span class="to-fill" id="to-fill-score">0</span>
+                    </div>
+                    <div id="all-score">
+                        <p>Highscore</p><span class="to-fill" id="to-fill-all-score">0</span>
+                    </div>
+                    <button type="submit" id="save-btn">
+                        Save
+                    </button><br>
 
 
-                    </td>
-                </tr>
 
-            </table>
+                </div>
+
+
+            </div>
 
 
         </div>
@@ -132,26 +128,34 @@
                 <p>Start Game</p>
             </div>
 
+            
+
             <div id="answer-area">
-                <div class="answer-btn">
+                <div class="answer-btn" data-number="1">
                     <p class="answer-letter">A</p>
-                    <p class="answer-text" data-number="1"></p>
+                  <p class="answer-text"></p>
                 </div>
 
-                <div class="answer-btn">
+                <div class="answer-btn" data-number="2">
                     <p class="answer-letter">B</p>
-                    <p class="answer-text" data-number="2"></p>
+                    <p class="answer-text"></p>
                 </div>
 
-                <div class="answer-btn">
+                <div class="answer-btn" data-number="3">
                     <p class="answer-letter">C</p>
-                    <p class="answer-text" data-number="3"></p>
+                   <p class="answer-text"></p>
                 </div>
 
-                <div class="answer-btn">
-                    <p class="answer-letter">D</p>
-                    <p class="answer-text" data-number="4"></p>
+                <div class="answer-btn" data-number="4">
+                   <p class="answer-letter">D</p>
+                <p class="answer-text"></p>
                 </div>
+
+
+            </div>
+            <div id="end-table">
+
+                
 
 
             </div>
@@ -159,6 +163,8 @@
             <div id="res-div">
                 <p id="result"></p>
             </div>
+
+            
 
             <div id="next-btn" class="next-btn">
                 <p>Next Question</p><i id="right-arrow" class="fas fa-arrow-right"></i>
