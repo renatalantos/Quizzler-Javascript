@@ -271,7 +271,7 @@ img {
 
 
 .start-btn,
-.next-btn {
+.next-btn, #restart-btn {
     display: block;
     padding: 20px;
     margin: 20px auto;

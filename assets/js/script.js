@@ -1,42 +1,3 @@
-window.onload = startPage;
-
-let fillUsername = document.getElementById('created-name');
-let startBtn = document.getElementById('start-btn');
-startBtn.addEventListener('click', startGame);
-let buttonArea = document.getElementById('answer-area');
-let nextBtn = document.getElementById('next-btn');
-nextBtn.addEventListener('click', nextPage);
-
-
-let questionArea = document.getElementById('question');
-let readyQuestion = document.getElementById('ready')
-let infoTable = document.getElementById('info-table');
-let mainImage = document.getElementById('main-image');
-
-
-
-const question = document.querySelector('#question');
-const choices = Array.from(document.querySelectorAll('.answer-btn'));
-const scoreText = document.querySelector('#to-fill-score');
-const photoArea = document.querySelector('#photo');
-const numberOfGames = document.querySelector('#to-fill-all-games');
-const allScore = document.querySelector('#to-fill-all-score');
-const result = document.querySelector('#result');
-
-
-
-let currentQuestion = {}
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-const score_points = 100;
-const max_questions = 5;
-let number_of_games = 0;
-let score_in_all_games = 1;
-
-
-
 let questions = [
 
   {
@@ -389,11 +350,59 @@ let questions = [
 
 ]
 
+window.onload = startPage;
+
+let fillUsername = document.getElementById('created-name');
+let startBtn = document.getElementById('start-btn');
+startBtn.addEventListener('click', startGame);
+let buttonArea = document.getElementById('answer-area');
+let nextBtn = document.getElementById('next-btn');
+nextBtn.addEventListener('click', nextPage);
+let allButtons = document.querySelector('#button-area')
+
+
+
+let questionArea = document.getElementById('question');
+let readyQuestion = document.getElementById('ready')
+let infoTable = document.getElementById('info-table');
+let mainImage = document.getElementById('main-image');
+
+
+
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.answer-btn'));
+const scoreText = document.querySelector('#to-fill-score');
+const photoArea = document.querySelector('#photo');
+const numberOfGames = document.querySelector('#to-fill-all-games');
+const allScore = document.querySelector('#to-fill-all-score');
+const result = document.querySelector('#result');
+const endTable = document.getElementById('end-table');
+
+
+let currentQuestion = {}
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+const score_points = 100;
+const max_questions = 15;
+let number_of_games = 0;
+let score_in_all_games = 1;
+
+
 function startPage() {
   startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
   buttonArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
+  questionCounter = 0;
+  score = 0;
+  photoArea.append(mainImage);
+  endTable.style.visibility="hidden";
+  startBtn.innerText="Start"
+
+
+
 }
 
 function nextPage() {
@@ -407,6 +416,8 @@ function nextPage() {
     acceptingAnswers = true;
   }
 }
+
+
 
 function removeMainImage() {
   mainImage.remove();
@@ -423,21 +434,23 @@ function removeStartBtn() {
 }
 
 function startGame() {
+
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
   nextBtn.style.visibility = "visible";
+
+
   questionArea.style.visibility = "visible";
-  startBtn.style.visibility ="hidden"
+
 
   console.log('Game started')
+  removeMainImage();
 
-  removeMainImage();
-  removeMainImage();
   removeReadyQuestion();
   removeStartBtn();
-  nextPage()
-
+  nextPage();
 }
+
 
 
 
@@ -448,11 +461,18 @@ getNewQuestion = () => {
 
   if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
     localStorage.setItem('mostRecentScore', score);
-    return window.location.assign('/end.html')
-    endGame();
+    // return window.location.assign('/end.html')
 
     /* numberOfGames.innerText = ('The End!');*/
-    
+    //let restartBtn=document.querySelector('#restart-btn')
+
+  
+
+    //startBtn.style.visibility = "visible";
+    endGame();
+    endTable.style.visibility="visible";
+    startBtn.innerText = "Restart";
+
 
   } else {
 
@@ -461,6 +481,7 @@ getNewQuestion = () => {
     currentQuestion = currentImage = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
+
 
 
     photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
@@ -540,55 +561,79 @@ incrementAllScore = num => {
 }
 
 
-let allButtons =document.querySelector('#button-area')
-
 
 
 
 function endGame() {
+ 
+  startBtn.remove()
+  photoArea.remove();
+  questionArea.remove();
+  buttonArea.remove();
+  nextBtn.remove();
+  console.log(questionCounter)
+  allButtons.prepend(startBtn)
+  startBtn.style.visibility = "visible";
+  allButtons.append(displayResults)
+  console.log('restart game')
+
+
   
-   buttonArea.remove()
-    
-    questionArea.remove();
-    photoArea.remove();
-    nextBtn.remove();
-    allButtons.prepend(startBtn);
-    console.log(questionCounter)
-    
-    
-    startBtn.style.visibility="visible";
-
-    
-    
-
-    console.log('restart game')
-    
-    
-    
-  let displayResults = document.querySelector('#end-table')
-  let numberOfQuestions = score / 100;
-  if (numberOfQuestions <= 5) {
-
-    displayResults.innerText = `Hello ${username}, thanks for playing. Well done! You got ${numberOfQuestions} questions right. Play again for en even better result!`;
-
-  } else if  ((numberOfQuestions >5 ) && (numberOfQuestions <= 10)) {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`
-
-
-  } else if ((numberOfQuestions > 10) &&(10 < numberOfQuestions <= 14)) {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`
-  } else {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`
 
   }
 
+  const displayResults = document.querySelector('#end-table')
+    let numberOfQuestions = score / 100;
+  if (numberOfQuestions <= 5) {
 
+   displayResults.innerText = `Hello *${username}, thanks for playing. Well done! You got ${numberOfQuestions} questions right. Play again for en even better result!`;
+
+  } else if ((numberOfQuestions > 5) && (numberOfQuestions <= 10)) {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`
+
+
+  } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions <= 14)) {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`
+  } else {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`}
+    allButtons.prepend(startBtn);
+    
+    startBtn.addEventListener('click', restartPage)
+
+
+
+function restartPage() {
+
+  // allButtons.append(startBtn);
+  //restartBtn.remove();
+  //removeStartBtn();
+  startBtn.addEventListener('click', removeStartBtn())
+  let photoArea2 = document.querySelector('#photo-area')
+  //photoArea2.append(photoArea)
+  //readyQuestion.style.visibility = "visible";
+  if (questionCounter = 0) {
+    photoArea2.append(mainImage)
+  } else {
+    photoArea2.append(photoArea)
+  };
+  let questionArea2 = document.querySelector('#question-area')
+  questionArea2.append(questionArea);
+  //buttonArea = document.querySelector('#answer-area')
+  allButtons.append(buttonArea);
+  const resDiv = document.querySelector('#res-div')
+  allButtons.append(resDiv)
+  nextBtn.style.visibility = "visible";
+  allButtons.append(nextBtn);
+  
+  endTable.remove();
+  startPage();
+  startGame();
 
 }
+
 
 
 //const username = document.querySelector('#username');
 //const saveBtn = document.querySelector('#save-btn');
 //const username = document.querySelector('#username');
 //const username = document.querySelector('#username');
-
