@@ -2,11 +2,10 @@ window.onload = startPage;
 
 let fillUsername = document.getElementById('created-name');
 let startBtn = document.getElementById('start-btn');
-startBtn.addEventListener("click", startGame);
+startBtn.addEventListener('click', startGame);
 let buttonArea = document.getElementById('answer-area');
 let nextBtn = document.getElementById('next-btn');
 nextBtn.addEventListener('click', nextPage);
-
 
 
 let questionArea = document.getElementById('question');
@@ -25,13 +24,14 @@ const allScore = document.querySelector('#to-fill-all-score');
 const result = document.querySelector('#result');
 
 
+
 let currentQuestion = {}
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
-const max_questions = 15;
+const max_questions = 5;
 let number_of_games = 0;
 let score_in_all_games = 1;
 
@@ -408,42 +408,38 @@ function nextPage() {
   }
 }
 
+function removeMainImage() {
+  mainImage.remove();
+}
 
+function removeReadyQuestion() {
+  readyQuestion.remove();
+
+}
+
+function removeStartBtn() {
+
+  startBtn.remove();
+}
 
 function startGame() {
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
-  //startBtn.style.visibility = "hidden";
   nextBtn.style.visibility = "visible";
   questionArea.style.visibility = "visible";
+  startBtn.style.visibility ="hidden"
 
-
-  function removeMainImage() {
-    mainImage.remove();
-  }
-
-  function removeReadyQuestion() {
-    readyQuestion.remove();
-
-  }
-
-  function removeStartBtn() {
-
-    startBtn.remove();
-  }
-
-  
+  console.log('Game started')
 
   removeMainImage();
-  // removeRegMsg();
   removeMainImage();
   removeReadyQuestion();
   removeStartBtn();
-  nextPage();
+  nextPage()
 
 }
 
-//Problems start here
+
 
 //questionCounter++;
 availableQuestions = availableImages = [...questions];
@@ -452,11 +448,11 @@ getNewQuestion = () => {
 
   if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
     localStorage.setItem('mostRecentScore', score);
-    //return window.location.assign('/end.html')
+    return window.location.assign('/end.html')
     endGame();
 
     /* numberOfGames.innerText = ('The End!');*/
-    buttonArea.style.visibility = "hidden"
+    
 
   } else {
 
@@ -544,13 +540,31 @@ incrementAllScore = num => {
 }
 
 
+let allButtons =document.querySelector('#button-area')
+
+
+
+
 function endGame() {
   
+   buttonArea.remove()
+    
+    questionArea.remove();
+    photoArea.remove();
+    nextBtn.remove();
+    allButtons.prepend(startBtn);
+    console.log(questionCounter)
+    
+    
+    startBtn.style.visibility="visible";
 
-    buttonArea.remove();
+    
+    
 
-  
-
+    console.log('restart game')
+    
+    
+    
   let displayResults = document.querySelector('#end-table')
   let numberOfQuestions = score / 100;
   if (numberOfQuestions <= 5) {
@@ -573,7 +587,8 @@ function endGame() {
 }
 
 
-const username = document.querySelector('#username');
-const saveBtn = document.querySelector('#save-btn');
+//const username = document.querySelector('#username');
+//const saveBtn = document.querySelector('#save-btn');
 //const username = document.querySelector('#username');
 //const username = document.querySelector('#username');
+
