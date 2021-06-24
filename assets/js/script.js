@@ -385,7 +385,7 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 const score_points = 100;
-const max_questions = 15;
+const max_questions = 5;
 let number_of_games = 0;
 let score_in_all_games = 1;
 
@@ -400,6 +400,7 @@ function startPage() {
   photoArea.append(mainImage);
   endTable.style.visibility="hidden";
   startBtn.innerText="Start"
+  
 
 
 
@@ -438,17 +439,14 @@ function startGame() {
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
   nextBtn.style.visibility = "visible";
-
-
   questionArea.style.visibility = "visible";
-
-
   console.log('Game started')
   removeMainImage();
-
   removeReadyQuestion();
   removeStartBtn();
   nextPage();
+  endTable.remove();
+
 }
 
 
@@ -459,19 +457,21 @@ availableQuestions = availableImages = [...questions];
 
 getNewQuestion = () => {
 
-  if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) {
+  if ((availableQuestions.length === 0) || (questionCounter > max_questions)) { //took out = here
     localStorage.setItem('mostRecentScore', score);
     // return window.location.assign('/end.html')
 
-    /* numberOfGames.innerText = ('The End!');*/
+     numberOfGames.innerText = ('The End!');
     //let restartBtn=document.querySelector('#restart-btn')
 
   
 
     //startBtn.style.visibility = "visible";
-    endGame();
+    startBtn.addEventListener('click', restartPage)
     endTable.style.visibility="visible";
     startBtn.innerText = "Restart";
+    endGame();
+    
 
 
   } else {
@@ -578,27 +578,26 @@ function endGame() {
   console.log('restart game')
 
 
-  
-
   }
 
   const displayResults = document.querySelector('#end-table')
-    let numberOfQuestions = score / 100;
-  if (numberOfQuestions <= 5) {
+  let numberOfQuestions = score / 100;
+  if (numberOfQuestions <= 6) {
 
    displayResults.innerText = `Hello *${username}, thanks for playing. Well done! You got ${numberOfQuestions} questions right. Play again for en even better result!`;
 
-  } else if ((numberOfQuestions > 5) && (numberOfQuestions <= 10)) {
+  } else if ((numberOfQuestions > 6) && (numberOfQuestions <= 10)) {
     displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`
 
-
-  } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions <= 14)) {
+  } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
     displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`
-  } else {
+  } else 
+  {
     displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`}
     allButtons.prepend(startBtn);
     
-    startBtn.addEventListener('click', restartPage)
+    
+    
 
 
 
@@ -609,13 +608,14 @@ function restartPage() {
   //removeStartBtn();
   startBtn.addEventListener('click', removeStartBtn())
   let photoArea2 = document.querySelector('#photo-area')
-  //photoArea2.append(photoArea)
+  photoArea2.append(photoArea)
   //readyQuestion.style.visibility = "visible";
-  if (questionCounter = 0) {
+  /*if (questionCounter = 0) {
     photoArea2.append(mainImage)
   } else {
     photoArea2.append(photoArea)
-  };
+  }*/
+  questionCounter=0;
   let questionArea2 = document.querySelector('#question-area')
   questionArea2.append(questionArea);
   //buttonArea = document.querySelector('#answer-area')
@@ -625,8 +625,8 @@ function restartPage() {
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
   
-  endTable.remove();
-  startPage();
+  //endTable.remove();
+  //startPage();
   startGame();
 
 }
