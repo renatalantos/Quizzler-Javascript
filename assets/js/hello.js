@@ -35,7 +35,7 @@
   
   // The below constants define the score points and number of questions that won't change during the game.
   const score_points = 100;
-  const max_questions = 10;
+  const max_questions = 15;
 
   const questions = [
 
@@ -433,6 +433,7 @@
   }
   
   function startGame() {
+    availableQuestions = availableImages = [...questions];
     photoArea.style.visibility = "visible";
     buttonArea.style.visibility = "visible";
     nextBtn.style.visibility = "visible";
@@ -443,15 +444,18 @@
     removeStartBtn();
     nextPage();
     endTable.remove();
+
   }
   
   
   //questionCounter++;
-  availableQuestions = availableImages = [...questions];
+  
   
   getNewQuestion = () => {
-  
-    if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) { 
+  console.log(questionCounter, max_questions, availableQuestions.length, 'test1')
+    if (questionCounter > max_questions) { 
+
+      console.log(questionCounter, max_questions, availableQuestions.length, 'should end now')
       localStorage.setItem('mostRecentScore', score);
       // return window.location.assign('/end.html')
   
@@ -566,10 +570,10 @@
       allButtons.prepend(startBtn);
   
   function restartPage() {
-  
+    availableQuestions = availableImages = [...questions];
     startBtn.addEventListener('click', removeStartBtn()) 
     photoContainer.append(photoArea)
-    questionCounter = 0;
+    questionCounter = 1;
     questionContainer.append(actualQuestion);
     allButtons.append(buttonArea);
     const resDiv = document.querySelector('#res-div')

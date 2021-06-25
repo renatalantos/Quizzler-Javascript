@@ -1,18 +1,57 @@
+// On window onload, a start page with a specific content and design will display by calling the startPage() function.
+window.onload = startPage;
+// These constants define the immediate content on the main page and during and after the game
+const infoTable = document.querySelector('#info-table');
+const fillUsername = document.querySelector('#username');
+const numberOfGames = document.querySelector('#to-fill-all-games');
+const scoreText = document.querySelector('#to-fill-score');
+const allScore = document.querySelector('#to-fill-all-score');
+const photoContainer = document.querySelector('#photo-area');
+const mainImage = document.querySelector('#main-image');
+const photoArea = document.querySelector('#photo');
+const questionContainer = document.querySelector('#question-area');
+//const question = document.querySelector('#question');
+const readyQuestion = document.querySelector('#ready');
+const actualQuestion = document.querySelector('#question');
+const startBtn = document.querySelector('#start-btn');
+startBtn.addEventListener('click', startGame);
+const buttonArea = document.querySelector('#answer-area');
+const selections = Array.from(document.querySelectorAll('.answer-btn'));
+const nextBtn = document.querySelector('#next-btn');
+nextBtn.addEventListener('click', nextPage);
+const allButtons = document.querySelector('#button-area');
+const result = document.querySelector('#result');
+const endTable = document.querySelector('#end-table');
+
+/*The below variables define question, counter, score, number of games before the game starts. 
+They are either empty or null as their content/value will be added to/incremented during the game.*/
+let currentQuestion = {}
+let userAnswer = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+let number_of_games = 0;
+let score_in_all_games = 0;
+
+// The below constants define the score points and number of questions that won't change during the game.
+const score_points = 100;
+const max_questions = 5;
+
 const questions = [
 
   {
 
     url: './assets/images/alhambra.jpg',
     question: 'Where is the Alhambra, famous for its Moorish architecture?',
-    answers: [
-    {text: 'A' + '\xa0\xa0\xa0\xa0' + 'Granada, Spain', correct: true},
-    {text: 'B' + '\xa0\xa0\xa0\xa0' + 'Rabat, Morocco', correct: false},
-    {text: 'C' + '\xa0\xa0\xa0\xa0' + 'Tunis, Tunisia', correct: false},
-    {text: 'D' + '\xa0\xa0\xa0\xa0' + 'Istanbul, Turkey', correct: false}
-  ]
-  }
-]
- /* [{
+
+    selection1: 'A' + '\xa0\xa0\xa0\xa0' + 'Granada, Spain',
+    selection2: 'B' + '\xa0\xa0\xa0\xa0' + 'Rabat, Morocco',
+    selection3: 'C' + '\xa0\xa0\xa0\xa0' + 'Tunis, Tunisia',
+    selection4: 'D' + '\xa0\xa0\xa0\xa0' + 'Istanbul, Turkey',
+    answer: 1,
+  },
+
+  {
     url: './assets/images/dali.jpg',
     question: 'What is the name of the art trend that Salvador Dali is a representant of?',
 
@@ -346,50 +385,7 @@ const questions = [
   },
 
 
-]*/
-
-// On window onload, a start page with a specific content and design will display by calling the startPage() function.
-window.onload = startPage;
-// These constants define the immediate content on the main page and during and after the game
-/*const infoTable = document.querySelector('#info-table');
-const fillUsername = document.querySelector('#username');
-const numberOfGames = document.querySelector('#to-fill-all-games');
-const scoreText = document.querySelector('#to-fill-score');
-const allScore = document.querySelector('#to-fill-all-score');
-const photoContainer = document.querySelector('#photo-area');*/
-const mainImage = document.querySelector('#main-image');
-const photoArea = document.querySelector('#photo');
-//const questionContainer = document.querySelector('#question-area');
-//const question = document.querySelector('#question');
-const readyQuestion = document.querySelector('#ready');
-const actualQuestion = document.querySelector('#question');
-const startBtn = document.querySelector('#start-btn');
-startBtn.addEventListener('click', startGame);
-const buttonArea = document.querySelector('#answer-area');
-const answerBtn = document.querySelectorAll('.answer-text');
-const nextBtn = document.querySelector('#next-btn');
-nextBtn.addEventListener('click', setNextQuestion);
-//const allButtons = document.querySelector('#button-area');
-//const result = document.querySelector('#result');
-const endTable = document.querySelector('#end-table');
-let shuffledQuestions
-let currentQuestionIndex
-
-/*The below variables define question, counter, score, number of games before the game starts. 
-They are either empty or null as their content/value will be added to/incremented during the game.*/
-/*let currentQuestion = {}
-let userAnswer = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-let number_of_games = 0;
-let score_in_all_games = 0;*/
-
-// The below constants define the score points and number of questions that won't change during the game.
-//const score_points = 100;
-//onst max_questions = 10;
-
-
+]
 
 /* The below functions determine what elements are present on a page and how these elements behave before, 
 during, after and at restart of the game.*/
@@ -398,60 +394,209 @@ during, after and at restart of the game.*/
 As the game is designed to be all on one page, certain elements will need to be removed/appended/hidden/made visible during the game
 for space saving purposes. You will see this pattern in most functions. The startPage() function sets questionCounter and score to 0*/
 
-function startPage(){
-
-  startBtn.classList.remove('hide')
+  function startPage() {
+  startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
-  buttonArea.style.visibility = "hidden";
+  buttonArea.style.visibility="hidden"
   readyQuestion.style.visibility = "visible";
+  score = 0;
   photoArea.append(mainImage);
-  endTable.style.visibility="hidden";
+  
   startBtn.innerText="Start"
 }
 
-function startGame(){
-
-  photoArea.style.visibility = "visible";
-  buttonArea.style.visibility = "visible";
+function nextPage() {
   nextBtn.style.visibility = "visible";
   actualQuestion.style.visibility = "visible";
-  console.log('startGame()')
+  if (userAnswer === false) {
+    buttonArea.classList.toggle("disabled");
+      
+  }userAnswer = true;
+  questionCounter++;
+  getNewQuestion();
+  console.log(questionCounter)
+}
+
+
+
+function removeMainImage() {
   mainImage.remove();
+}
+
+function removeReadyQuestion() {
   readyQuestion.remove();
+
+}
+
+function removeStartBtn() {
+
+  startBtn.remove();
+}
+
+function startGame() {
+    startBtn.addEventListener('click', startGame);
+  photoArea.classList.remove('hide')
+  buttonArea.style.visibility="visible"
+  nextBtn.classList.remove('hide')
+  actualQuestion.classList.remove('hide')
+  console.log('startGame()')
+  mainImage.classList.add('hide')
+  readyQuestion.classList.add('hide')
   startBtn.classList.add('hide')
-  
-  endTable.remove();
-  shuffledQuestions = questions.sort(()=> Math.random() - .5)
-  currentQuestionIndex=0;
-
-
-
-  setNextQuestion()
+  //nextPage();
+  getNewQuestion();
+  endTable
+ questionCounter=0;
+  console.log(questionCounter)
 }
 
 
+//questionCounter++;
+availableQuestions = availableImages = [...questions];
 
-function setNextQuestion(){
-
-  showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-function showQuestion(question){
+getNewQuestion = () => {
  
-  actualQuestion.innerText= question.question
 
-  question.answers.forEach(answer => {
-    const answerBtn = document.querySelectorAll('.answer-text');
-    answerBtn.innerText = answer.text
+  if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) { 
+    localStorage.setItem('mostRecentScore', score);
+    // return window.location.assign('/end.html')
+
+    numberOfGames.innerText = ('The End!');
+  // startBtn.addEventListener('click', nextPage)
+    
+    endTable.classList.remove('hide');
+    startBtn.classList.remove('hide');
+    
+    allButtons.classList.add('hide')
+    //nextBtn.classList.add('hide')
+    startBtn.innerText = "Restart";
+    mainImage.classList.add('hide')
+    questionContainer.classList.add('hide')
+   
+   
+   console.log(questionCounter)
+    
+  } else {
+
+    const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = currentImage = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+    let image = availableImages[imageIndex].url;
+
+    photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
+
+    selections.forEach(selection => {
+      const number = selection.dataset['number'];
+      selection.innerText = currentQuestion['selection' + number];
+
+    })
+    availableQuestions.splice(questionsIndex, 1);
+    // userAnswer = true;
+
+  }
+
 }
-  
-  )
 
 
+
+selections.forEach(selection => {
+  selection.addEventListener('click', e => {
+    if (!userAnswer) return
+
+    userAnswer = false;
+    const selectedselection = e.target;
+    const selectedAnswer = selectedselection.dataset['number'];
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+    if (classToApply === 'correct') {
+      incrementScore(score_points)
+      result.innerHTML = `Correct! +${score_points} points!`
+      result.style.color = "green";
+
+
+    } else {
+      result.innerHTML = "Incorrect! 0 points"
+      result.style.color = "red";
+    }
+
+    selectedselection.classList.add(classToApply);
+
+    setTimeout(() => {
+      console.log(userAnswer)
+      selectedselection.classList.remove(classToApply)
+      const resDiv = document.querySelector('#res-div')
+      resDiv.append(result.innerText = "")
+      // console.log('set timeout')
+      buttonArea.classList.toggle("disabled")
+    }, 900)
+  })
+
+})
+
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
 }
 
+incrementNumberOfGames = num => {
+  number_of_games += num;
+  numberOfGames.innerText = number_of_games;
+}
 
-function selectAnswer(){}
+incrementAllScore = num => {
+  score += score_in_all_games = num;
+  allScore.innerText = score_in_all_games;
+}
+
+/*function endGame() {
+  startBtn.remove()
+  photoArea.remove();
+  actualQuestion.remove();
+  buttonArea.remove();
+  nextBtn.remove();
+  console.log(questionCounter)
+  allButtons.prepend(startBtn)
+  startBtn.style.visibility = "visible";
+  allButtons.append(displayResults)
+  console.log('endGame() function')
+  startBtn.addEventListener('click', restartPage)
+ }*/
+
+  const displayResults = document.querySelector('#end-table')
+  let numberOfQuestions = score / 100;
+  if (numberOfQuestions <= 6) {
+
+   displayResults.innerText = `Hello *${username}, thanks for playing. Well done! You got ${numberOfQuestions} questions right. Play again for en even better result!`;
+
+  } else if ((numberOfQuestions > 6) && (numberOfQuestions <= 10)) {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`
+
+  } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`
+  } else 
+  {
+    displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`}
+   
+   
+    allButtons.prepend(startBtn);
+
+/*function restartPage() {
+
+  startBtn.addEventListener('click', removeStartBtn()) 
+  photoContainer.append(photoArea)
+  questionCounter = 0;
+  questionContainer.append(actualQuestion);
+  allButtons.append(buttonArea);
+  const resDiv = document.querySelector('#res-div')
+  allButtons.append(resDiv)
+  nextBtn.style.visibility = "visible";
+  allButtons.append(nextBtn);
+  console.log('restartPage() function')
+
+}*/
 
 
 
+//const username = document.querySelector('#username');
+//const saveBtn = document.querySelector('#save-btn');
+//const username = document.querySelector('#username');
+//const username = document.querySelector('#username');
