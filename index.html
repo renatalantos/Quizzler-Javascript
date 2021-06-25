@@ -71,7 +71,7 @@
 
     <section id="photo-area">
 
-        <img id="main-image" class="slide" src="./assets/images/paints.jpg" alt="colourful paints">
+        <img id="main-image" src="./assets/images/paints.jpg" alt="colourful paints">
 
         <div id="photo"></div>
 
@@ -121,19 +121,18 @@
     <section id="game-area">
 
         <h1></h1>
-        <div id="button-area">
-            
-                
-                <div id="start-btn" class="start-btn">
-                <p>Start Game</p>
-            </div>
 
-            
+        <div id="start-btn" class="start-btn hide">
+            <p>Start Game</p>
+        </div>
+
+
+        <div id="button-area">
 
             <div id="answer-area">
                 <div class="answer-btn" data-number="1">
                     <p class="answer-letter">A</p>
-                  <p class="answer-text"></p>
+                    <p class="answer-text"></p>
                 </div>
 
                 <div class="answer-btn" data-number="2">
@@ -143,40 +142,46 @@
 
                 <div class="answer-btn" data-number="3">
                     <p class="answer-letter">C</p>
-                   <p class="answer-text"></p>
+                    <p class="answer-text"></p>
                 </div>
 
                 <div class="answer-btn" data-number="4">
-                   <p class="answer-letter">D</p>
-                <p class="answer-text"></p>
+                    <p class="answer-letter">D</p>
+                    <p class="answer-text"></p>
                 </div>
-
-
-            </div>
-            <div id="end-table">
-
-                
-
-
-            </div>
-
-            <div id="res-div">
-                <p id="result"></p>
-            </div>
-
-            
-
-            <div id="next-btn" class="next-btn">
-                <p>Next Question</p><i id="right-arrow" class="fas fa-arrow-right"></i>
             </div>
 
 
 
+        </div>
+
+
+        <div id="end-table">
 
 
 
 
         </div>
+
+        <div id="res-div">
+            <p id="result"></p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="next-btn" class="next-btn">
+            <p>Next Question</p><i id="right-arrow" class="fas fa-arrow-right"></i>
+        </div>
+
     </section>
 
 
@@ -184,7 +189,7 @@
 
 
 
-    <script src="assets/js/script.js">
+    <script src="assets/js/form.js">
 
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js"

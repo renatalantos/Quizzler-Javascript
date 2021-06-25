@@ -262,13 +262,13 @@ img {
 
 
 
+
+
 #button-area {
     display: grid;
     grid-gap: 10px;
 
 }
-
-
 
 .start-btn,
 .next-btn, #restart-btn {
@@ -284,6 +284,7 @@ img {
     background: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
     color: white;
     white-space: nowrap;
+    
 
 }
 
@@ -472,6 +473,10 @@ img {
     font-family: 'Sniglet', cursive;
     display: inline;
 }
+
+
+.hide {display:none}
+
 
 @media screen and (min-width:1025px) and (max-width:1200px) {
 
