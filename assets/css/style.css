@@ -218,6 +218,7 @@ img {
 }
 
 #question-area {
+    
     height: 50px;
     width: 100vw;
     margin: auto;
@@ -314,16 +315,18 @@ img {
 #end-table{
 
     margin:0 auto;
-    height: auto;
+    height: 300px;
     width: 300px;
     font-family: 'Sniglet', cursive;
-    font-size:16px;
+    font-size: 30px;
     color:rgba(6, 53, 20, 1);
+    text-align: justify;
     display: block;
+    padding: 15px;
+    border-radius:10px;
+
+  background-color: pink;
 }
-
-
-
 
 
 .disabled {
