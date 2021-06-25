@@ -13,7 +13,8 @@
 
 
 body {
-    background-color: #FFFADE;
+    /*background-color: #FFFADE;*/
+    background-color: rgb(255, 227, 217);
 
 }
 
@@ -171,15 +172,17 @@ hr {
 
 }
 
-#quiz-title {
+#quiz-title{
     /*color:#8A88E4;*/
     /* text-transform: uppercase;*/
     letter-spacing: 2px;
     font-family: 'Nanum Brush Script', cursive;
     font-size: 50px;
     color: #2A0B5B;
-
 }
+
+
+
 
 
 #photo-area {
@@ -203,12 +206,13 @@ hr {
     height: auto;
     width: 100%;
     position: relative;
+    margin:20px 0 20px;
 }
 
 
 
 img {
-
+    
     border-radius: 5px;
 
 }
@@ -227,7 +231,7 @@ img {
 #title {
     font-size: 50px;
     color: #D53E69;
-    margin-bottom: 20px;
+   margin-bottom: 20px;
 
 }
 
@@ -244,11 +248,12 @@ img {
 #ready {
     color: #D53E69;
     font-family: 'Nanum Brush Script', cursive;
-    font-size: 50px;
+    font-size: 40px;
     margin: 20px;
     display: block;
-
 }
+
+
 
 #question {
     overflow: hidden;

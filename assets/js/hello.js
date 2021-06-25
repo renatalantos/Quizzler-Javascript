@@ -22,6 +22,8 @@
   const allButtons = document.querySelector('#button-area');
   const result = document.querySelector('#result');
   const endTable = document.querySelector('#end-table');
+ const titleArea = document.querySelector('#title-area');
+  const wrapAround = document.querySelector('#wrap-around');
   
   /*The below variables define question, counter, score, number of games before the game starts. 
   They are either empty or null as their content/value will be added to/incremented during the game.*/
@@ -403,6 +405,7 @@
     photoArea.append(mainImage);
     endTable.style.visibility="hidden";
     startBtn.innerText="Start"
+    
   }
   
   function nextPage() {
@@ -440,10 +443,12 @@
     actualQuestion.style.visibility = "visible";
     console.log('startGame()')
     removeMainImage();
-    removeReadyQuestion();
+   
     removeStartBtn();
     nextPage();
     endTable.remove();
+    titleArea.remove();
+    readyQuestion.remove();
 
   }
   
@@ -464,6 +469,7 @@
       
       endTable.style.visibility="visible";
       startBtn.innerText = "Restart";
+      
       endGame();
       
     } else {
@@ -540,9 +546,13 @@
   function endGame() {
     startBtn.remove()
     photoArea.remove();
+    questionContainer.append(readyQuestion)
+    readyQuestion.innerText="Good job! Play again!"
+    readyQuestion.style.color="purple"
     actualQuestion.remove();
     buttonArea.remove();
     nextBtn.remove();
+    wrapAround.append(titleArea)
     console.log(questionCounter)
     allButtons.prepend(startBtn)
     startBtn.style.visibility = "visible";
@@ -572,7 +582,8 @@
   function restartPage() {
     availableQuestions = availableImages = [...questions];
     startBtn.addEventListener('click', removeStartBtn()) 
-    photoContainer.append(photoArea)
+    photoContainer.prepend(photoArea)
+    
     questionCounter = 1;
     questionContainer.append(actualQuestion);
     allButtons.append(buttonArea);
