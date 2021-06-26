@@ -417,7 +417,7 @@ function nextPage() {
   userAnswer = true;
   questionCounter++;
   getNewQuestion();
-  
+
 }
 
 
@@ -437,18 +437,18 @@ function removeStartBtn() {
 }
 
 function startGame() {
-  
+
   availableQuestions = availableImages = [...questions];
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
   nextBtn.style.visibility = "visible";
   actualQuestion.style.visibility = "visible";
-  console.log('startGame()')
+ 
   removeMainImage();
   removeStartBtn();
   nextPage();
   endTable.remove();
-  titleArea.remove();
+
   readyQuestion.remove();
 
 }
@@ -458,16 +458,15 @@ function startGame() {
 
 
 getNewQuestion = () => {
-  console.log(questionCounter, max_questions, availableQuestions.length, 'test1')
+  
   if (questionCounter > max_questions) {
 
-    console.log(questionCounter, max_questions, availableQuestions.length, 'should end now')
+    
     localStorage.setItem('mostRecentScore', score);
     // return window.location.assign('/end.html')
+    allButtons.prepend(startBtn);
 
     numberOfGames.innerText = ('The End!');
-    
-
 
     // startBtn.addEventListener('click', restartPage)
 
@@ -515,6 +514,7 @@ selections.forEach(selection => {
       result.style.color = "green";
 
 
+
     } else {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
@@ -523,11 +523,11 @@ selections.forEach(selection => {
     selectedselection.classList.add(classToApply);
 
     setTimeout(() => {
-      console.log(userAnswer)
+      
       selectedselection.classList.remove(classToApply)
       const resDiv = document.querySelector('#res-div')
       resDiv.append(result.innerText = "")
-      // console.log('set timeout')
+      
       buttonArea.classList.toggle("disabled")
     }, 900)
   })
@@ -547,7 +547,7 @@ incrementAllScore = num => {
 }
 
 function endGame() {
-  
+
   startBtn.remove()
   photoArea.remove();
   questionContainer.append(readyQuestion)
@@ -556,12 +556,12 @@ function endGame() {
   actualQuestion.remove();
   buttonArea.remove();
   nextBtn.remove();
-  wrapAround.append(titleArea)
-  console.log(questionCounter)
+
+  
   allButtons.prepend(startBtn)
   startBtn.style.visibility = "visible";
   allButtons.append(displayResults)
-  console.log('endGame() function')
+
   startBtn.addEventListener('click', restartPage)
 }
 
@@ -571,47 +571,80 @@ function endGame() {
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
+ 
 }
 
+/*function incrementScore(num) {
+  score += num;
+  scoreText.innerText = score;
+  
+}*/
 const displayResults = document.querySelector('#end-table');
-let numberOfQuestions = score / 100;
-let username = document.querySelector('#username').value;
-let info = document.querySelector('#info');
-info.addEventListener('submit', handleSubmit)
-const saveBtn = document.querySelector('#save-btn');
-saveBtn.addEventListener('submit', handleSubmit)
 
-
-
-function handleSubmit(event){
-  event.preventDefault();
+function incrementScore(){
+  score++;
+  scoreText.innerText=score;
+}
   let username = document.querySelector('#username').value;
-  //username.innerText= username;
-  info.submit();
+  let finalScore= score;
+  //let hello = parseInt(finalScore);
+  let info = document.querySelector('#info');
+  info.addEventListener('submit', handleSubmit)
+  //const saveBtn = document.querySelector('#save-btn');
+  //saveBtn.addEventListener('submit', handleSubmit)
+  let numberOfQuestions = finalScore / 100;
 
-if (numberOfQuestions == 0) 
 
-  {displayResults.innerText = `Hello ${username}, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
 
-} else if ((numberOfQuestions > 0) && (numberOfQuestions <= 6)) {
-  displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`;
 
-} else if ((numberOfQuestions > 6) && (numberOfQuestions <= 10)) {
-  displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`;
+  function handleSubmit(event) {
+    event.preventDefault();
+    let username = document.querySelector('#username').value;
+    //username.innerText= username;
+    
+    if (numberOfQuestions == 0)
 
-} else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
-  displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
-} else {
-  displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`;
-}
-}
+    {
+      displayResults.innerText = `Hello ${username}, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
 
-allButtons.prepend(startBtn);
+    } else if ((numberOfQuestions > 0) && (numberOfQuestions <= 6)) {
+      displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`;
+
+    } else if ((numberOfQuestions > 6) && (numberOfQuestions <= 10)) {
+      displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`;
+
+    } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
+      displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
+    } else {
+      displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`;
+    }
+    info.submit();
+  }
+
+
+
+  if (score = 0)
+
+  {
+    displayResults.innerText = `Hello, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
+
+  } else if ((score > 0) && (score <= 600)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! Play again for en even better result!`;
+
+  } else if ((score > 600) && (score <= 1000)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! Play again for en even better result!`;
+
+  } else if ((score > 1000) && (score < 1400)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! You do know your art!`;
+  } else {
+    displayResults.innerText = `Hello, thanks for playing. You got all questions right. You really, really know your art!`;
+  }
+
 
 
 function restartPage() {
-  score=0;
-  scoreText.innerText=0;
+  score = 0;
+  scoreText.innerText ="";
   availableQuestions = availableImages = [...questions];
   startBtn.addEventListener('click', removeStartBtn())
   photoContainer.prepend(photoArea)
@@ -622,7 +655,7 @@ function restartPage() {
   allButtons.append(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-  console.log('restartPage() function')
+
 
 }
 
