@@ -425,6 +425,8 @@ function nextPage() {
   }
   userAnswer = true;
   questionCounter++;
+
+  allScore.innerText=`15 / ${questionCounter}`;
   getNewQuestion();
 
 }
@@ -490,14 +492,8 @@ getNewQuestion = () => {
     currentQuestion = currentImage = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
-    
-    /*let questionNumber;
-    for (questionNumber=0; questionNumber <availableQuestions.length/2; questionNumber){
-    allScore.innerText=questionNumber;}*/
-
     photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
-
-    
+ 
     selections.forEach(selection => {
       const number = selection.dataset['number'];
       selection.innerText = currentQuestion['selection' + number];
@@ -505,8 +501,6 @@ getNewQuestion = () => {
     })
     availableQuestions.splice(questionsIndex, 1);
     // userAnswer = true;
-
-
 
   }
 
@@ -561,7 +555,7 @@ incrementAllScore = num => {
 }
 
 function endGame() {
-
+ 
   startBtn.remove()
   photoArea.remove();
   questionContainer.append(readyQuestion)
@@ -570,6 +564,7 @@ function endGame() {
   actualQuestion.remove();
   buttonArea.remove();
   nextBtn.remove();
+  allScore.innerText=0;
 
   
   allButtons.prepend(startBtn)
@@ -662,17 +657,19 @@ incrementScore = num =>{
 
 function restartPage() {
   score = 0;
-  scoreText.innerText ="";
+  scoreText.innerText ="0";
   availableQuestions = availableImages = [...questions];
   startBtn.addEventListener('click', removeStartBtn())
   photoContainer.prepend(photoArea)
   questionCounter = 1;
+  allScore.innerText=questionCounter;
   questionContainer.append(actualQuestion);
   allButtons.append(buttonArea);
   const resDiv = document.querySelector('#res-div')
   allButtons.append(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
+  allScore.innerText= `15 / ${questionCounter}`
 
 }
 
