@@ -15,15 +15,18 @@ const readyQuestion = document.querySelector('#ready');
 const actualQuestion = document.querySelector('#question');
 const startBtn = document.querySelector('#start-btn');
 startBtn.addEventListener('click', startGame);
+//startBtn.addEventListener('click', countGame)
 const buttonArea = document.querySelector('#answer-area');
 const selections = Array.from(document.querySelectorAll('.answer-btn'));
 const nextBtn = document.querySelector('#next-btn');
 nextBtn.addEventListener('click', nextPage);
 const allButtons = document.querySelector('#button-area');
+const displayResults = document.querySelector('#end-table');
 const result = document.querySelector('#result');
 const endTable = document.querySelector('#end-table');
 const titleArea = document.querySelector('#title-area');
 const wrapAround = document.querySelector('#wrap-around');
+startBtn.addEventListener('click', countGame);
 
 /*The below variables define question, counter, score, number of games before the game starts. 
 They are either empty or null as their content/value will be added to/incremented during the game.*/
@@ -37,7 +40,7 @@ let score_in_all_games = 0;
 
 // The below constants define the score points and number of questions that won't change during the game.
 const score_points = 100;
-const max_questions = 5;
+const max_questions = 15;
 
 const questions = [
 
@@ -396,6 +399,8 @@ during, after and at restart of the game.*/
 As the game is designed to be all on one page, certain elements will need to be removed/appended/hidden/made visible during the game
 for space saving purposes. You will see this pattern in most functions. The startPage() function sets questionCounter and score to 0*/
 
+
+
 function startPage() {
   startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
@@ -406,6 +411,10 @@ function startPage() {
   startBtn.innerText = "Start"
 
 }
+
+
+
+
 
 function nextPage() {
   nextBtn.style.visibility = "visible";
@@ -481,9 +490,14 @@ getNewQuestion = () => {
     currentQuestion = currentImage = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
+    
+    /*let questionNumber;
+    for (questionNumber=0; questionNumber <availableQuestions.length/2; questionNumber){
+    allScore.innerText=questionNumber;}*/
 
     photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
 
+    
     selections.forEach(selection => {
       const number = selection.dataset['number'];
       selection.innerText = currentQuestion['selection' + number];
@@ -542,7 +556,7 @@ incrementNumberOfGames = num => {
 }
 
 incrementAllScore = num => {
-  score += score_in_all_games = num;
+  score += num;
   allScore.innerText = score_in_all_games;
 }
 
@@ -568,39 +582,59 @@ function endGame() {
 
 
 
-incrementScore = num => {
-  score += num;
-  scoreText.innerText = score;
+/*let username = document.querySelector('#username').value;
  
-}
-
-/*function incrementScore(num) {
-  score += num;
-  scoreText.innerText = score;
-  
-}*/
-const displayResults = document.querySelector('#end-table');
-
-function incrementScore(){
-  score++;
-  scoreText.innerText=score;
-}
-  let username = document.querySelector('#username').value;
-  let finalScore= score;
-  //let hello = parseInt(finalScore);
+ 
   let info = document.querySelector('#info');
   info.addEventListener('submit', handleSubmit)
-  //const saveBtn = document.querySelector('#save-btn');
-  //saveBtn.addEventListener('submit', handleSubmit)
-  let numberOfQuestions = finalScore / 100;
+  const saveBtn = document.querySelector('#save-btn');
+  saveBtn.addEventListener('submit', handleSubmit)
+  let numberOfQuestions = finalScore / 100;*/
+  let gameCounter=0;
+function countGame(){
+  
+  gameCounter++;
+  numberOfGames.innerText=gameCounter;
+}
+ 
+incrementScore = num =>{
+  score += num;
+  scoreText.innerText=score;
+  let numberOfQuestions = score / 100;
+
+  
+  if (score == 0)
+
+  {
+    displayResults.innerText = `Hello, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
+
+  } else if ((score > 0) && (score <= 600)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for an even better result!`;
+
+  } else if ((score > 600) && (score <= 1000)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+
+  } else if ((score > 1000) && (score <= 1400)) {
+    displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
+  } else {
+    displayResults.innerText = `Hello, thanks for playing. You got all questions right! You really, really know your art!`;
+  }
+
+
+  
+}
 
 
 
 
-  function handleSubmit(event) {
+
+
+
+  /*function handleSubmit(event) {
     event.preventDefault();
     let username = document.querySelector('#username').value;
     //username.innerText= username;
+     info.submit();
     
     if (numberOfQuestions == 0)
 
@@ -618,28 +652,12 @@ function incrementScore(){
     } else {
       displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`;
     }
-    info.submit();
+   
   }
 
 
 
-  if (score = 0)
-
-  {
-    displayResults.innerText = `Hello, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
-
-  } else if ((score > 0) && (score <= 600)) {
-    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! Play again for en even better result!`;
-
-  } else if ((score > 600) && (score <= 1000)) {
-    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! Play again for en even better result!`;
-
-  } else if ((score > 1000) && (score < 1400)) {
-    displayResults.innerText = `Hello, thanks for playing. You got ${score} questions right. Great job! You do know your art!`;
-  } else {
-    displayResults.innerText = `Hello, thanks for playing. You got all questions right. You really, really know your art!`;
-  }
-
+  */
 
 
 function restartPage() {
@@ -655,7 +673,6 @@ function restartPage() {
   allButtons.append(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-
 
 }
 
