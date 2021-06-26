@@ -4,6 +4,7 @@ window.onload = startPage;
 const infoTable = document.querySelector('#info-table');
 //let fillUsername = document.querySelector('#username');
 const numberOfGames = document.querySelector('#to-fill-all-games');
+const questionNumber =document.querySelector('#to-fill-question-counter');
 const scoreText = document.querySelector('#to-fill-score');
 const allScore = document.querySelector('#to-fill-all-score');
 const photoContainer = document.querySelector('#photo-area');
@@ -13,6 +14,7 @@ const questionContainer = document.querySelector('#question-area');
 //const question = document.querySelector('#question');
 const readyQuestion = document.querySelector('#ready');
 const actualQuestion = document.querySelector('#question');
+const gameArea = document.querySelector('#game-area');
 const startBtn = document.querySelector('#start-btn');
 startBtn.addEventListener('click', startGame);
 //startBtn.addEventListener('click', countGame)
@@ -426,7 +428,7 @@ function nextPage() {
   userAnswer = true;
   questionCounter++;
 
-  allScore.innerText=`15 / ${questionCounter}`;
+  questionNumber.innerText=`15 / ${questionCounter}`;
   getNewQuestion();
 
 }
@@ -459,6 +461,7 @@ function startGame() {
   removeStartBtn();
   nextPage();
   endTable.remove();
+  titleArea.remove();
 
   readyQuestion.remove();
 
@@ -477,8 +480,7 @@ getNewQuestion = () => {
     // return window.location.assign('/end.html')
     allButtons.prepend(startBtn);
 
-    numberOfGames.innerText = ('The End!');
-
+  
     // startBtn.addEventListener('click', restartPage)
 
     endTable.style.visibility = "visible";
@@ -488,7 +490,8 @@ getNewQuestion = () => {
 
   } else {
 
-    const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+   const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+   
     currentQuestion = currentImage = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
@@ -564,7 +567,8 @@ function endGame() {
   actualQuestion.remove();
   buttonArea.remove();
   nextBtn.remove();
-  allScore.innerText=0;
+  questionNumber.innerText=0;
+  wrapAround.append(titleArea)
 
   
   allButtons.prepend(startBtn)
@@ -604,7 +608,7 @@ incrementScore = num =>{
     displayResults.innerText = `Hello, thanks for playing. Oh, no! 0 score in this game. Play again to improve your score!`;
 
   } else if ((score > 0) && (score <= 600)) {
-    displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for an even better result!`;
+    displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 600) && (score <= 1000)) {
     displayResults.innerText = `Hello, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
@@ -662,14 +666,14 @@ function restartPage() {
   startBtn.addEventListener('click', removeStartBtn())
   photoContainer.prepend(photoArea)
   questionCounter = 1;
-  allScore.innerText=questionCounter;
+  questionNumber.innerText=questionCounter;
   questionContainer.append(actualQuestion);
   allButtons.append(buttonArea);
   const resDiv = document.querySelector('#res-div')
-  allButtons.append(resDiv)
+  gameArea.prepend(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-  allScore.innerText= `15 / ${questionCounter}`
+  questionNumber.innerText= `15 / ${questionCounter}`
 
 }
 
