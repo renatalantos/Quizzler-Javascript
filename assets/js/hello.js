@@ -493,6 +493,8 @@ getNewQuestion = () => {
     availableQuestions.splice(questionsIndex, 1);
     // userAnswer = true;
 
+
+
   }
 
 }
@@ -571,9 +573,21 @@ incrementScore = num => {
   scoreText.innerText = score;
 }
 
-const displayResults = document.querySelector('#end-table')
+const displayResults = document.querySelector('#end-table');
 let numberOfQuestions = score / 100;
-let username = document.getElementById('username').value;
+let username = document.querySelector('#username').value;
+let info = document.querySelector('#info');
+info.addEventListener('submit', handleSubmit)
+const saveBtn = document.querySelector('#save-btn');
+saveBtn.addEventListener('submit', handleSubmit)
+
+
+
+function handleSubmit(event){
+  event.preventDefault();
+  let username = document.querySelector('#username').value;
+  //username.innerText= username;
+  info.submit();
 
 if (numberOfQuestions == 0) 
 
@@ -588,9 +602,9 @@ if (numberOfQuestions == 0)
 } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
   displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
 } else {
-  displayResults.innerText = `Hello ${name}, thanks for playing. You got all questions right. You really, really know your art!`;
+  displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`;
 }
-
+}
 
 allButtons.prepend(startBtn);
 
