@@ -186,11 +186,11 @@ hr {
 }
 
 
-
+.hide{display:none;}
 
 
 #photo-area {
-    height: auto;
+    height: 270px;
     width: 100vw;
     
     float: none;
@@ -209,7 +209,7 @@ hr {
     justify-content: center;
     float: none;
     display: block;
-    height: auto;
+    height: 270px;
     width: 100%;
     position: relative;
     margin-top:30px;

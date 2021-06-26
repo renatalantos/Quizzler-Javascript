@@ -451,6 +451,8 @@ function removeStartBtn() {
 
 function startGame() {
 
+ 
+ 
   availableQuestions = availableImages = [...questions];
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
@@ -560,7 +562,9 @@ incrementAllScore = num => {
 function endGame() {
  
   startBtn.remove()
-  photoArea.remove();
+  
+  photoArea.remove()
+photoContainer.remove();
   questionContainer.append(readyQuestion)
   readyQuestion.innerText = "Play again!"
   readyQuestion.style.color = "purple"
@@ -568,7 +572,7 @@ function endGame() {
   buttonArea.remove();
   nextBtn.remove();
   questionNumber.innerText=0;
-  wrapAround.append(titleArea)
+  //wrapAround.append(titleArea)
 
   
   allButtons.prepend(startBtn)
@@ -664,6 +668,7 @@ function restartPage() {
   scoreText.innerText ="0";
   availableQuestions = availableImages = [...questions];
   startBtn.addEventListener('click', removeStartBtn())
+  wrapAround.append(photoContainer)
   photoContainer.prepend(photoArea)
   questionCounter = 1;
   questionNumber.innerText=questionCounter;
