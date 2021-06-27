@@ -7,6 +7,7 @@ let userName = sessionStorage.getItem("userName");
 const numberOfGames = document.querySelector('#to-fill-all-games');
 const questionNumber = document.querySelector('#to-fill-question-counter');
 const scoreText = document.querySelector('#to-fill-score');
+let highScore = sessionStorage.getItem('highScore')
 const allScore = document.querySelector('#to-fill-all-score');
 const photoContainer = document.querySelector('#photo-area');
 const mainImage = document.querySelector('#main-image');
@@ -482,7 +483,7 @@ getNewQuestion = () => {
   if (questionCounter > max_questions) {
 
 
-    localStorage.setItem('mostRecentScore', score);
+    //localStorage.setItem('mostRecentScore', score);
     // return window.location.assign('/end.html')
     allButtons.prepend(startBtn);
 
@@ -584,6 +585,7 @@ function endGame() {
   allButtons.append(displayResults)
 
   startBtn.addEventListener('click', restartPage)
+  checkHighScore()
 }
 
 
@@ -617,17 +619,17 @@ incrementScore = num => {
 
 
    if ((score > 0) && (score <= 300)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!.`;
 
   } else if ((score > 300) && (score <= 600)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!.`;
   } else if ((score > 600) && (score <= 1000)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!.`;
 
   } else if ((score > 1000) && (score <= 1400)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!.`;
   } else {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!.`;
   }
 
 
@@ -636,7 +638,18 @@ incrementScore = num => {
 
 
 
+function checkHighScore(){
 
+  if ((score==highScore ) || (score > highScore)){
+
+    highScore=score;
+    sessionStorage.setItem('highScore', highScore )
+    allScore.innerText=highScore;
+  }
+
+
+
+}
 
 
 
