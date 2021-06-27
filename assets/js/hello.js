@@ -1,13 +1,14 @@
 // On window onload, a start page with a specific content and design will display by calling the startPage() function.
 window.onload = startPage;
+
 // These constants define the immediate content on the main page and during and after the game
 const infoTable = document.querySelector('#info-table');
-let fillUserName = sessionStorage.getItem("fillUserName");
-let userName = sessionStorage.getItem("userName");
+let fillUserName = localStorage.getItem("fillUserName");
+let userName = localStorage.getItem("userName");
 const numberOfGames = document.querySelector('#to-fill-all-games');
 const questionNumber = document.querySelector('#to-fill-question-counter');
 const scoreText = document.querySelector('#to-fill-score');
-let highScore = sessionStorage.getItem('highScore')
+let highScore = localStorage.getItem('highScore')
 const allScore = document.querySelector('#to-fill-all-score');
 const photoContainer = document.querySelector('#photo-area');
 const mainImage = document.querySelector('#main-image');
@@ -586,6 +587,7 @@ function endGame() {
 
   startBtn.addEventListener('click', restartPage)
   checkHighScore()
+  userData()
 }
 
 
@@ -596,15 +598,14 @@ startBtn.addEventListener('click', userData);
 
 function userData() {
 
-
   userName = $('#username').val()
-  sessionStorage.setItem("fillUserName", fillUserName)
+ 
+  localStorage.setItem("fillUserName", fillUserName)
 
   if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
-    sessionStorage.setItem("", userName);
+    localStorage.setItem("", userName);
   } 
   
-
 }
 
 let gameCounter = 0;
@@ -646,7 +647,7 @@ function checkHighScore() {
   if ((score == highScore) || (score > highScore)) {
 
     highScore = score;
-    sessionStorage.setItem('highScore', highScore)
+    localStorage.setItem('highScore', highScore)
     allScore.innerText = highScore;
 
   }
