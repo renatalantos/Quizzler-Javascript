@@ -35,7 +35,8 @@ startBtn.addEventListener('click', countGame);
 They are either empty or null as their content/value will be added to/incremented during the game.*/
 let currentQuestion = {}
 let userAnswer = true;
-let score = 0;
+//let score = 0;
+let score=0;
 
 let questionCounter = 0;
 let availableQuestions = [];
@@ -612,10 +613,14 @@ function countGame() {
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
-  let numberOfQuestions = score / 100;
+  //let numberOfQuestions = score / 100;
 
+if (!isNaN(scoreText.innerText)){
+  displayResults.innerText = `Hello ${userName}, thanks for playing `
+}
 
-  if ((score > 0) && (score <= 300)) {
+console.log(score)
+  /*if ((score > 0) && (score <= 300)) {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 300) && (score <= 600)) {
@@ -629,7 +634,7 @@ incrementScore = num => {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!`;
   }
 
-
+*/
 
 }
 

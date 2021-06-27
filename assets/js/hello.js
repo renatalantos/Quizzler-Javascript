@@ -37,6 +37,8 @@ let currentQuestion = {}
 let userAnswer = true;
 let score = 0;
 
+
+
 let questionCounter = 0;
 let availableQuestions = [];
 let number_of_games = 0;
@@ -586,7 +588,8 @@ function endGame() {
 
 
 const saveBtn = document.querySelector('#save-btn');
-saveBtn.addEventListener('click', userData)
+saveBtn.addEventListener('click', userData);
+startBtn.addEventListener('click', userData);
 
 function userData() {
 
@@ -613,7 +616,7 @@ incrementScore = num => {
   let numberOfQuestions = score / 100;
 
 
-  if ((score > 0) && (score <= 300)) {
+   if ((score > 0) && (score <= 300)) {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 300) && (score <= 600)) {
