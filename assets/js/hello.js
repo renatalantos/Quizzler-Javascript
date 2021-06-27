@@ -597,7 +597,6 @@ function userData() {
     if ((fillUserName=null) || (fillUserName="")){  //if player doesn't enter any username or saves username without entering anything
     sessionStorage.setItem("", userName)}
 
-  
 }
 
 let gameCounter = 0;

@@ -2,8 +2,10 @@
 window.onload = startPage;
 // These constants define the immediate content on the main page and during and after the game
 const infoTable = document.querySelector('#info-table');
-const fillUsername = document.querySelector('#username');
+let fillUserName = sessionStorage.getItem("fillUserName");
+let userName = sessionStorage.getItem("userName");
 const numberOfGames = document.querySelector('#to-fill-all-games');
+const questionNumber = document.querySelector('#to-fill-question-counter');
 const scoreText = document.querySelector('#to-fill-score');
 const allScore = document.querySelector('#to-fill-all-score');
 const photoContainer = document.querySelector('#photo-area');
@@ -13,21 +15,28 @@ const questionContainer = document.querySelector('#question-area');
 //const question = document.querySelector('#question');
 const readyQuestion = document.querySelector('#ready');
 const actualQuestion = document.querySelector('#question');
+const gameArea = document.querySelector('#game-area');
 const startBtn = document.querySelector('#start-btn');
 startBtn.addEventListener('click', startGame);
+//startBtn.addEventListener('click', countGame)
 const buttonArea = document.querySelector('#answer-area');
 const selections = Array.from(document.querySelectorAll('.answer-btn'));
 const nextBtn = document.querySelector('#next-btn');
 nextBtn.addEventListener('click', nextPage);
 const allButtons = document.querySelector('#button-area');
+const displayResults = document.querySelector('#end-table');
 const result = document.querySelector('#result');
 const endTable = document.querySelector('#end-table');
+const titleArea = document.querySelector('#title-area');
+const wrapAround = document.querySelector('#wrap-around');
+startBtn.addEventListener('click', countGame);
 
 /*The below variables define question, counter, score, number of games before the game starts. 
 They are either empty or null as their content/value will be added to/incremented during the game.*/
 let currentQuestion = {}
 let userAnswer = true;
 let score = 0;
+
 let questionCounter = 0;
 let availableQuestions = [];
 let number_of_games = 0;
@@ -35,7 +44,7 @@ let score_in_all_games = 0;
 
 // The below constants define the score points and number of questions that won't change during the game.
 const score_points = 100;
-const max_questions = 5;
+const max_questions = 15;
 
 const questions = [
 
@@ -394,27 +403,36 @@ during, after and at restart of the game.*/
 As the game is designed to be all on one page, certain elements will need to be removed/appended/hidden/made visible during the game
 for space saving purposes. You will see this pattern in most functions. The startPage() function sets questionCounter and score to 0*/
 
-  function startPage() {
+
+
+function startPage() {
   startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
-  buttonArea.style.visibility="hidden"
+  buttonArea.style.visibility = "hidden";
   readyQuestion.style.visibility = "visible";
-  score = 0;
   photoArea.append(mainImage);
-  
-  startBtn.innerText="Start"
+  endTable.style.visibility = "hidden";
+  startBtn.innerText = "Start"
+
 }
+
+
+
+
 
 function nextPage() {
   nextBtn.style.visibility = "visible";
   actualQuestion.style.visibility = "visible";
   if (userAnswer === false) {
     buttonArea.classList.toggle("disabled");
-      
-  }userAnswer = true;
+
+  }
+  userAnswer = true;
   questionCounter++;
+
+  questionNumber.innerText = `${questionCounter} / 15`;
   getNewQuestion();
-  console.log(questionCounter)
+
 }
 
 
@@ -434,55 +452,53 @@ function removeStartBtn() {
 }
 
 function startGame() {
-    startBtn.addEventListener('click', startGame);
-  photoArea.classList.remove('hide')
-  buttonArea.style.visibility="visible"
-  nextBtn.classList.remove('hide')
-  actualQuestion.classList.remove('hide')
-  console.log('startGame()')
-  mainImage.classList.add('hide')
-  readyQuestion.classList.add('hide')
-  startBtn.classList.add('hide')
-  //nextPage();
-  getNewQuestion();
-  endTable
- questionCounter=0;
-  console.log(questionCounter)
+
+
+
+  availableQuestions = availableImages = [...questions];
+  photoArea.style.visibility = "visible";
+  buttonArea.style.visibility = "visible";
+  nextBtn.style.visibility = "visible";
+  actualQuestion.style.visibility = "visible";
+
+  removeMainImage();
+  removeStartBtn();
+  nextPage();
+  endTable.remove();
+  titleArea.remove();
+
+  readyQuestion.remove();
+
 }
 
 
 //questionCounter++;
-availableQuestions = availableImages = [...questions];
+
 
 getNewQuestion = () => {
- 
 
-  if ((availableQuestions.length === 0) || (questionCounter >= max_questions)) { 
+  if (questionCounter > max_questions) {
+
+
     localStorage.setItem('mostRecentScore', score);
     // return window.location.assign('/end.html')
+    allButtons.prepend(startBtn);
 
-    numberOfGames.innerText = ('The End!');
-  // startBtn.addEventListener('click', nextPage)
-    
-    endTable.classList.remove('hide');
-    startBtn.classList.remove('hide');
-    
-    allButtons.classList.add('hide')
-    //nextBtn.classList.add('hide')
+
+    // startBtn.addEventListener('click', restartPage)
+
+    endTable.style.visibility = "visible";
     startBtn.innerText = "Restart";
-    mainImage.classList.add('hide')
-    questionContainer.classList.add('hide')
-   
-   
-   console.log(questionCounter)
-    
+
+    endGame();
+
   } else {
 
     const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
+
     currentQuestion = currentImage = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
-
     photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
 
     selections.forEach(selection => {
@@ -513,6 +529,7 @@ selections.forEach(selection => {
       result.style.color = "green";
 
 
+
     } else {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
@@ -520,83 +537,132 @@ selections.forEach(selection => {
 
     selectedselection.classList.add(classToApply);
 
+
+
     setTimeout(() => {
-      console.log(userAnswer)
+
       selectedselection.classList.remove(classToApply)
       const resDiv = document.querySelector('#res-div')
       resDiv.append(result.innerText = "")
-      // console.log('set timeout')
+
       buttonArea.classList.toggle("disabled")
+
     }, 900)
   })
 
 })
 
-incrementScore = num => {
-  score += num;
-  scoreText.innerText = score;
-}
+
 
 incrementNumberOfGames = num => {
   number_of_games += num;
   numberOfGames.innerText = number_of_games;
 }
 
-incrementAllScore = num => {
-  score += score_in_all_games = num;
-  allScore.innerText = score_in_all_games;
-}
 
-/*function endGame() {
+
+function endGame() {
+
   startBtn.remove()
-  photoArea.remove();
+
+  photoArea.remove()
+  photoContainer.remove();
+  questionContainer.append(readyQuestion)
+  readyQuestion.innerText = "Play again!"
+  readyQuestion.style.color = "purple"
   actualQuestion.remove();
   buttonArea.remove();
   nextBtn.remove();
-  console.log(questionCounter)
+  questionNumber.innerText = 0;
+  //wrapAround.append(titleArea)
+
+
   allButtons.prepend(startBtn)
   startBtn.style.visibility = "visible";
   allButtons.append(displayResults)
-  console.log('endGame() function')
+
   startBtn.addEventListener('click', restartPage)
- }*/
+}
 
-  const displayResults = document.querySelector('#end-table')
+
+const saveBtn = document.querySelector('#save-btn');
+saveBtn.addEventListener('click', userData)
+startBtn.addEventListener('click', userData)
+
+function userData() {
+
+ 
+  userName = $('#username').val()
+    sessionStorage.setItem("fillUserName", fillUserName)
+
+    if ((fillUserName=null) || (fillUserName="")){  //if player doesn't enter any username or saves username without entering anything
+    sessionStorage.setItem("", userName)}
+
+  
+}
+
+let gameCounter = 0;
+
+function countGame() {
+
+  gameCounter++;
+  numberOfGames.innerText = gameCounter;
+}
+
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
   let numberOfQuestions = score / 100;
-  if (numberOfQuestions <= 6) {
 
-   displayResults.innerText = `Hello *${username}, thanks for playing. Well done! You got ${numberOfQuestions} questions right. Play again for en even better result!`;
 
-  } else if ((numberOfQuestions > 6) && (numberOfQuestions <= 10)) {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for en even better result!`
+  if ((score > 0) && (score <= 300)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
-  } else if ((numberOfQuestions > 10) && (10 < numberOfQuestions < 14)) {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`
-  } else 
-  {
-    displayResults.innerText = `Hello ${username}, thanks for playing. You got all questions right. You really, really know your art!`}
-   
-   
-    allButtons.prepend(startBtn);
+  } else if ((score > 300) && (score <= 600)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+  } else if ((score > 600) && (score <= 1000)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
 
-/*function restartPage() {
+  } else if ((score > 1000) && (score <= 1400)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
+  } else {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!`;
+  }
 
-  startBtn.addEventListener('click', removeStartBtn()) 
-  photoContainer.append(photoArea)
-  questionCounter = 0;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function restartPage() {
+  
+  score = 0;
+  scoreText.innerText = "0";
+  availableQuestions = availableImages = [...questions];
+  startBtn.addEventListener('click', removeStartBtn())
+  wrapAround.append(photoContainer)
+  photoContainer.prepend(photoArea)
+  questionCounter = 1;
+  questionNumber.innerText = questionCounter;
   questionContainer.append(actualQuestion);
   allButtons.append(buttonArea);
   const resDiv = document.querySelector('#res-div')
-  allButtons.append(resDiv)
+  gameArea.prepend(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-  console.log('restartPage() function')
+  
+  questionNumber.innerText = `${questionCounter} / 15`
 
-}*/
+}
 
-
-
-//const username = document.querySelector('#username');
-//const saveBtn = document.querySelector('#save-btn');
-//const username = document.querySelector('#username');
-//const username = document.querySelector('#username');
