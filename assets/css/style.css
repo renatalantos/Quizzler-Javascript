@@ -289,7 +289,7 @@ img {
 .next-btn, #restart-btn {
     display: block;
     padding: 20px;
-    margin: 20px auto;
+    margin: 0 auto;
     font-family: 'Sniglet', cursive;
     font-size: 20px;
     border-radius: 20px;
@@ -326,16 +326,19 @@ img {
     margin:0 auto;
     height: 300px;
     width: 300px;
-    font-family: 'Baloo Bhai 2', cursive;
+    font-family: 'Baloo Bhai', cursive;
+
+    /*font-family: 'Sniglet', cursive;*/
     font-size: 30px;
     color:#5E3B98;
+    font-weight: normal;
     text-align: justify;
     display: block;
     padding: 15px;
     border-radius:10px;
-    border: 5px solid #5E3B98;
+   /* border: 5px solid #5E3B98;*/
 
-  background-color: #C4FCEF;
+  /*background-color: #C4FCEF;*/
 }
 
 
