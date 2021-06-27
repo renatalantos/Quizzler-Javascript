@@ -591,6 +591,7 @@ function endGame() {
 
 const saveBtn = document.querySelector('#save-btn');
 saveBtn.addEventListener('click', userData);
+//saveBtn.addEventListener('click', checkHighScore);
 startBtn.addEventListener('click', userData);
 
 function userData() {
@@ -601,7 +602,7 @@ function userData() {
 
   if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
     sessionStorage.setItem("", userName);
-  } else sessionStorage.getItem(highScore);
+  } 
   
 
 }
