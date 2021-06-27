@@ -3,7 +3,7 @@ window.onload = startPage;
 
 // These constants define the immediate content on the main page and during and after the game
 const infoTable = document.querySelector('#info-table');
-let fillUserName = localStorage.getItem("fillUserName");
+//let fillUserName = localStorage.getItem("fillUserName");
 let userName = localStorage.getItem("userName");
 const numberOfGames = document.querySelector('#to-fill-all-games');
 const questionNumber = document.querySelector('#to-fill-question-counter');
@@ -593,14 +593,16 @@ function endGame() {
 
 const saveBtn = document.querySelector('#save-btn');
 saveBtn.addEventListener('click', userData);
-//saveBtn.addEventListener('click', checkHighScore);
+saveBtn.addEventListener('click', checkHighScore);
 startBtn.addEventListener('click', userData);
 
 function userData() {
 
   userName = $('#username').val()
  
-  localStorage.setItem("fillUserName", fillUserName)
+  //localStorage.setItem("fillUserName", fillUserName)
+  localStorage.setItem("userName", userName)
+  
 
   if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
     localStorage.setItem("", userName);
