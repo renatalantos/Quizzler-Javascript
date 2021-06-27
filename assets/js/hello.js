@@ -595,12 +595,13 @@ startBtn.addEventListener('click', userData);
 
 function userData() {
 
- 
-  userName = $('#username').val()
-    sessionStorage.setItem("fillUserName", fillUserName)
 
-    if ((fillUserName=null) || (fillUserName="")){  //if player doesn't enter any username or saves username without entering anything
-    sessionStorage.setItem("", userName)}
+  userName = $('#username').val()
+  sessionStorage.setItem("fillUserName", fillUserName)
+
+  if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
+    sessionStorage.setItem("", userName)
+  }
 
 }
 
@@ -618,18 +619,18 @@ incrementScore = num => {
   let numberOfQuestions = score / 100;
 
 
-   if ((score > 0) && (score <= 300)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!.`;
+  if ((score > 0) && (score <= 300)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 300) && (score <= 600)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!.`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
   } else if ((score > 600) && (score <= 1000)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!.`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
 
   } else if ((score > 1000) && (score <= 1400)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!.`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
   } else {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!.`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!`;
   }
 
 
@@ -638,29 +639,21 @@ incrementScore = num => {
 
 
 
-function checkHighScore(){
+function checkHighScore() {
 
-  if ((score==highScore ) || (score > highScore)){
+  if ((score == highScore) || (score > highScore)) {
 
-    highScore=score;
-    sessionStorage.setItem('highScore', highScore )
-    allScore.innerText=highScore;
+    highScore = score;
+    sessionStorage.setItem('highScore', highScore)
+    allScore.innerText = highScore;
+
   }
 
-
-
 }
-
-
-
-
-
-
-
 
 
 function restartPage() {
-  
+
   score = 0;
   scoreText.innerText = "0";
   availableQuestions = availableImages = [...questions];
@@ -675,10 +668,7 @@ function restartPage() {
   gameArea.prepend(resDiv)
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-  
+
   questionNumber.innerText = `${questionCounter} / 15`
 
 }
-
-
-
