@@ -600,8 +600,9 @@ function userData() {
   sessionStorage.setItem("fillUserName", fillUserName)
 
   if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
-    sessionStorage.setItem("", userName)
-  }
+    sessionStorage.setItem("", userName);
+  } else sessionStorage.getItem(highScore);
+  return;
 
 }
 
@@ -646,7 +647,7 @@ function checkHighScore() {
     highScore = score;
     sessionStorage.setItem('highScore', highScore)
     allScore.innerText = highScore;
-
+return true;
   }
 
 }
