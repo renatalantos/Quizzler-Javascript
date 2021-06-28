@@ -97,7 +97,7 @@ As I meant to keep the design as simple as possible, the game is designed to be 
 This basic layout is maintained throughout the game. The "Your information" section won't dynamically change, merely the information in it will be updated throughout the game. 
 
 ### The "Your information" section
-
+insert photo here!!!!
  This is where the user can enter and view user and game information. It is located to the left on the page on larger desktops and on top on smaller screens. It has the following elements:
  
 * Username window with placeholder inside and with text above. 
@@ -116,7 +116,7 @@ This basic layout is maintained throughout the game. The "Your information" sect
 
 ### The game area
 
-The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again. The game area which will be in the middle of the page on all screens, and all its elements are centered in the middle.
+The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again. The game area which will be in the middle of the page on all screens, and all its elements are centered in the middle. insert photo here!!!!
 1. Start page 
 [Start page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/start_page_with_no_updates.JPG)
 2. Game page 
@@ -137,7 +137,7 @@ The game area layout will basically stay the same throughout the game. I manipul
 
  * Image relating to question - this will be hidden when the game ends.
  * Actual question - this will be hidden when the game ends.
- * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view, 4 x 1on smaller screens) these will be hidden when the game ends.
+ * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view, 4 x 1on smaller screens) these will be hidden when the game ends. insert photo here!!!!!
 *  Next button - this will be hidden when the game ends.
 *  Result message. This message appears above the answer buttons and will disappear as soon as the answer buttons are disabled.
 
@@ -229,7 +229,7 @@ However, there are some concepts and features that I discarded.
 
   ## Colours
 
-    For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for cheerful, playful, attractive colours that suit a game and compliment the colourful images. I allowed myself to use stronger yet not too strong colours. The background colour is a very pale pink, however, as users should not be distracted from the visuals of the game elements. I chose the colours intuitively. The colours are contrasting yet complimenting each other in my opinion.
+    For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for cheerful, playful, attractive colours that suit a game and compliment the colourful images. I allowed myself to use stronger yet not too strong colours. The background colour is a very pale pink, however, as users should not be distracted from the visuals of the game elements. I chose the colours intuitively. The colours are contrasting yet complimenting each other in my opinion. insert photo here!!!!
 
     
 
