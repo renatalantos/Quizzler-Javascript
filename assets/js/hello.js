@@ -516,13 +516,7 @@ getNewQuestion = () => {
 }
 
 
-let click=0;
-incrementClicks = num =>
-{
-click+=num;
-}
 
-console.log(click)
 
 selections.forEach(selection => {
   selection.addEventListener('click', e => {
@@ -538,8 +532,7 @@ selections.forEach(selection => {
       incrementScore(score_points)
       result.innerHTML = `Correct! +${score_points} points!`
       result.style.color = "green";
-      incrementClicks(1)
-      console.log(click)
+      
      
       
       
@@ -547,8 +540,7 @@ selections.forEach(selection => {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
       incrementScore(0)
-      incrementClicks(1)
-      console.log(click)
+      
       
     }
 
@@ -632,7 +624,7 @@ incrementScore = num => {
   let numberOfQuestions = score / 100;
 
 
-if ((score===0)||(click==0)){
+if (score===0){
   
   displayResults.innerText = `Hello ${userName}, thanks for playing. Ooops, ${numberOfQuestions} score. Play again to improve!`
 }

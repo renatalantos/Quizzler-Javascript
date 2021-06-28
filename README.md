@@ -1,5 +1,5 @@
 # Milestone Project 2 - Quizzler-Javascript
-![image](https://github.com/renatalantos/Quizzler-Javascript/blob//master/documents/screenshots/Am_I_responsive_screenshot.JPG)
+![All devices](https://github.com/renatalantos/Quizzler-Javascript/blob//master/documents/screenshots/Am_I_responsive_screenshot.JPG)
 
 ## Table of Contents
 
@@ -71,7 +71,7 @@ Potential users would like / may want to achieve the following:
 
 ### During the game
 * See the number of games played in the session. This is displayed in the "Number of games" window in the "Your information" section once a game is started.
-* See how many questions are there left to answer. This information is displayed in the "Current question" window in the "Your information" section., where current questions are shown as current question / 15.
+* See how many questions are there left to answer. This information is displayed in the "Current question" window in the "Your information" section, where current questions are shown as current question / 15.
 * Keep track of their score. This information is displayed "Current score" window in the "Your information" section. Score increments by 100. 
 * Get from one question to the next. This is supported by the "Next" button.
 * Receive immediate feedback whether the answer they gave was correct or incorrect. This feature is implemented by the answer button turning green/red depending on correct/incorrect answer. Also, a message is displayed "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect.
@@ -88,7 +88,49 @@ Potential users would like / may want to achieve the following:
 
 # Layout
 
-## Home
+The page is designed to be on one page only. The basic page layout is divided into 2 areas: 
+
+
+1.  The "Your information" section"
+2.  The game area.
+
+This basic layout is maintained throughout the game. The "Your information" section won't dynamically change, merely the information in it will be updated throughout the game. 
+
+### The "Your information" section
+
+This is where the user can enter and view user and game information. It consists of the following elements:
+ 1.  "Your information" heading to display the purpose of this section. The horizontal rule underneath separates the functional elements from the title. These functional elements are:
+
+ 2. Username window with placeholder inside and with text above. User has the option to create a username or play in guest mode. This is clarified by the text, which says: "Create username or just play!" If user enters a username and saves it, it will be displayed in the result message at the end of the game, where number of corretly answered questions are outlined. If user chooes not to enter a username, the message will be still displayed, with no name.
+
+ 2. "Save" button. The save button will save the username, entered the way described above.
+
+
+ 3. "Number of games played" window with text. Here user can keep track of the  number of games in a game session. This is 0 by default, changes to 1 on start and will update on restart.
+
+ 3. "Current question" window with text. Current questions are shown as current question / 15. This is 0 by default, changes to 1 on start and will updateto 0 on restart.
+
+4. "Current score" window with text. This enables users to keep track of their score. Score increments by 100. This is 0 by default, increments by 100 when user gets a question right and will update to 0 on restart.
+
+5. "Highscore" window with text. This enables users to keep track of their highscore. This is 0 by default, increments if achieved score is bigger than the highscore or sets the first score as highscore. This is 0 by default.
+
+5. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current posrtfolio and the copyright statement unserneath.
+
+### The game area
+
+The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages.
+1. Start page 
+2. Game page
+3. End page
+
+1. The start page 
+
+
+
+
+
+
+##
 The Homepage introduces the purpose and the main activity of the group, the vision and responses.
 The home page consists of the following sections:
 
