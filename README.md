@@ -1,5 +1,5 @@
 # Milestone Project 2 - Quizzler-Javascript
-![image](https://github.com/renatalantos/Quizzler-Javascript/blob//master/documents/screenshots/Am I responsive screenshot.JPG)
+![image](https://github.com/renatalantos/Quizzler-Javascript/blob//master/documents/screenshots/Am_I_responsive_screenshot.JPG)
 
 ## Table of Contents
 
@@ -36,32 +36,54 @@
 * Acknowledgements
 
 # Introduction
-The product (Embrace Support Group website) is for a fictional support group where end users are parents with problem teenage children or parents with simply teenage children. The site provides information on the support group's purpose, ethos, practices, organizers, visual aids and contact details and extra professional assistance. It also informs users about their privacy and data protection rights. 
-It is a non-profit business, participation is free. The site has been designed for desktop, laptop, tablet and mobile devices.
+The product Quizzler (supported by javascript) is an online art quiz game. Art lovers can test their knowledge by answering 15 questions, illustrated by images relating to the work of art or artist. 
+The user has an option to create a username, but they can also play in guest mode.
+The user is given the option to save their username. At the end of the game they receive a message, whose content depends on the score and it displays entered username (if any) and the score in the game as well. During the game, the user is informed about:
+  
+  *  The number of games played in the session
+  *  Which question they are on (Current question)
+  *  Current score
+  *  The highscore
+
+ The site has been designed for desktop, laptop, tablet and mobile devices.
 
 
 # UX
 
 * Owner goals
 
-The owners of the product are the organizers who run the meetings.
+The owners of the product is a web developer, who would like to demonstrate her skills towards prospective employers and the public.
 
 
-The site owners use online presence to attract participants to the support group meetings.
+* User goals
 
-*User goals
-Potential users would like to achieve the following:
 
-* Find a parent support group
-* Contact a parent support group
-* Contact a child psychologist
-* Get information on support group's practices
-* Get information on support group's ethos
-* Get information on responses
-* Get information on leaders 
-* Get visual aids
-* Get information on privacy and data protection rights
-* Be able to view the site on devices with different screen sizes and reolution 
+Potential users would like / may want to achieve the following:
+
+### Before the game
+
+* Finding a quiz game online. This can be achieved by one of the meta tags' name being set to "keywords" and  the content to "trivia, art, quiz, online, game" in the index.html file.
+* See username and game information. These are displayed in the "Your information" section.  
+* Create a username to personalise the game. This can be achieved by entering the name in the username window. Users can start the game without entering a username as well, which is pinpointed in the "Create username or just play!" message about the username window.
+* Save their username. This is supported by the "Save" button under the username window.
+* Know how many questions there are. This is supported by the initial message "Try my awesome 15 question art quiz!"
+* Start the game. This feature is enabled by the "Start" button.
+
+### During the game
+* See the number of games played in the session. This is displayed in the "Number of games" window in the "Your information" section once a game is started.
+* See how many questions are there left to answer. This information is displayed in the "Current question" window in the "Your information" section., where current questions are shown as current question / 15.
+* Keep track of their score. This information is displayed "Current score" window in the "Your information" section. Score increments by 100. 
+* Get from one question to the next. This is supported by the "Next" button.
+* Receive immediate feedback whether the answer they gave was correct or incorrect. This feature is implemented by the answer button turning green/red depending on correct/incorrect answer. Also, a message is displayed "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect.
+
+### When game ends
+* See their highscore in order to be able to measure their current performance against previous performances. This information is displayed in the "Highscore" window in the "Your information" section.
+* Recieve a message, with the number of questions they got right. This is enabled by the user message at the end. The text will differ based on the score. 
+* Restart the game. This feature is enabled by the "Restart" button.
+
+### In general
+* Check out the developer portfolio of this project. The GitHub favicon will enable the user to get access to this information.
+* Be able to view the site on devices with different screen sizes and reolution. This is supported by the css media queries in the style.css file.
 
 
 # Layout

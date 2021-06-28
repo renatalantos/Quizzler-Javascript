@@ -133,12 +133,13 @@ hr {
 
 #save-btn {
     height: 50px;
-    width: 80px;
+    width: 70px;
     padding: 5px;
     margin: 20px auto auto auto;
     font-family: 'Sniglet', cursive;
     color: white;
-    background-color: teal;
+    /*background-color: teal;*/
+    background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
     font-size: 20px;
     letter-spacing: 0rem;
     border-radius: 20px;
@@ -147,12 +148,20 @@ hr {
    
 }
 
+#save-btn:active{
+    background:rgb(233, 233, 103);
+
+}
 
 #save-btn p {
     color: white;
+    padding: 2px;
 }
 
-
+#save-btn.p:active {
+    padding: 2px;
+    color:blue;
+}
 
 
 
@@ -172,9 +181,13 @@ hr {
     color: #D53E69;
     font-size: 20px;
     text-align: center;
+    
     margin-bottom: 5px;
 
 }
+#second-hr{
+    margin-bottom: 15px;
+margin-top: 20px;}
 
 
 .social i{
@@ -185,7 +198,9 @@ hr {
     font-size: 40px;
     margin: 0 auto;
     display: block;
+    
     margin-bottom: 15px;
+    
 }
 
 .social i:hover {
@@ -657,9 +672,9 @@ img {
         margin: 10px auto auto auto;
         font-family: 'Sniglet', cursive;
         color: white;
-        background-color: teal;
+        background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
 
-        font-size: 20px;
+        font-size: 17px;
         letter-spacing: 0rem;
         border-radius: 20px;
         border: 2px solid #DDE2F3;
@@ -669,6 +684,7 @@ img {
 
     #save-btn p {
         color: white;
+        padding: 3px;
     }
 
     #question {
@@ -782,9 +798,11 @@ img {
         margin: 10px auto auto auto;
         font-family: 'Sniglet', cursive;
         color: white;
-        background-color: teal;
+        background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
+       color: white;
+        
 
-        font-size: 20px;
+        font-size: 17px;
         letter-spacing: 0rem;
         border-radius: 20px;
         border: 2px solid #DDE2F3;
@@ -794,7 +812,8 @@ img {
 
     #save-btn p {
         color: white;
-    }
+        padding: 3px;
+        }
 
 
 
