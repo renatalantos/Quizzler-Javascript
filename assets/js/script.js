@@ -1,52 +1,4 @@
-// On window onload, a start page with a specific content and design will display by calling the startPage() function.
-window.onload = startPage;
-
-// These constants define the immediate content on the main page and during and after the game
-const infoTable = document.querySelector('#info-table');
-//let fillUserName = sessionStorage.getItem("fillUserName");
-let userName = sessionStorage.getItem("userName");
-const numberOfGames = document.querySelector('#to-fill-all-games');
-const questionNumber = document.querySelector('#to-fill-question-counter');
-const scoreText = document.querySelector('#to-fill-score');
-let highScore = sessionStorage.getItem('highScore')
-const allScore = document.querySelector('#to-fill-all-score');
-const photoContainer = document.querySelector('#photo-area');
-const mainImage = document.querySelector('#main-image');
-const photoArea = document.querySelector('#photo');
-const questionContainer = document.querySelector('#question-area');
-//const question = document.querySelector('#question');
-const readyQuestion = document.querySelector('#ready');
-const actualQuestion = document.querySelector('#question');
-const gameArea = document.querySelector('#game-area');
-const startBtn = document.querySelector('#start-btn');
-startBtn.addEventListener('click', startGame);
-//startBtn.addEventListener('click', countGame)
-const buttonArea = document.querySelector('#answer-area');
-const selections = Array.from(document.querySelectorAll('.answer-btn'));
-const nextBtn = document.querySelector('#next-btn');
-nextBtn.addEventListener('click', nextPage);
-const allButtons = document.querySelector('#button-area');
-const displayResults = document.querySelector('#end-table');
-const result = document.querySelector('#result');
-const endTable = document.querySelector('#end-table');
-const titleArea = document.querySelector('#title-area');
-const wrapAround = document.querySelector('#wrap-around');
-startBtn.addEventListener('click', countGame);
-
-/*The below variables define question, counter, score, number of games before the game starts. 
-They are either empty or null as their content/value will be added to/incremented during the game.*/
-let currentQuestion = {}
-let takingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-let number_of_games = 0;
-let score_in_all_games = 0;
-
-// The below constants define the score points and number of questions that won't change during the game.
-const score_points = 100;
-const max_questions = 15;
-
+/*Array with images, questions and answers*/
 const questions = [
 
   {
@@ -393,19 +345,65 @@ const questions = [
     selection4: 'D' + '\xa0\xa0\xa0\xa0' + 'Pop art',
     answer: 1,
   },
-
-
 ]
 
-/* The below functions determine what elements are present on a page and how these elements behave before, 
-during, after and at restart of the game.*/
 
-/*This startPage() function determines what elements are on the start page, when user land on the page.
-As the game is designed to be all on one page, certain elements will need to be removed/appended/hidden/made visible during the game
-for space saving purposes. You will see this pattern in most functions. The startPage() function sets questionCounter and score to 0*/
+/* This game is based on the tutorial How to Make a Quiz App using HTML CSS Javascript -
+ Vanilla Javascript Project for Beginners Tutorial by Brian Design
+ Youtube link: https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2455s
+
+ I also looked at the following repository by a fellow student:
+ https://github.com/rebeccatraceyt/WhatTheBlank. This helped me set up the sessionStorage.getItem() 
+ and sessionStorage.setItem()methods and helped me understand what the code does.
+ 
+ I was also helped on 2 separate issues by 2 tutors of CI
+ 
+ Main issue with my game of questionCounter decreasing on restart was resolved by my mentor*/
+
+// On window onload, a start page with a specific content and design will display by calling the startPage() function.
+window.onload = startPage;
+const infoTable = document.querySelector('#info-table');
+let userName = sessionStorage.getItem('userName');
+const numberOfGames = document.querySelector('#to-fill-all-games');
+const questionNumber = document.querySelector('#to-fill-question-counter');
+const scoreText = document.querySelector('#to-fill-score');
+let highScore = sessionStorage.getItem('highScore')
+const allScore = document.querySelector('#to-fill-all-score');
+const photoContainer = document.querySelector('#photo-area');
+const mainImage = document.querySelector('#main-image');
+const photoArea = document.querySelector('#photo');
+const questionContainer = document.querySelector('#question-area');
+const readyQuestion = document.querySelector('#ready');
+const actualQuestion = document.querySelector('#question');
+const gameArea = document.querySelector('#game-area');
+const startBtn = document.querySelector('#start-btn');
+startBtn.addEventListener('click', startGame);
+const buttonArea = document.querySelector('#answer-area');
+const selections = Array.from(document.querySelectorAll('.answer-btn'));
+const nextBtn = document.querySelector('#next-btn');
+nextBtn.addEventListener('click', nextPage);
+const allButtons = document.querySelector('#button-area');
+const displayResults = document.querySelector('#end-table');
+const result = document.querySelector('#result');
+const endTable = document.querySelector('#end-table');
+const titleArea = document.querySelector('#title-area');
+const wrapAround = document.querySelector('#wrap-around');
+startBtn.addEventListener('click', countGame);
+
+let currentQuestion = {}
+let takingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+let number_of_games = 0;
+let score_in_all_games = 0;
+
+const score_points = 100; //increment score by this 
+const max_questions = 15; // questions to answer
 
 
 
+// defines behaviour of elements on start page when user lands on page
 function startPage() {
   startBtn.style.visibility = "visible";
   nextBtn.style.visibility = "hidden";
@@ -413,118 +411,75 @@ function startPage() {
   readyQuestion.style.visibility = "visible";
   photoArea.append(mainImage);
   endTable.style.visibility = "hidden";
-  startBtn.innerText = "Start"
-
-}
-
-
-
-
-
-function nextPage() {
-  nextBtn.style.visibility = "visible";
-  actualQuestion.style.visibility = "visible";
-  if (takingAnswers === false) {
-    buttonArea.classList.toggle("disabled");
-
-  }
-  takingAnswers = true;
-  questionCounter++;
-
-  questionNumber.innerText = `${questionCounter} / 15`;
-  getNewQuestion();
-
-}
-
-
-
-function removeMainImage() {
-  mainImage.remove();
-}
-
-function removeReadyQuestion() {
-  readyQuestion.remove();
-
+  startBtn.innerText = "Start";
 }
 
 function removeStartBtn() {
-
   startBtn.remove();
 }
 
+// defines behaviour of elements on start page when user starts the game
 function startGame() {
-
-
-
   availableQuestions = availableImages = [...questions];
   photoArea.style.visibility = "visible";
   buttonArea.style.visibility = "visible";
   nextBtn.style.visibility = "visible";
   actualQuestion.style.visibility = "visible";
-
-  removeMainImage();
+  mainImage.remove();
   removeStartBtn();
   nextPage();
   endTable.remove();
   titleArea.remove();
-
   readyQuestion.remove();
-
-
 }
 
-
-//questionCounter++;
-
+// defines behaviour of elements when user proceeds to next page
+function nextPage() {
+  nextBtn.style.visibility = "visible";
+  actualQuestion.style.visibility = "visible";
+  if (takingAnswers === false) { // if statement applied by CI tutor 
+    buttonArea.classList.toggle("disabled");
+  }
+  takingAnswers = true;
+  questionCounter++;
+  questionNumber.innerText = `${questionCounter} / 15`;
+  getNewQuestion();
+}
 
 getNewQuestion = () => {
 
-  if (questionCounter > max_questions) {
+  //iterate through questions
 
-
-    //sessionStorage.setItem('mostRecentScore', score);
-    // return window.location.assign('/end.html')
+  if (questionCounter > max_questions) { // max number of questions reached (questionCounter set to 1 on restart)
     allButtons.prepend(startBtn);
-
-
-    // startBtn.addEventListener('click', restartPage)
-
     endTable.style.visibility = "visible";
     startBtn.innerText = "Restart";
-
     endGame();
 
   } else {
-
-    const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length);
-
-    currentQuestion = currentImage = availableQuestions[questionsIndex];
+    const questionsIndex = imageIndex = Math.floor(Math.random() * availableQuestions.length); // always equals to number of questions left
+    currentQuestion = currentImage = availableQuestions[questionsIndex]; // create variables for images, although not necessary as images can be defined with questionIndex
     question.innerText = currentQuestion.question;
     let image = availableImages[imageIndex].url;
-    photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>";
+    photoArea.innerHTML = "<img src=\"" + image + "\" width=\"auto\" height=\"auto\"><br>"; // use image variable here, source to implement method: 
+    //https://stackoverflow.com/questions/64563792/how-to-have-images-in-a-javascript-quiz
 
+    //iterate through answers
     selections.forEach(selection => {
-      const number = selection.dataset['number'];
-      selection.innerText = currentQuestion['selection' + number];
-
+      const number = selection.dataset['number']; // get number from dataset property, get dataset and give back the number
+      selection.innerText = currentQuestion['selection' + number]; //get answer property and data attribute belonging to it in order to get the number 
     })
-    availableQuestions.splice(questionsIndex, 1);
-    
-
+    availableQuestions.splice(questionsIndex, 1); //removes item from array, and returns the removed item
   }
-
 }
 
-
-
-
+//defines behaviour of answer buttons depending on correct/incorrect answer
 selections.forEach(selection => {
   selection.addEventListener('click', e => {
-   
+
     if (!takingAnswers) return
     takingAnswers = false;
-   
-    
+
     const selectedSelection = e.target;
     const selectedAnswer = selectedSelection.dataset['number'];
     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
@@ -532,16 +487,12 @@ selections.forEach(selection => {
       incrementScore(score_points)
       result.innerHTML = `Correct! +${score_points} points!`
       result.style.color = "green";
-      
-     
-      
-      
+
     } else {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
-      incrementScore(0)
-      
-      
+      incrementScore(0) // implemented incrementScore(0) as score is only "born" when user gets a score. 
+      //Therefore score==0 caused an error when validating user score at the end.
     }
 
     selectedSelection.classList.add(classToApply);
@@ -550,24 +501,13 @@ selections.forEach(selection => {
       selectedSelection.classList.remove(classToApply)
       const resDiv = document.querySelector('#res-div')
       resDiv.append(result.innerText = "")
-
       buttonArea.classList.toggle("disabled")
 
     }, 900)
-
-
-    
   })
-  
- 
 })
 
-
-
-
-
-
-
+//defines behaviour of elements when the game ends
 function endGame() {
   startBtn.remove()
   photoArea.remove()
@@ -579,7 +519,6 @@ function endGame() {
   buttonArea.remove();
   nextBtn.remove();
   questionNumber.innerText = 0;
-  //wrapAround.append(titleArea)
   allButtons.prepend(startBtn)
   startBtn.style.visibility = "visible";
   allButtons.append(displayResults)
@@ -594,91 +533,77 @@ saveBtn.addEventListener('click', userData);
 saveBtn.addEventListener('click', checkHighScore);
 startBtn.addEventListener('click', userData);
 
+
+//Check if user enters anything into username window and store name for session or set it to empty string if no or empty input
 function userData() {
 
   userName = $('#username').val()
- 
-  //sessionStorage.setItem("fillUserName", fillUserName)
   sessionStorage.setItem("userName", userName)
-  
-
   if ((fillUserName = null) || (fillUserName = "")) { //if player doesn't enter any username or saves username without entering anything
     sessionStorage.setItem("", userName);
-  } 
-  
+  }
 }
 
 
-
+//Count number of games for game session
 let gameCounter = 0;
 
 function countGame() {
-
   gameCounter++;
   numberOfGames.innerText = gameCounter;
 }
 
+//Increment score based on correct answers and return feedback messages to user at the end depending the score. 
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
   let numberOfQuestions = score / 100;
 
 
-if (score===0){
-  
-  displayResults.innerText = `Hello ${userName}, thanks for playing. Ooops, ${numberOfQuestions} score. Play again to improve!`
-}
+  if (score === 0) {
 
-  else if ((score > 0) && (score <= 300)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. Ooops, ${numberOfQuestions} score. Play again to improve!`
+  } else if ((score > 0) && (score <= 300)) {
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} out of 15 questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 300) && (score <= 600)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} out of 15 questions right. Great job! Play again for an even better result!`;
   } else if ((score > 600) && (score <= 1000)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Super job! Play again for an even better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} out of 15 questions right. Super job! Play again for an even better result!`;
 
   } else if ((score > 1000) && (score <= 1400)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Excellent job! You do know your art!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} out of 15 questions right. Excellent job! You do know your art!`;
   } else {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! Vow! You really, really know your art!`;
   }
-
-
-
 }
 
 
-
+//check if score is in first game played or higher than previous score and set highscore accordingly
 function checkHighScore() {
 
   if ((score == highScore) || (score > highScore)) {
-
     highScore = score;
     sessionStorage.setItem('highScore', highScore)
     allScore.innerText = highScore;
-
   }
-
 }
 
-
+//defines behaviour of elements on game restart
 function restartPage() {
-
   score = 0;
   scoreText.innerText = "0";
   availableQuestions = availableImages = [...questions];
   startBtn.addEventListener('click', removeStartBtn())
-  wrapAround.append(photoContainer)
-  photoContainer.prepend(photoArea)
+  wrapAround.append(photoContainer);
+  photoContainer.prepend(photoArea);
   questionCounter = 1;
   questionNumber.innerText = questionCounter;
   questionContainer.append(actualQuestion);
   allButtons.append(buttonArea);
   const resDiv = document.querySelector('#res-div')
-  gameArea.prepend(resDiv)
+  gameArea.prepend(resDiv);
   nextBtn.style.visibility = "visible";
   allButtons.append(nextBtn);
-
-  questionNumber.innerText = `${questionCounter} / 15`
-
+  questionNumber.innerText = `${questionCounter} / 15`;
 }

@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
 
 
-/*font-family: 'Nanum Brush Script', cursive;*/
-/*font-family: 'Sniglet', cursive;*/
-/*font-family: 'Baloo Bhai 2', cursive;*/
 
 * {
     margin: 0;
@@ -15,31 +12,25 @@
 
 
 body {
-    /*background-color: #FFFADE;*/
     background-color: rgb(255, 227, 217);
-
 }
 
 #wrap-around {
     margin: 0 auto;
-
     justify-content: center;
     align-items: center;
 }
 
 
+/*Style the user information section and its elements*/
 
 #sidebar {
     height: 100vw;
     width: 220px;
-    /*background-color: #E8F3F1;*/
     background-color: rgb(119, 226, 245);
     float: left;
     padding: 0 10px;
     position: fixed;
-
-
-
 }
 
 #info {
@@ -54,11 +45,9 @@ body {
 }
 
 hr {
-
     border: solid 0.25px #DDE2F3;
     width: 96%;
 }
-
 
 #user-name,
 #number-of-games,
@@ -66,10 +55,7 @@ hr {
 #user-score,
 #all-score {
     text-align: center;
-
 }
-
-
 
 #user-name p,
 #username p,
@@ -84,15 +70,11 @@ hr {
     letter-spacing: 0rem;
     text-align: center;
     padding: 10px;
-
-
 }
 
 
-
-
-
-#username, #question-counter {
+#username,
+#question-counter {
     height: 30px;
     width: 150px;
     padding: 5px;
@@ -124,12 +106,7 @@ hr {
     letter-spacing: 0rem;
     border-radius: 5px;
     border: 2px solid #DDE2F3;
-
-
 }
-
-
-
 
 #save-btn {
     height: 50px;
@@ -138,19 +115,16 @@ hr {
     margin: 20px auto auto auto;
     font-family: 'Sniglet', cursive;
     color: white;
-    /*background-color: teal;*/
     background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
     font-size: 20px;
     letter-spacing: 0rem;
     border-radius: 20px;
     border: 2px solid #DDE2F3;
     display: block;
-   
 }
 
-#save-btn:active{
-    background:rgb(233, 233, 103);
-
+#save-btn:active {
+    background: rgb(233, 233, 103);
 }
 
 #save-btn p {
@@ -160,19 +134,17 @@ hr {
 
 #save-btn.p:active {
     padding: 2px;
-    color:blue;
+    color: blue;
 }
-
-
 
 #info-container {
     visibility: visible;
 }
 
-#github, #copyright {
-
+#github,
+#copyright {
     margin: 0 auto;
-    display:block;
+    display: block;
     text-align: center;
 }
 
@@ -182,36 +154,33 @@ hr {
     font-size: 20px;
     text-align: center;
     bottom: 10px;
-    
     margin-bottom: 5px;
-
 }
-#second-hr{
+
+#second-hr {
     margin-bottom: 15px;
-margin-top: 20px;}
+    margin-top: 20px;
+}
 
 
-.social i{
-    /*color: #D53E69;*/
-    color:#D53E69;
-
+.social i {
+    color: #D53E69;
     font-weight: 600;
     font-size: 40px;
     margin: 0 auto;
     display: block;
-    
     margin-bottom: 15px;
-    
 }
 
 .social i:hover {
     color: #8D7257;
 }
+
 .social i:active {
-    color:rgb(233, 233, 103);
+    color: rgb(233, 233, 103);
 }
 
-
+/*Style the title area and its elements*/
 
 #title-area {
     height: auto;
@@ -219,15 +188,11 @@ margin-top: 20px;}
     margin: 0 auto;
     float: none;
     display: block;
-    /* background-color: purple;*/
     text-align: center;
     overflow: hidden;
-
 }
 
-#quiz-title{
-    /*color:#8A88E4;*/
-    /* text-transform: uppercase;*/
+#quiz-title {
     letter-spacing: 2px;
     font-family: 'Nanum Brush Script', cursive;
     font-size: 50px;
@@ -235,20 +200,20 @@ margin-top: 20px;}
 }
 
 
-.hide{display:none;}
+.hide {
+    display: none;
+}
 
+/*style the photo area and its elements*/
 
 #photo-area {
     height: 270px;
     width: 100vw;
-    
     float: none;
     display: block;
     text-align: center;
     overflow: hidden;
-    position:relative;
-    
-
+    position: relative;
 }
 
 
@@ -261,25 +226,25 @@ margin-top: 20px;}
     height: 270px;
     width: 100%;
     position: relative;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 
 
 img {
-    
+
     border-radius: 5px;
 
 }
 
+/*Style the question area and its elements*/
+
 #question-area {
-    
     height: 50px;
     width: 100vw;
     margin: auto;
     float: none;
     display: block;
-    /* background-color: cyan;*/
     text-align: center;
     font-family: 'Sniglet', cursive;
 }
@@ -287,7 +252,7 @@ img {
 #title {
     font-size: 50px;
     color: #D53E69;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 
 }
 
@@ -298,10 +263,7 @@ img {
     float: none;
     display: block;
     text-align: center;
-   margin-bottom: 20px;
-   
-    
-    
+    margin-bottom: 20px;
 }
 
 #ready {
@@ -311,8 +273,6 @@ img {
     margin: 20px;
     display: block;
 }
-
-
 
 #question {
     overflow: hidden;
@@ -324,18 +284,16 @@ img {
     margin: 20px 0 10px 0;
 }
 
-
-
-
+/*Style the button area and its elements*/
 
 #button-area {
     display: grid;
     grid-gap: 10px;
-
 }
 
 .start-btn,
-.next-btn, #restart-btn {
+.next-btn,
+#restart-btn {
     display: block;
     padding: 20px;
     margin: 0 auto;
@@ -348,14 +306,11 @@ img {
     background: linear-gradient(90deg, rgba(4, 134, 41, 1), rgba(6, 53, 20, 1));
     color: white;
     white-space: nowrap;
-    
-
 }
 
 #answer-area {
     display: grid;
     grid-template-columns: 250px 250px;
-    /* grid-row: auto auto;*/
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     grid-gap: 10px;
@@ -364,32 +319,28 @@ img {
 
 #res-div,
 #result {
-
     margin: 0 auto;
     justify-content: center;
     display: block;
 }
 
-#end-table{
+/*Style end messages to the user*/
 
-    margin:0 auto;
+#end-table {
+    margin: 0 auto;
     height: 300px;
     width: 300px;
-    font-family: 'Baloo Bhai', cursive;
-
-    /*font-family: 'Sniglet', cursive;*/
+    font-family: 'Calligraffitti', cursive;
     font-size: 30px;
-    color:#5E3B98;
-    font-weight: normal;
+    color: #5E3B98;
+    font-weight: bolder;
     text-align: justify;
     display: block;
     padding: 15px;
-    border-radius:10px;
-   /* border: 5px solid #5E3B98;*/
-
-  /*background-color: #C4FCEF;*/
+    border-radius: 10px;
 }
 
+/*Classes to add to answer buttons after user has selected an answer*/
 
 .disabled {
     pointer-events: none;
@@ -415,6 +366,9 @@ img {
     pointer-events: all;
     opacity: 1;
 }
+
+
+/*Style all buttons*/
 
 .answer-btn {
     display: block;
@@ -442,9 +396,6 @@ img {
     cursor: pointer;
     transition: transform 120ms;
     transform: scale(1.04);
-
-
-
 }
 
 
@@ -454,17 +405,16 @@ img {
     padding-left: 5px;
 }
 
+/*Styles to add depending on correct / incorrect answer*/
 
 .correct {
 
     background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.9));
-    /*transition: transform 60ms;*/
     animation: fadeMe 0.5s;
     -webkit-animation: fadeMe 0.5s;
     -moz-animation: fadeMe 0.5s;
     -o-animation: fadeMe 0.5s;
     -ms-animation: fadeMe 0.5s;
-
 }
 
 @keyframes fadeMe {
@@ -526,17 +476,15 @@ img {
 }
 
 .incorrect {
-
     background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.9));
-    /* transition: transform 60ms;*/
     animation: fadeMe 0.5s;
     -webkit-animation: fadeMe 0.5s;
     -moz-animation: fadeMe 0.5s;
     -o-animation: fadeMe 0.5s;
     -ms-animation: fadeMe 0.5s;
-
-
 }
+
+/*Style messages to show correct/incorrect answer and score gained on question*/
 
 #result {
     font-size: 25px;
@@ -544,41 +492,33 @@ img {
     display: inline;
 }
 
-
-.hide {display:none}
-
+/*Media queries for laptop devices*/
 
 @media screen and (min-width:1025px) and (max-width:1200px) {
 
     #question-area,
     #question {
-
         width: 50%;
         height: auto;
         justify-content: center;
         margin: 0 auto;
     }
-
-
 }
 
+/*Media queries for tablet devices landscape view */
 @media screen and (min-width:992px) and (max-width:1024px) {
 
     #question-area,
     #question {
-
         width: 50%;
         height: auto;
         justify-content: center;
         margin: 0 auto;
     }
-
 }
 
-
-@media screen and (min-width:768px)  and (max-width:991px) {
-
-
+/*Media queries for tablet devices portrait view */
+@media screen and (min-width:768px) and (max-width:991px) {
 
     #title-area,
     #photo-area,
@@ -593,10 +533,6 @@ img {
 
     }
 
-
-
-
-
     #sidebar {
         height: auto;
         width: 50%;
@@ -605,10 +541,7 @@ img {
         position: relative;
         margin: 0 auto;
         align-content: center;
-
-
     }
-
 
     .answer-btn {
         width: 200px;
@@ -616,8 +549,6 @@ img {
         color: white;
         font-size: 14px;
         margin-top: 5px;
-
-
     }
 
     .start-btn {
@@ -626,22 +557,15 @@ img {
 
     .next-btn {
         float: none;
-        /*margin-bottom: 20px;*/
         display: block;
         float: none;
         position: relative;
         margin: 0 auto;
-
-
-
     }
 
     #answer-btn4 {
         margin-bottom: 20px;
-
-
     }
-
 
     #username {
         height: auto;
@@ -649,22 +573,15 @@ img {
         margin-top: 5px;
     }
 
-
-
-
-
     #info-container {
         margin: 0 auto;
     }
 
-
-
 }
 
-
+/*Media queries for larger mobile devices */
 
 @media screen and (min-width:400px) and (max-width:990px) {
-
 
     #save-btn {
         height: 50px;
@@ -674,7 +591,6 @@ img {
         font-family: 'Sniglet', cursive;
         color: white;
         background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
-
         font-size: 17px;
         letter-spacing: 0rem;
         border-radius: 20px;
@@ -703,7 +619,6 @@ img {
         float: none;
         position: relative;
         margin: 0 auto;
-
     }
 
 
@@ -715,10 +630,7 @@ img {
         position: relative;
         margin: 0 auto;
         align-content: center;
-
-
     }
-
 
     .answer-btn {
         width: 200px;
@@ -726,8 +638,6 @@ img {
         color: white;
         font-size: 15px;
         margin-top: 5px;
-
-
     }
 
     .start-btn {
@@ -739,58 +649,43 @@ img {
         float: none;
         position: relative;
         margin: 20px auto 20px auto;
-
     }
 
     #answer-btn4 {
         margin-bottom: 20px;
-
-
     }
 
     .answer-text {
         padding-right: 0;
     }
 
-
     #username {
-
         height: auto;
         width: 150px;
         margin-top: 5px;
-
-
-
     }
 
     ::placeholder {
         color: lightgray;
     }
 
-
     #info-container {
         margin: 0 auto;
     }
 
-
     .correct {
 
         background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
-        /*transition: transform 60ms;*/
     }
-
 
     .incorrect {
 
         background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
-        /* transition: transform 60ms;*/
     }
-
-
-
 }
 
-@media screen and (min-width:280px) and (max-width:767px){
+/*Media queries for smaller mobile devices*/
+@media screen and (min-width:280px) and (max-width:767px) {
 
     #save-btn {
         height: 50px;
@@ -800,9 +695,7 @@ img {
         font-family: 'Sniglet', cursive;
         color: white;
         background: linear-gradient(90deg, rgb(68, 152, 173), rgb(89, 87, 218));
-       color: white;
-        
-
+        color: white;
         font-size: 17px;
         letter-spacing: 0rem;
         border-radius: 20px;
@@ -814,9 +707,7 @@ img {
     #save-btn p {
         color: white;
         padding: 3px;
-        }
-
-
+    }
 
     #question {
         padding: 0 10px;
@@ -836,9 +727,7 @@ img {
         width: auto;
         justify-content: center;
         align-content: center;
-
     }
-
 
     #sidebar {
         display: block;
@@ -848,10 +737,7 @@ img {
         height: auto;
         justify-content: center;
         align-content: center;
-
     }
-
-
 
     #wrap-around {
         margin: 0 auto;
@@ -861,7 +747,6 @@ img {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        
     }
 
     .answer-btn {
@@ -878,38 +763,29 @@ img {
     }
 
     .next-btn {
-        /* margin: 20px;*/
-
         display: block;
         float: none;
         position: relative;
         margin: 20px auto 20px auto;
-
-
     }
 
 
 
     img {
-
         border: none;
         box-shadow: none;
         position: relative;
         margin: 0 auto;
         border-radius: 5px;
-
-
     }
 
     #photo-area {
         height: auto;
         width: 100vw;
-
     }
 
 
     #photo {
-
         background-repeat: no-repeat;
         background-position: center;
         justify-content: center;
@@ -918,24 +794,14 @@ img {
         height: auto;
         width: 100%;
         position: relative;
-
-
     }
 
-    /* .answer-text {padding-right: 50px;}*/
-
     .correct {
-
         background: linear-gradient(45deg, rgba(5, 209, 63, 1), rgba(2, 114, 36, 0.8));
-        /*transition: transform 60ms;*/
     }
 
 
     .incorrect {
-
         background: linear-gradient(45deg, rgba(231, 19, 36, 1), rgba(167, 6, 6, 0.8));
-        /* transition: transform 60ms;*/
     }
-
-
 }

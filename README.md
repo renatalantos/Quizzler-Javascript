@@ -100,17 +100,17 @@ This basic layout is maintained throughout the game. The "Your information" sect
 
  This is where the user can enter and view user and game information. It is located to the left on the page on larger desktops and on top on smaller screens. It has the following elements:
  
- 2. Username window with placeholder inside and with text above. 
+* Username window with placeholder inside and with text above. 
 
- 2. "Save" button. 
+ * "Save" button. 
 
- 3. "Number of games played" window with text. 
+ * "Number of games played" window with text. 
 
- 3. "Current question" window with text. 
+ * "Current question" window with text. 
 
-4. "Current score" window with text. 
+* "Current score" window with text. 
 
-5. "Highscore" window with text. 
+* "Highscore" window with text. 
 
 
 
@@ -122,18 +122,18 @@ The game area layout will basically stay the same throughout the game. I manipul
 2. Game page 
 [Game page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/when_game_started.JPG)
 3. End page 
-[Start page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/on_end_game.JPG)
+[End page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/on_end_game.JPG)
 4. Restart page - this will be the same as the Start page, except for highscore will show and the current question counter is 1.
 [Restart page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/on_restart.JPG)
 
- ## The Start Page consist of the following elements: 
+ #### The Start Page consist of the following elements: 
  * Title area with question "Do you know your art?" and 2 Font Awesome icons for a palette and a brush - this will be hidden after "Start" button is pressed.
  * Photo area with the main image "colourful paints" - this will be hidden after "Start" button is pressed.
  * Message to user "Play my awesome 15 question quiz game" - this will be hidden after "Start" button is pressed. 
  * Button area with the "Start" button only - the "Start" button will be hidden after "Start" button is pressed.   
 
 
- ## The Game page consist of the following elements:
+ #### The Game page consist of the following elements:
 
  * Image relating to question - this will be hidden when the game ends.
  * Actual question - this will be hidden when the game ends.
@@ -141,7 +141,7 @@ The game area layout will basically stay the same throughout the game. I manipul
 *  Next button - this will be hidden when the game ends.
 *  Result message. This message appears above the answer buttons and will disappear as soon as the answer buttons are disabled.
 
-## The End Game Page consist of the following elements: 
+#### The End Game Page consist of the following elements: 
 
 * Message to the user "Play again" - this will be hidden when the game restarts.
 * "Restart" button - this will be hidden when the game restarts. The "Restart" button takes the user to the Game page (skipping the static Start page).
@@ -151,7 +151,6 @@ The game area layout will basically stay the same throughout the game. I manipul
 
 # Features
 
-## Featured in all game stages: 
 
 ### The "Your information" section
 
@@ -160,18 +159,18 @@ This is where the user can enter and view user and game information. This is fea
 
  2. Username window with placeholder inside and with text above. User has the option to create a username or play in guest mode. This is clarified by the text, which says: "Create username or just play!" If user enters a username and saves it, it will be displayed in the result message at the end of the game, where number of corretly answered questions are outlined. If user chooes not to enter a username, the message will be still displayed, with no name.
 
- 2. "Save" button. The save button will save the username, entered the way described above.
+ 3. "Save" button. The save button will save the username, entered the way described above.
 
 
- 3. "Number of games played" window with text. Here user can keep track of the  number of games in a game session. This is 0 by default, changes to 1 on start and will update on restart.
+ 4. "Number of games played" window with text. Here user can keep track of the  number of games in a game session. This is 0 by default, changes to 1 on start and will update on restart.
 
- 3. "Current question" window with text. Current questions are shown as current question / 15. This is 0 by default, changes to 1 on start and will updateto 0 on restart.
+ 5. "Current question" window with text. Current questions are shown as current question / 15. This is 0 by default, changes to 1 on start and will updateto 0 on restart.
 
-4. "Current score" window with text. This enables users to keep track of their score. Score increments by 100. This is 0 by default, increments by 100 when user gets a question right and will update to 0 on restart.
+6. "Current score" window with text. This enables users to keep track of their score. Score increments by 100. This is 0 by default, increments by 100 when user gets a question right and will update to 0 on restart.
 
-5. "Highscore" window with text. This enables users to keep track of their highscore. This is 0 by default, increments if achieved score is bigger than the highscore or sets the first score as highscore. This is 0 by default.
+7. "Highscore" window with text. This enables users to keep track of their highscore. This is 0 by default, increments if achieved score is bigger than the highscore or sets the first score as highscore. This is 0 by default.
 
-5. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current portfolio and the copyright statement unserneath.
+8. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current portfolio and the copyright statement unserneath.
 
 ### Featured on Start Page
 
@@ -189,16 +188,16 @@ This is where the user can enter and view user and game information. This is fea
 4.   Next button. The next button removes the disabled state from the answer buttons and takes the user to the next page.
 5.  Result message. This message appears above the answer buttons simultaneously with the answer buttons' reacting saying "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect. It will disappear as soon as the answer buttons are disabled.
 
-## The End Game Page consist of the following elements: 
+### Featured on End Page
 
-* Message to the user "Play again" - extra encouragement to the user to stay on the game.
-* "Restart" button - The "Restart" button takes the user to the Game page (skipping the static Start page) It is simply the "Start" button renamed to "Restart".
-* Message to the user depending on the score, displaying te number of correctly answered questions. There are 6 messages altogether, including when score is 0.
+1. Message to the user "Play again" - extra encouragement to the user to stay on the game.
+2. "Restart" button - The "Restart" button takes the user to the Game page (skipping the static Start page) It is simply the "Start" button renamed to "Restart".
+3. Message to the user depending on the score, displaying te number of correctly answered questions. There are 6 messages altogether, including when score is 0.
 
 
 
 ## Future features
-* I would like to add more questions to the game, as presently the number of alternating questions in a 15 game score is only 30.
+* I would like to add more questions to the game, as presently the number of alternating questions in a 15 question game is only 30.
 * I would like to add a sound effect to the buttons and maybe a pleasant background music.
 * It would be nice to create a larger game where this art quiz is only a subcategory. 
 
@@ -219,57 +218,30 @@ This is where the user can enter and view user and game information. This is fea
 ## Discrepancies with original ideas
 
 
-*  Overall 
+Overall I kept to the basic layout described in the wireframes. I aimed for a simple design and simple game to start with.
 
-Overall I kept to the basic layout described in the wireframes. The main discrepancy  is that I didn't implement a hamburger menu in mobile
-view as planned. Also, in tablet and mobile view, the copyright message is not displayed. See Issues for explanation.
+However, there are some concepts and features that I discarded.
 
-* On individual pages
-  * Home page
-
-  I added more text start with, as I felt the user would look for information on the group. I added smaller images to enhance the content and make the site visually more appealing. I divided the text area into a left and right section. The testimonials are displayed in a 2-by-2 view, instead of a 4-by-1 and used images, too to introduce the reviewers. I used Welcome instead of Intro.
-
-    *  About page
+1. I intended to add a user registration and login form, which I realized were unnecsessary. I only created the above mention "Your information" section, which was also part of my original concept.
 
 
-    I added smaller images to enhance the content and make the site visually more appealing. I divided the text area into a left and right section. I used Our Group Leaders instead of History and used images, too to introduce them. I also planned to put the child psychologist contact details and image here, which are on the Contact page right now. I felt this was more logical and coherent.
+2. Buttons were meant to be displayed under one another, however, this is not good on smaller laptop screens, as user needs to scroll up and down to see the image and press the next button. This button layout has been preserved for mobile devices.
 
-    *  Sessions page 
+  ## Colours
 
-    I added smaller images to enhance the content and make the site visually more appealing. I divided the text area into a left and right section. Also, a video is featured here, that I wanted to display in the Gallery page, as one of the images.
+    For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for cheerful, playful, attractive colours that suit a game and compliment the colourful images. I allowed myself to use stronger yet not too strong colours. The background colour is a very pale pink, however, as users should not be distracted from the visuals of the game elements. I chose the colours intuitively. The colours are contrasting yet complimenting each other in my opinion.
 
-    *  Gallery page
-
-
-    Instead of a mosaic image layout I displayed a whole page slideshow gallery. I felt this is more consistent with the layout of the previous pages that display a large size main image on top.
-
-    *  Contact page 
-
-
-    I changed the arrangements of the 3 sections on the page. The two 50% size sections are displayed in reverse order as the user will look for the contact details first according to the page title and on smaller screens the contact details might not show without scrolling down first. Also I inserted the child psychologist's details here. 
-
-
-    The contact form is for newsletter subscription purposes, as opposed to the original where it was meant for contacting the site. This would have merely duplicated the contact option, without any added function.
-
-
-    The radio button question has been changed to asking the user whether they would want to join soon. The original question would have been answered by the user in the process of contacting the group anyway.
-
-    *  Confidentiality page - was meant to be the way it is in the final version. 
-
-    ## Colours
-
-    For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for low-tone, relaxing colours that harmonize with each other, as users turn to the site in distress, seeking for comfort. Dominant colours are shades of blue, shades  taupe, white, light blue-green and grey and black for text. Main images were selected accordingly.
-
-    [Example for colour implementation - About page](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/About_page_main_image.JPG)
+    
 
     ## Typography
 
 
-    For the main text flow I used 'Lora', serif from Google fonts as it has nicely formed letters with a flow effect and it has a default font-weight that didn't need extra Css styling. 
+    For the information section, the game questions, the game answers on the buttons I used Sniglet cursive from Google fonts as it has playful, round yet easy-to-read letters.  
 
-    For links in the header and navbar and text-overlays displaying mottos and extra information, also image gallery overlay I used default 'Rubik', sans-serif from Google Fonts, sans-serif, as I find it matter-of fact letter-type. 
+    For the page title "Do you know your art?"  and the messages to the user to encourage them to paly "Try my awesome 15 question art quiz!" and "Play again" I used Nanum Brush cursive from Google Fonts as the letters look like brushstrokes and they can be associated with painting. 
+    
 
-    For page headings I used the default 'Open Sans', sans-serif from Google Fonts, sans-serif, as I find it matter-of fact letter-type but it also differs from Rubik.
+    For the final score messages to the user I used Calligraffiti, cursive from Google fonts as the letters look like they are handwritten and the message is more personal. This is also a very beautiful letter type and can be associated with art.
 
 
 # Technologies
@@ -280,7 +252,8 @@ view as planned. Also, in tablet and mobile view, the copyright message is not d
 
 *  **CSS** for styling
 
-* **Javascript** for the Gallery page slideshow gallery
+* **Javascript** for to enable user interaction on the site
+
 
 * **Google Fonts** for text
 
@@ -297,14 +270,15 @@ view as planned. Also, in tablet and mobile view, the copyright message is not d
 
  ## Validation 
 
-   My Home, About, Sessions, Gallery, Contact, Confidentiality html pages passed in the W3C HTML Validator with the following result. I needed to fix minor errors on 3 pages before: **Document checking completed. No errors or warnings to show.**
+   My index.html page passed the validator with the following result on 2 lines: **Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.** I left this, however, as even without the heading, the sections represent areas with well marked different purposes on the page.
+   [HTML Warning messages after successful validation]()
 
    My CSS page passed in the W3C Jigsaw CSS validator with the following result: **CSS Congratulations! No Error Found.**
 
-  There were 9 warning messages displayed regarding imported elements. 
+  There were 14 warning messages displayed regarding imported elements. 
   These relate to the imported stylesheet on top of the page and the elements are imported to power the text overlay transform features.
 
-  [CSS Warning messages after successful validation](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/CSS%20warning%20messages%20in%20Jigsaw.JPG)
+  [CSS Warning messages after successful validation]()
 
   ## Testing in supported browsers
 
