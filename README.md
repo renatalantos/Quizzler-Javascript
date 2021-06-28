@@ -88,7 +88,7 @@ Potential users would like / may want to achieve the following:
 
 # Layout
 
-The page is designed to be on one page only. The basic page layout is divided into 2 areas: 
+As I meant to keep the design as simple as possible, the game is designed to be on one page only, regardless the game stages. The basic page layout is divided into 2 areas: 
 
 
 1.  The "Your information" section"
@@ -114,16 +114,39 @@ This is where the user can enter and view user and game information. It consists
 
 5. "Highscore" window with text. This enables users to keep track of their highscore. This is 0 by default, increments if achieved score is bigger than the highscore or sets the first score as highscore. This is 0 by default.
 
-5. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current posrtfolio and the copyright statement unserneath.
+5. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current portfolio and the copyright statement unserneath.
 
 ### The game area
 
-The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages.
+The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again.
 1. Start page 
 2. Game page
 3. End page
+4. Restart page
 
-1. The start page 
+ ## The Start Page consist of the following elements: 
+ * Title area with question "Do you know your art?" and 2 Font Awesome icons for a palette and a brush - this will be hidden after "Start" button is pressed.
+ * Photo area with the main image "colourful paints" - this will be hidden after "Start" button is pressed.
+ * Message to user "Play my awesome 15 question quiz game" - this will be hidden after "Start" button is pressed. 
+ * Button area with the "Start" button only - the "Start" button will be hidden after "Start" button is pressed.   
+
+
+ ## The Game page consist of the following elements:
+
+ * Image relating to question - this will be hidden when the game ends.
+ * Actual question - this will be hidden when the game ends.
+ * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view). The answer selected answer button turns green/red depending on correct/incorrect answer, and they will be disabled and faded out then to signal it to the the user, that they are not allowed to press the buttons again. They will stay like this until the "Next" button is pressed. The answer buttons could not be pressed again by default anyway, this feature just enhances that. - these will be hidden when the game ends - these will be hidden when the game ends.
+*  Next button. The next buttons removes the disabled state from the answer buttons and takes the user to the next page - this will be hidden when the game ends.
+*  Result message. This message appears above the answer buttons simultaneously with the answer buttons' reacting saying "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect. They will disappear as soon as the answer buttons are disabled.
+
+## The End Game Page consist of the following elements: 
+
+* Message to the user "Play again" - this will be hidden when the game restarts.
+* "Restart" button - this will be hidden when the game restarts. The "Restart" button takes the user to the Game page (skipping the static Start page).
+* Message to the user depending on the score, displaying te number of correctly answered questions - this will be hidden when the game restarts. 
+
+
+
 
 
 
