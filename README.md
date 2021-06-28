@@ -1,5 +1,5 @@
-# Milestone Project 2 - Quizzler
-![image](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Am_I_responsive_screenshot.JPG)
+# Milestone Project 2 - Quizzler-Javascript
+![image](https://github.com/renatalantos/Quizzler-Javascript/blob//master/documents/screenshots/Am I responsive screenshot.JPG)
 
 ## Table of Contents
 

@@ -72,7 +72,6 @@ hr {
 
 
 #user-name p,
-.user-label p,
 #username p,
 #number-of-games p,
 #question-number p,
@@ -136,7 +135,7 @@ hr {
     height: 50px;
     width: 80px;
     padding: 5px;
-    margin: 10px auto auto auto;
+    margin: 20px auto auto auto;
     font-family: 'Sniglet', cursive;
     color: white;
     background-color: teal;
@@ -145,7 +144,7 @@ hr {
     border-radius: 20px;
     border: 2px solid #DDE2F3;
     display: block;
-    margin-top: 20px;
+   
 }
 
 
@@ -161,6 +160,40 @@ hr {
     visibility: visible;
 }
 
+#github, #copyright {
+
+    margin: 0 auto;
+    display:block;
+    text-align: center;
+}
+
+#copyright {
+    font-family: 'Sniglet', cursive;
+    color: #D53E69;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+
+}
+
+
+.social i{
+    /*color: #D53E69;*/
+    color:#D53E69;
+
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.social i:hover {
+    color: #8D7257;
+}
+.social i:active {
+    color:rgb(233, 233, 103);
+}
 
 
 
