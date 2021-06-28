@@ -88,17 +88,74 @@ Potential users would like / may want to achieve the following:
 
 # Layout
 
-As I meant to keep the design as simple as possible, the game is designed to be on one page only, regardless the game stages. The basic page layout is divided into 2 areas: 
+As I meant to keep the design as simple as possible, the game is designed to be on one page only, regardless the game stages. It's layout is sourced from one index.html file only. The basic page layout is divided into 2 areas: 
 
 
-1.  The "Your information" section"
-2.  The game area.
+1.  The "Your information" section" 
+2.  The game area 
 
 This basic layout is maintained throughout the game. The "Your information" section won't dynamically change, merely the information in it will be updated throughout the game. 
 
 ### The "Your information" section
 
-This is where the user can enter and view user and game information. It consists of the following elements:
+ This is where the user can enter and view user and game information. It is located to the left on the page on larger desktops and on top on smaller screens. It has the following elements:
+ 
+ 2. Username window with placeholder inside and with text above. 
+
+ 2. "Save" button. 
+
+ 3. "Number of games played" window with text. 
+
+ 3. "Current question" window with text. 
+
+4. "Current score" window with text. 
+
+5. "Highscore" window with text. 
+
+
+
+### The game area
+
+The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again. The game area which will be in the middle of the page on all screens, and all its elements are centered in the middle.
+1. Start page 
+[Start page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/start_page_with_no_updates.JPG)
+2. Game page 
+[Game page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/when_game_started.JPG)
+3. End page 
+[Start page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/on_end_game.JPG)
+4. Restart page - this will be the same as the Start page, except for highscore will show and the current question counter is 1.
+[Restart page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/on_restart.JPG)
+
+ ## The Start Page consist of the following elements: 
+ * Title area with question "Do you know your art?" and 2 Font Awesome icons for a palette and a brush - this will be hidden after "Start" button is pressed.
+ * Photo area with the main image "colourful paints" - this will be hidden after "Start" button is pressed.
+ * Message to user "Play my awesome 15 question quiz game" - this will be hidden after "Start" button is pressed. 
+ * Button area with the "Start" button only - the "Start" button will be hidden after "Start" button is pressed.   
+
+
+ ## The Game page consist of the following elements:
+
+ * Image relating to question - this will be hidden when the game ends.
+ * Actual question - this will be hidden when the game ends.
+ * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view, 4 x 1on smaller screens) these will be hidden when the game ends.
+*  Next button - this will be hidden when the game ends.
+*  Result message. This message appears above the answer buttons and will disappear as soon as the answer buttons are disabled.
+
+## The End Game Page consist of the following elements: 
+
+* Message to the user "Play again" - this will be hidden when the game restarts.
+* "Restart" button - this will be hidden when the game restarts. The "Restart" button takes the user to the Game page (skipping the static Start page).
+* Message to the user depending on the score, displaying te number of correctly answered questions - this will be hidden when the game restarts. 
+
+
+
+# Features
+
+## Featured in all game stages: 
+
+### The "Your information" section
+
+This is where the user can enter and view user and game information. This is featured in ALL game stages. It consists of the following elements:
  1.  "Your information" heading to display the purpose of this section. The horizontal rule underneath separates the functional elements from the title. These functional elements are:
 
  2. Username window with placeholder inside and with text above. User has the option to create a username or play in guest mode. This is clarified by the text, which says: "Create username or just play!" If user enters a username and saves it, it will be displayed in the result message at the end of the game, where number of corretly answered questions are outlined. If user chooes not to enter a username, the message will be still displayed, with no name.
@@ -116,206 +173,34 @@ This is where the user can enter and view user and game information. It consists
 
 5. The second horizontal rule separates the above functional elements from the GitHub icon, which is a shortcut link to the web developer's current portfolio and the copyright statement unserneath.
 
-### The game area
+### Featured on Start Page
 
-The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again.
-1. Start page 
-2. Game page
-3. End page
-4. Restart page
-
- ## The Start Page consist of the following elements: 
- * Title area with question "Do you know your art?" and 2 Font Awesome icons for a palette and a brush - this will be hidden after "Start" button is pressed.
- * Photo area with the main image "colourful paints" - this will be hidden after "Start" button is pressed.
- * Message to user "Play my awesome 15 question quiz game" - this will be hidden after "Start" button is pressed. 
- * Button area with the "Start" button only - the "Start" button will be hidden after "Start" button is pressed.   
+1. Title area with question "Do you know your art?" and 2 Font Awesome icons for a palette and a brush - this is a visual enhancement feature
+ 2. Photo area with the main image "colourful paints" - this is a visual enhancement feature.
+ 3. Message to user "Play my awesome 15 question quiz game". 
+ 4. Button area with the "Start" button only - the "Start" button starts the game the first time, after it's renamed to "Restart. This is the only dynamic element on the Start page.
 
 
- ## The Game page consist of the following elements:
+ ### Featured on Game Page
 
- * Image relating to question - this will be hidden when the game ends.
- * Actual question - this will be hidden when the game ends.
- * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view). The answer selected answer button turns green/red depending on correct/incorrect answer, and they will be disabled and faded out then to signal it to the the user, that they are not allowed to press the buttons again. They will stay like this until the "Next" button is pressed. The answer buttons could not be pressed again by default anyway, this feature just enhances that. - these will be hidden when the game ends - these will be hidden when the game ends.
-*  Next button. The next buttons removes the disabled state from the answer buttons and takes the user to the next page - this will be hidden when the game ends.
-*  Result message. This message appears above the answer buttons simultaneously with the answer buttons' reacting saying "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect. They will disappear as soon as the answer buttons are disabled.
+ 1. Image relating to question - for visual enhancement, also they are organic part of the questions.
+ 2. Actual question - the gist of the quiz.
+ 3. Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view). The answer selected answer button turns green/red depending on correct/incorrect answer, and they will be disabled and faded out then to signal it to the the user, that they are not allowed to press the buttons again. They will stay like this until the "Next" button is pressed. The answer buttons could not be pressed again by default anyway, this feature just enhances that. 
+4.   Next button. The next button removes the disabled state from the answer buttons and takes the user to the next page.
+5.  Result message. This message appears above the answer buttons simultaneously with the answer buttons' reacting saying "Correct! +100 points" if answer is correct and "Incorrect! 0 points" if answer is incorrect. It will disappear as soon as the answer buttons are disabled.
 
 ## The End Game Page consist of the following elements: 
 
-* Message to the user "Play again" - this will be hidden when the game restarts.
-* "Restart" button - this will be hidden when the game restarts. The "Restart" button takes the user to the Game page (skipping the static Start page).
-* Message to the user depending on the score, displaying te number of correctly answered questions - this will be hidden when the game restarts. 
+* Message to the user "Play again" - extra encouragement to the user to stay on the game.
+* "Restart" button - The "Restart" button takes the user to the Game page (skipping the static Start page) It is simply the "Start" button renamed to "Restart".
+* Message to the user depending on the score, displaying te number of correctly answered questions. There are 6 messages altogether, including when score is 0.
 
 
-
-
-
-
-
-
-
-##
-The Homepage introduces the purpose and the main activity of the group, the vision and responses.
-The home page consists of the following sections:
-
-* Welcome
-
-* Vision
-
-* Testimonials
-
-[Home page main image](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/Home_page_main_image.JPG)
-
-
-[Welcome section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Welcome_section_mobile_view.JPG)
-
-[Visions section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Vision_section_mobile_view.JPG)
-
-[Testimonials section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Testimonials_section_tablet_view.JPG)
-
-## About 
-
-The About page introduces the group leader, describes the benefits and gives information about the venue and times. 
-The About page consists of the following sections:
-
-* Our Group Leaders
-
-* Group Therapy Benefits 
-
-* Meetups 
-
-[About page main image](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/About_page_main_image.JPG)
-
-[Our group leaders section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Group_leaders_tablet_view.JPG)
-
-[Group Therapy Benefits Section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Benefits_tablet_view.JPG)
-
-[Meetups section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Meetups_tablet_view.JPG)
-
-
-## Sessions
-The Sessions page intoduces the sessions in more detail. It provides a video of an actual session, frequently discussed topics and activities outside the sessions.
-
-The Sessions page consists of the following sections:
-
-* How It Happens
-
-* Frequently Discussed - Teen and Parent Concerns
-
-* Other Activities
-
-[Sessions page main image](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/sessions_page_main_image.JPG)
-
-[How It Happens Section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Actual_session_mobile_view.JPG)
-
-[Frequently Discussed - Teen and Parent Concerns Section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Concerns_desktop_view.JPG)
-
-[Other Activities Section](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/activites_mobile_view.JPG)
-
-
-## Gallery 
-
-The gallery page consists of a heading and slideshow image gallery. It provides visual aid.
-
-[Gallery page slideshow gallery](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Gallery_slideshow_tablet_view.JPG)
-
-
-## Contact  
-The contact pages provides means for users to get in touch with the group.
-
-The contact page consist of the following sections:
-
-* Our contact details
-
-* Contact a child psychologist
-
-* Signup for newsletter form
-
-* Map to the venue
-
-[Contact details](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Contacts_desktop_view.JPG)
-
-[Contact a child psychologist](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Contacts_desktop_view.JPG)
-
-[Signup for newsletter form](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Signup_form_desktop_view.JPG)
-
-[Map to the venue](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Map_mobile_view.JPG)
-
-## Confidentiality
-
-This page opens from the Confidentiality link in the footer. It is a mere confidentiality statement. It is styled as the body of the other pages, however, it is meant to be a document and therefore has no header or footer. 
-
-[Confidentiality statement](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Confidentiality_statement.JPG)
-
-
-# Features
-
-## Header
-
-The header contains a logo of the Support group, links to the Home, About, Sessions, Gallery and Contact pages.
-The header will allow the user to see all available pages at a glance and navigate between pages without having to go back to the previous pages. The header is present on all pages linked in it, except for the Confidentiality page, which is a document, not an actual webpage.
-
-
-## Footer 
-
-The footer contains a link to the Condidentiality page (statement), a link to contact a child psychologist and links to Facebook, Instagram, Twitter and Youtube pages. For visual enhancement, it displays icons over the link text. For a simpler solution, the <em>Follow us on social media</em> text is not a link, user needs to click on the icons. Hovering over them guide the user. On the <em>Confidentiality</em> and <em>Contact a child psychologist</em> links the actual text is clickable, the icons are unresponsive. Users can use the <em>Contact a child psychologist</em> link as a shortcut to get to the contact page, were his image, profile and practice's address are displayed. 
-
-
-
-## Page main image
-
-
-The main image is present on the Home, About and Sessions pages. It's function is to grab the user's attention and to enhance the groups' ethos and practices. The text overlay provides information about activity and ethos and another overlay displays an inspirational quote.
-
-## Page information section
-
-
-On the Home, About and Sessions pages, the information section is divided into a text and image area. The images enhance the content. Titles are displayed as headings.
-
-## Testimonials section
-
-The testimonials on the Home page feature responses from existing users. For a more real experience, photos are displayed.
-
-## Group leaders section
-
-This section on the About page features the group leaders with a short description and a photograph.
-For a more real experience, photos are displayed.
-
-## Video 
-
-The video on the Sessions page features an actual session.
-
-## Slidehow image gallery
-
-This feature is on the Gallery page. It displays one image at the time, with side buttons. The images are the size of the main images on the Home, About and Gallery pages in order to stay in keeping with the site's general layout. A slow zoomout enhances the images, and there is a friendly message to the user in the bottom right corner in a text overlay. There is also a heading on the page, which gives the main message of the page.
-
-
-## Contact details section
-
-This section on the Contact page provides email-address, phone number, web address, venue address.
-
-## Child psychologist section
-
-On the contact page, a child psychologist's image, profile and practice's address are displayed. Users can also get here by clicking on the Contact a child psychologist link in the footer.
-
-## Contact form
-
-This section on the Contact page features a contact form where users can input their name and email address and then submit those to the site owners. 
-
-## Radio buttons
-
-On the Contact page, the user can let the site owners know whether he/she wants to participate in the sessions soon. Radio buttons are technically part of the contact form.
-
-## Map
-
-On the Contact page, the embedded Google map will help the user find the venue.
-
-## Confidentiality document page 
-
-This page opens from the footer Confidentiality link. It features a padlock icon to enhance the content, the actual statement and a back arrow icon and a link to get back on the Home page. It's styled the same colour as the main page background.
 
 ## Future features
-
-A hamburger menu for mobile view.
+* I would like to add more questions to the game, as presently the number of alternating questions in a 15 game score is only 30.
+* I would like to add a sound effect to the buttons and maybe a pleasant background music.
+* It would be nice to create a larger game where this art quiz is only a subcategory. 
 
 # Structure
 ## Wireframes
@@ -323,13 +208,13 @@ A hamburger menu for mobile view.
 
 ### Wireframes for mobile, tablet and desktop view are available here: 
 
-[Mobile View](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/wireframes/Milestone_Project_1_Wireframes%20for%20mobile%20view.pdf)
+[Mobile View](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/wireframes/%23Mobile_view.pdf)
 
 
-[Tablet View](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/wireframes/Milestone_Project_1_Wireframes%20for%20tablet%20view.pdf)
+[Tablet View](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/wireframes/%23Tablet_view.pdf)
 
 
-[Desktop View](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/wireframes/Milestone_Project_1_Wireframes%20for%20desktop%20view.pdf)
+[Desktop View](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/wireframes/%23Desktop_view.pdf)
 
 ## Discrepancies with original ideas
 
