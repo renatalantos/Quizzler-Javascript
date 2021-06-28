@@ -516,23 +516,30 @@ getNewQuestion = () => {
 }
 
 
+let click=0;
+incrementClicks = num =>
+{
+click+=num;
+}
 
-
-
+console.log(click)
 
 selections.forEach(selection => {
   selection.addEventListener('click', e => {
    
     if (!takingAnswers) return
     takingAnswers = false;
+   
     
-    const selectedselection = e.target;
-    const selectedAnswer = selectedselection.dataset['number'];
+    const selectedSelection = e.target;
+    const selectedAnswer = selectedSelection.dataset['number'];
     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
     if (classToApply === 'correct') {
       incrementScore(score_points)
       result.innerHTML = `Correct! +${score_points} points!`
       result.style.color = "green";
+      incrementClicks(1)
+      console.log(click)
      
       
       
@@ -540,19 +547,24 @@ selections.forEach(selection => {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
       incrementScore(0)
+      incrementClicks(1)
+      console.log(click)
       
     }
 
-    selectedselection.classList.add(classToApply);
+    selectedSelection.classList.add(classToApply);
     setTimeout(() => {
 
-      selectedselection.classList.remove(classToApply)
+      selectedSelection.classList.remove(classToApply)
       const resDiv = document.querySelector('#res-div')
       resDiv.append(result.innerText = "")
 
       buttonArea.classList.toggle("disabled")
 
     }, 900)
+
+
+    
   })
   
  
@@ -561,10 +573,6 @@ selections.forEach(selection => {
 
 
 
-incrementNumberOfGames = num => {
-  number_of_games += num;
-  numberOfGames.innerText = number_of_games;
-}
 
 
 
@@ -624,7 +632,7 @@ incrementScore = num => {
   let numberOfQuestions = score / 100;
 
 
-if (score===0){
+if ((score===0)||(click==0)){
   
   displayResults.innerText = `Hello ${userName}, thanks for playing. Ooops, ${numberOfQuestions} score. Play again to improve!`
 }
