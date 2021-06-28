@@ -36,8 +36,10 @@ startBtn.addEventListener('click', countGame);
 /*The below variables define question, counter, score, number of games before the game starts. 
 They are either empty or null as their content/value will be added to/incremented during the game.*/
 let currentQuestion = {}
-let userAnswer = true;
+let takingAnswers = true;
 let score = 0;
+let answerSelected;
+
 
 
 
@@ -427,11 +429,11 @@ function startPage() {
 function nextPage() {
   nextBtn.style.visibility = "visible";
   actualQuestion.style.visibility = "visible";
-  if (userAnswer === false) {
+  if (takingAnswers === false) {
     buttonArea.classList.toggle("disabled");
 
   }
-  userAnswer = true;
+  takingAnswers = true;
   questionCounter++;
 
   questionNumber.innerText = `${questionCounter} / 15`;
@@ -511,7 +513,7 @@ getNewQuestion = () => {
 
     })
     availableQuestions.splice(questionsIndex, 1);
-    // userAnswer = true;
+    
 
   }
 
@@ -521,9 +523,12 @@ getNewQuestion = () => {
 
 selections.forEach(selection => {
   selection.addEventListener('click', e => {
-    if (!userAnswer) return
-
-    userAnswer = false;
+   
+    if (!takingAnswers) return
+    takingAnswers = false;
+    
+    
+    
     const selectedselection = e.target;
     const selectedAnswer = selectedselection.dataset['number'];
     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
@@ -531,12 +536,15 @@ selections.forEach(selection => {
       incrementScore(score_points)
       result.innerHTML = `Correct! +${score_points} points!`
       result.style.color = "green";
+      
 
 
 
     } else {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
+      incrementScore(0)
+   
     }
 
     selectedselection.classList.add(classToApply);
@@ -553,7 +561,7 @@ selections.forEach(selection => {
 
     }, 900)
   })
-
+  
 })
 
 
@@ -566,9 +574,7 @@ incrementNumberOfGames = num => {
 
 
 function endGame() {
-
   startBtn.remove()
-
   photoArea.remove()
   photoContainer.remove();
   questionContainer.append(readyQuestion)
@@ -579,12 +585,9 @@ function endGame() {
   nextBtn.remove();
   questionNumber.innerText = 0;
   //wrapAround.append(titleArea)
-
-
   allButtons.prepend(startBtn)
   startBtn.style.visibility = "visible";
   allButtons.append(displayResults)
-
   startBtn.addEventListener('click', restartPage)
   checkHighScore()
   userData()
@@ -624,18 +627,23 @@ incrementScore = num => {
   let numberOfQuestions = score / 100;
 
 
-  if ((score > 0) && (score <= 300)) {
+if (score===0){
+  
+  displayResults.innerText = `Hello ${userName}, thanks for playing. Ooops, ${numberOfQuestions} score. Play again to improve!`
+}
+
+  else if ((score > 0) && (score <= 300)) {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Nice one! Play again for a better result!`;
 
   } else if ((score > 300) && (score <= 600)) {
     displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
   } else if ((score > 600) && (score <= 1000)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! Play again for an even better result!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Super job! Play again for an even better result!`;
 
   } else if ((score > 1000) && (score <= 1400)) {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Great job! You do know your art!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got ${numberOfQuestions} questions right. Excellent job! You do know your art!`;
   } else {
-    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! You really, really know your art!`;
+    displayResults.innerText = `Hello ${userName}, thanks for playing. You got all questions right! Vow! You really, really know your art!`;
   }
 
 
