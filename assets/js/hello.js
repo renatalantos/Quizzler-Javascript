@@ -38,11 +38,6 @@ They are either empty or null as their content/value will be added to/incremente
 let currentQuestion = {}
 let takingAnswers = true;
 let score = 0;
-let answerSelected;
-
-
-
-
 let questionCounter = 0;
 let availableQuestions = [];
 let number_of_games = 0;
@@ -475,6 +470,7 @@ function startGame() {
 
   readyQuestion.remove();
 
+
 }
 
 
@@ -521,13 +517,14 @@ getNewQuestion = () => {
 
 
 
+
+
+
 selections.forEach(selection => {
   selection.addEventListener('click', e => {
    
     if (!takingAnswers) return
     takingAnswers = false;
-    
-    
     
     const selectedselection = e.target;
     const selectedAnswer = selectedselection.dataset['number'];
@@ -536,21 +533,17 @@ selections.forEach(selection => {
       incrementScore(score_points)
       result.innerHTML = `Correct! +${score_points} points!`
       result.style.color = "green";
+     
       
-
-
-
+      
     } else {
       result.innerHTML = "Incorrect! 0 points"
       result.style.color = "red";
       incrementScore(0)
-   
+      
     }
 
     selectedselection.classList.add(classToApply);
-
-
-
     setTimeout(() => {
 
       selectedselection.classList.remove(classToApply)
@@ -562,7 +555,9 @@ selections.forEach(selection => {
     }, 900)
   })
   
+ 
 })
+
 
 
 
@@ -612,6 +607,8 @@ function userData() {
   } 
   
 }
+
+
 
 let gameCounter = 0;
 
