@@ -495,15 +495,6 @@ img {
 
 
 
-
-/*Media queries for large laptop devices*/
-@media screen and (min-width:1201px){
-    #second-hr {
-        margin-bottom: 185px;
-        margin-top: 20px;
-    }
-}
-
 /*Media queries for laptop devices*/
 
 @media screen and (min-width:1025px) and (max-width:1200px) {
@@ -515,7 +506,6 @@ img {
         justify-content: center;
         margin: 0 auto;
     }
-
 
 }
 
