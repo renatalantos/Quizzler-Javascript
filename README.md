@@ -426,8 +426,9 @@ I was also helped on 2 separate issues by 2 tutors of CI.
 Main issue with my game of questionCounter decreasing on restart was resolved by my mentor Seun.
 I learnt how to insert images into Javascript from this tutorial: [StackOverflow](https://stackoverflow.com/questions/64563792/how-to-have-images-in-a-javascript-quiz). 
 
-
 Beside StackOverflow, I often checked the geeksforgeeks and www.w3schools websites as well. 
+Code for text transformation (fade in) in CSS is from W3schools.
+Button layout is based on the following site: https://css-tricks.com/
 
 
 
