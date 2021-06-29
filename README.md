@@ -254,7 +254,7 @@ For the final score messages to the user I used Calligraffiti, cursive from Goog
 
 *  **CSS** for styling
 
-* **Javascript** for to enable user interaction on the site
+* **Javascript** for enabling user interaction on the site
 
 
 * **Google Fonts** for text
