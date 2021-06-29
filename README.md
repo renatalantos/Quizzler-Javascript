@@ -89,7 +89,7 @@ Potential users would like / may want to achieve the following:
 # Layout
 
 As I meant to keep the design as simple as possible, the game is designed to be on one page only, regardless the game stages. It's layout is sourced from one index.html file only. The basic page layout is divided into 2 areas: 
-
+[View on IPadPro](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/ipad_pro_responsive_design.JPG)
 
 1.  The "Your information" section" 
 2.  The game area 
@@ -97,7 +97,7 @@ As I meant to keep the design as simple as possible, the game is designed to be 
 This basic layout is maintained throughout the game. The "Your information" section won't dynamically change, merely the information in it will be updated throughout the game. 
 
 ### The "Your information" section
-insert photo here!!!!
+
  This is where the user can enter and view user and game information. It is located to the left on the page on larger desktops and on top on smaller screens. It has the following elements:
  
 * Username window with placeholder inside and with text above. 
@@ -116,7 +116,9 @@ insert photo here!!!!
 
 ### The game area
 
-The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again. The game area which will be in the middle of the page on all screens, and all its elements are centered in the middle. insert photo here!!!!
+The game area layout will basically stay the same throughout the game. I manipulate it by adding and hiding elements, depending on what page the user is. There are three basic pages. They all include the "Your information section", so I'm not going to explicitely mention it again. The game area which will be in the middle of the page on all screens, and all its elements are centered in the middle. 
+[View on IPad](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/ipad_responsive_design.JPG)
+
 1. Start page 
 [Start page](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/start_page_with_no_updates.JPG)
 2. Game page 
@@ -137,7 +139,7 @@ The game area layout will basically stay the same throughout the game. I manipul
 
  * Image relating to question - this will be hidden when the game ends.
  * Actual question - this will be hidden when the game ends.
- * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view, 4 x 1on smaller screens) these will be hidden when the game ends. insert photo here!!!!!
+ * Possible answers displayed on answer buttons in a 2 x 2 layout (in desktop view, 4 x 1on smaller screens) these will be hidden when the game ends. [Button layout on smallest screen](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/smallest_screen_responsive_design.JPG)
 *  Next button - this will be hidden when the game ends.
 *  Result message. This message appears above the answer buttons and will disappear as soon as the answer buttons are disabled.
 
@@ -229,19 +231,19 @@ However, there are some concepts and features that I discarded.
 
   ## Colours
 
-    For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for cheerful, playful, attractive colours that suit a game and compliment the colourful images. I allowed myself to use stronger yet not too strong colours. The background colour is a very pale pink, however, as users should not be distracted from the visuals of the game elements. I chose the colours intuitively. The colours are contrasting yet complimenting each other in my opinion. insert photo here!!!!
+ For the colours I partly used the [mycolor.space](https://mycolor.space/) site and the in-built colour palette in Gitpod. I aimed for cheerful, playful, attractive colours that suit a game and compliment the colourful images. I allowed myself to use stronger yet not too strong colours. The background colour is a very pale pink, however, as users should not be distracted from the visuals of the game elements. I chose the colours intuitively. The colours are contrasting yet complimenting each other in my opinion. [Colour harmony](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/colour_harmony.JPG)
 
     
 
-    ## Typography
+## Typography
 
 
-    For the information section, the game questions, the game answers on the buttons I used Sniglet cursive from Google fonts as it has playful, round yet easy-to-read letters.  
+For the information section, the game questions, the game answers on the buttons I used Sniglet cursive from Google fonts as it has playful, round yet easy-to-read letters.  
 
-    For the page title "Do you know your art?"  and the messages to the user to encourage them to paly "Try my awesome 15 question art quiz!" and "Play again" I used Nanum Brush cursive from Google Fonts as the letters look like brushstrokes and they can be associated with painting. 
+For the page title "Do you know your art?"  and the messages to the user to encourage them to paly "Try my awesome 15 question art quiz!" and "Play again" I used Nanum Brush cursive from Google Fonts as the letters look like brushstrokes and they can be associated with painting. 
     
 
-    For the final score messages to the user I used Calligraffiti, cursive from Google fonts as the letters look like they are handwritten and the message is more personal. This is also a very beautiful letter type and can be associated with art.
+For the final score messages to the user I used Calligraffiti, cursive from Google fonts as the letters look like they are handwritten and the message is more personal. This is also a very beautiful letter type and can be associated with art.
 
 
 # Technologies
@@ -270,15 +272,26 @@ However, there are some concepts and features that I discarded.
 
  ## Validation 
 
-   My index.html page passed the validator with the following result on 2 lines: **Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.** I left this, however, as even without the heading, the sections represent areas with well marked different purposes on the page.
-   [HTML Warning messages after successful validation]()
+   My index.html page passed the validator with the following result on 2 lines: **Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.** I left this, however, as even without the heading, the sections represent areas with well marked different purposes on the page, so there use is semantically correct in my opinion.
+   [HTML Warning messages after successful validation](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/HTML_warnings.JPG)
 
    My CSS page passed in the W3C Jigsaw CSS validator with the following result: **CSS Congratulations! No Error Found.**
 
   There were 14 warning messages displayed regarding imported elements. 
   These relate to the imported stylesheet on top of the page and the elements are imported to power the text overlay transform features.
 
-  [CSS Warning messages after successful validation]()
+  [CSS Warning messages after successful validation](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/css_validation.JPG)
+
+
+  My script.js file passed the JS Lint validator with no errors but a lot of warnings, most of which relate the the characters I uses in the code.
+  [JS Lint Warning messages 1](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/js_lint_warnings1.JPG)
+  [JS Lint Warning messages 2](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/js_lint_warnings2.JPG)
+  [JS Lint Warning messages end](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/js_lint_warnings_end.JPG)
+
+
+On Google Dev Tools the site displays without erros, however, there is an error for a deleted favicon, which is not connected to the game.
+
+Insert photo!!!
 
   ## Testing in supported browsers
 
@@ -288,12 +301,13 @@ However, there are some concepts and features that I discarded.
   * Mozilla Firefox
   * Microsoft Edge
   * Internet Explorer
+  * Opera
 
-  Chrome, Firefox and Edge displayed the site without problems. Firefox and Edge display a sligthly different background color. 
+  Chrome, Firefox, Edge and Opera displayed the site without problems and let the game run without errors. Firefox and Edge display a sligthly different background color. 
   My guess is, they don't feature the colours I imported from the ColorSpace website and they substitute it with the closest match.
 
-  Internet Explorer didn't display the animated features including the Javascript powered slideshow Gallery  first. 
-  After I moved the javascript source links form the head into the end of the body page, these features worked as well.
+  On Internet Explorer the start page displayed but on click of the start button the game didn't start, even though active scripting is on. I guess IE doesn't support certain Javascript features.
+
 
   ## Responsiveness
 
@@ -314,58 +328,27 @@ However, there are some concepts and features that I discarded.
    Apparently that could do with the IOS system or Safari, I couldn't resolve this issue, however, in Google Developer 
    tools everything looks as meant.
 
-  I also found while testing the responsive layout in Google Developer tools, that the smaller the device screen size, the better the header looks.
-
   ## Features 
 
-  All features are working as intended. Contact form asks for relevant information if not given. 
-  Radio buttons allow user to select one option at the time.
+  All features are working as intended. All buttons work, username is displayed, all question and score windows show the correct values, user feedback messages are correctly displayed based on score. Images and questions show up. 
 
 ## Bugs, Issues
 
 
-* Hamburger menu
+* My main issue that kept me progressing for a long time was that question counter started decrementing on game restart after a while. This was due to the fact that unlike in the tutorial I based my game on, the user needs to proceed to the next question by the next button. I had created a nexPage() function where I put the questionCounter as questionCounter increases as user goes to the next page. Therefore I had to redeclare questionCounter in startGame() and set it to 1 in restartPage(). availableQuestions = [...questions] needed to be taken out of the getNewQuestion() function and put into restartPage() and startPage(). This issue was resolved by my mentor.
 
-I tried to insert a hamburger menu for mobile view using Javascript following the [https://www.w3schools.com/howto/howto_js_mobile_navbar.asp](https://www.w3schools.com/howto/howto_js_mobile_navbar.asp) link,
- however, the opened link tabs stayed open after being clicked on, and occupied too much space on the screen, so I reverted to using the header links. 
+* However, due to this another bug was generated, which has remained unresolved. As questionCounter is forced to start at 1 at restart, the first question on restart is the last from the previous game. And probably due to the splice method, as the first question is basically considered being from the previous array of questions, is removed and sometimes put back in the array during the course of the same game, meaning that question 1 may be repeated within the same game.
 
-* Gap on the side of main images in large desktop view
+* Was unable to write if statement with if(score===0) for user feedback message, there was no message returned at the end. Then I realized that score is only "born" when it is incremented, it doesn't exist before. By adding an incrementScore(0) into the user selection check function, this issue was resolved.
 
-This is due to the actual width of the images, which is 1500px and the screen width is wider than that. 
-I considered resizing the images but I found that it affects the image quality, 
-so I left it the way it is.  
+* My other unresolved issue is that I haven't been able write code for validating no user answer, namely when user does not press any answer buttons. I tried to set a Boolean variable answerClicked at the beginning of the game set it to false, placed it into the user selection check function and set it to true, outside of the function it was false, and validate as if (answerClicked==false){display message... } I would have needed it to the user feedback message. Right now, when user rushes through the game without selecting any answer, two things can happen:
+1. If user plays in the first session, no message shows where user feedback messages should be shown. 
+2. If user plays after a session where they received a score (including 0), the previous score and user message will be transferred into the end of the "empty" game.
 
-* Header occupied a large portion of the screen in mobile view
-
- In mobile view the header took up too much space and nav elements appeared partly under each other. I resized the header in all views. In mobile views I reduced the line height, font size, the logo and all paddings and margins that could be done without. I gave the navbar a width of 90% and the logo 10%. This doesn't apply to devices under the screen width of under 321 px. Here I simply floated the logo to the left and reduced the navbar elements. On larger mobile devices the logo and the nav elements appear on 2 different lines, however the nav items are pretty much centered and the layout has improved a lot. 
-
-
-* Extra space between elements Contact child psychologist link and copyright statement on About and Sessions pages. On the About page the footer was inside the #hero-text-area section, taking it out fixed the issue. 
-
-
-* On the Sessions page an extra margin of 10px was was applied to the h3 footer elements, and extra 10px padding was applied to the footer h6 elements. Styling just the footer h3 elements by stopping them from sharing the same properties as the navbar elements and footer links was half of the solution. In the properties I set both margin and padding to 0. I created an id for the footer h6 and styled this again with no margin or padding.
-
-[Gap as intended](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/gap%20between%20contact%20child%20psychologist%20link%20and%20copyright%20as%20intended.JPG)
-[Gap appears larger than intended](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/gap%20appear%20larger%20on%20Sessions%20and%20Gallery%20pages.JPG)
-
-
-* The above helped me solve another issue where creating an extra div for the copyright statement and placing it after the Follow us on social media text in the html file highlighted the flaws mentioned in the above section. The copyright statement had to be part of the of footer-item-center div, after the Contact a child psychologist link. Therefore, when diaplayed in mobile view, the copyright statement was displayed between links and not at the bottom. Therefore, in tablet and mobile view the copyright needed to hidden in the @media queries. 
-
-[Illogical position of copyright statement in the footer in tablet and mobile view](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/footer%20and%20copyright.JPG)
+* I had an issue with figuring out how to restart the game as reimplementing the start button didn't do anything. Then I realized that I had to build back the elements that I removed in the startGame() function in order to make most of the space and reset the variables that were increased during the game. I needed to create an endGame() function for this purpose as well.
 
 
 
-* Radio buttons allow user to select two options at the same time. 
-
-This was solved by adding a name to the radio input tags. 
-[Radio button allows to selections at the same time](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Radio%20buttons.JPG)
-
-* Gap between main Home image and text area
-
-A gap appeared between the main image and the text area in tablet and large desktop view. This was due to the narrower height and width of the image from the rest.
- I fixed this issue resizing the image for the 2 extra views. However, when tested on my Android Galaxy A51, the gap appeared there (not before). I fixed this by adding an extra 20px of height and line height in mobile view. This fixed the issue.
-
-[Gap between main image and text area](https://github.com/renatalantos/Embrace-support-group/blob/master/documents/screenshots/Gap_between_image_and_text_area.jpg)
 
 # Deployment
 
@@ -383,35 +366,30 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 9. Under Source I selected branch **Master** from the **None**, **extensions** and **Master** options.
 10. From the folders beside branch I selected /(root) from /(root) and /docs.
 11. Next I clicked save.
-12. My live site was deployed a few minutes later under [the following link:](https://renatalantos.github.io/Embrace-support-group/)
+12. My live site was deployed a few minutes later under [the following link:](https://renatalantos.github.io/Quizzler-Javascript/)
 
 
 # Acknowledgements 
 
-The below website is a collage for all over the web.
+
 
 ## Idea
+The quiz idea is not new unser the Sun, but this particular quiz was was compiled by me. 
 
-Completely mine. However, I was glad to discover that there are web pages, images, videos featuring parent support groups and therapy groups in general. 
 
 ## Text 
-Text is a mix from the following websites:
+I wrote most questions myself.
+I needed help on the following 2 questions, though as I don't know the artists well:
 
-* [General1](https://www.relate.org.uk/)
-* [General2](https://turn2me.ie/)
-* [General3](http://www.familymatters.ie/testimonials.html)
-* [General4](https://www.goodtherapy.org/learn-about-therapy/modes/group-therapy)
-* [Confidentiality page](https://students.tufts.edu/sites/default/files/HWClientConsentConfidentialityPolicy.pdf)
+* [On Kandinsky](https://quizizz.com/admin/quiz/5de6f21a52cd9a001b726dc0/wassily-kandinsky)
+* [On Andy Warhol](https://www.funtrivia.com/trivia/People/Andy-Warhol-20581.html)
+
 
 ## Images 
 
-Images are  courtesy of the [pexels.com](https://www.pexels.com/).  Thanks Tima!
-The main Home page image is featured on the [www.newportacademy.com](https://www.newportacademy.com/resources/restoring-families/parenting-support-groups/) webiste.
+The main image is from [pexels.com](https://www.pexels.com/). The images in the project are not subjected to copyright.
 
-## Video 
 
-Video is courtesy of a lovely parent support group and YouTube
-[YouTube video link](https://www.youtube.com/watch?v=jAIRxEWfl7Y)
 
 ## Text styling
 I used the GoogleFonts website to choose my letter styles.
@@ -424,17 +402,30 @@ Icons are from the FontAwesome website.
 Colours were partly chosen from the mycolor.space website and the default palette in GitPod. 
 
 ## Technologies
-My beloved cheetsheet, the www.w3schools website for Javascript. Kits to power image transformations, the gallery slideshow and buttons for the slideshow are from there. 
+I could not have created this game without external Javascript resources in this short amount of time. I heavily relied on the following tutorial to build the game:  How to Make a Quiz App using HTML CSS Javascript -
+Vanilla Javascript Project for Beginners Tutorial by Brian Design
+Youtube link: https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2455s. 
+I also looked at the following repository by a fellow student:
+https://github.com/rebeccatraceyt/WhatTheBlank. This helped me set up the sessionStorage.getItem() 
+and sessionStorage.setItem()methods and helped me understand what the code does.
+I was also helped on 2 separate issues by 2 tutors of CI.
+Main issue with my game of questionCounter decreasing on restart was resolved by my mentor Seun.
+I learnt how to insert images into Javascript from this tutorial: [StackOverflow](https://stackoverflow.com/questions/64563792/how-to-have-images-in-a-javascript-quiz). 
+Beside StackOverflow, I often checked the geeksforgeeks and www.w3schools websites as well. 
+
+
 
 # Special Acknowledgements
 
-* To Roman for staring us off on this journey.
-* To Kasia for all her help and hard work.
+
+* To Kasia for all her help and precious advice.
 * To my classmates who helped and advised.
 * To my mentor Seun for her guidance.
 
-And last but not least my family for testing my pages while I was testing their patience.
-Sorry about the late dinners and horrible meals!!! And Thanks!
+And last but not least my family for putting up with me during this intense time.
+Thanks Guys!
+
+Thanks for reading.
 
 
 
