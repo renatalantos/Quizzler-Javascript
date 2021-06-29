@@ -224,7 +224,7 @@ Overall I kept to the basic layout described in the wireframes. I aimed for a si
 
 However, there are some concepts and features that I discarded.
 
-1. I intended to add a user registration and login form, which I realized were unnecsessary. I only created the above mention "Your information" section, which was also part of my original concept.
+1. I intended to add a user registration and login form, which I realized were unnecessary. I only created the above mention "Your information" section, which was also part of my original concept.
 
 
 2. Buttons were meant to be displayed under one another, however, this is not good on smaller laptop screens, as user needs to scroll up and down to see the image and press the next button. This button layout has been preserved for mobile devices.
@@ -291,7 +291,9 @@ For the final score messages to the user I used Calligraffiti, cursive from Goog
 
 On Google Dev Tools the site displays without erros, however, there is an error for a deleted favicon, which is not connected to the game.
 
-Insert photo!!!
+[Favicon](https://github.com/renatalantos/Quizzler-Javascript/blob/master/documents/screenshots/Favicon.JPG)
+
+
 
   ## Testing in supported browsers
 
@@ -350,6 +352,8 @@ Insert photo!!!
 
 
 
+
+
 # Deployment
 
 The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -374,7 +378,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 
 ## Idea
-The quiz idea is not new unser the Sun, but this particular quiz was was compiled by me. 
+The quiz idea is not new under the Sun, but this particular quiz was was compiled by me. 
 
 
 ## Text 
@@ -402,15 +406,27 @@ Icons are from the FontAwesome website.
 Colours were partly chosen from the mycolor.space website and the default palette in GitPod. 
 
 ## Technologies
-I could not have created this game without external Javascript resources in this short amount of time. I heavily relied on the following tutorial to build the game:  How to Make a Quiz App using HTML CSS Javascript -
+I could not have created this game without external Javascript resources in this short amount of time. 
+I heavily relied on the following tutorial to build the game:
+
+How to Make a Quiz App using HTML CSS Javascript -
 Vanilla Javascript Project for Beginners Tutorial by Brian Design
-Youtube link: https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2455s. 
+Youtube link: https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2455s.
+
 I also looked at the following repository by a fellow student:
+
+
 https://github.com/rebeccatraceyt/WhatTheBlank. This helped me set up the sessionStorage.getItem() 
 and sessionStorage.setItem()methods and helped me understand what the code does.
+
+
 I was also helped on 2 separate issues by 2 tutors of CI.
+
+
 Main issue with my game of questionCounter decreasing on restart was resolved by my mentor Seun.
 I learnt how to insert images into Javascript from this tutorial: [StackOverflow](https://stackoverflow.com/questions/64563792/how-to-have-images-in-a-javascript-quiz). 
+
+
 Beside StackOverflow, I often checked the geeksforgeeks and www.w3schools websites as well. 
 
 
